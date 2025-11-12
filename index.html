@@ -28,12 +28,6 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.nexussolution.com">
     
     <!-- Preconnect to important domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -92,6 +86,8 @@
             --gray: #64748b;
             --gray-light: #e2e8f0;
             --white: #ffffff;
+            --success: #10b981;
+            --warning: #f59e0b;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --radius: 8px;
         }
@@ -183,6 +179,16 @@
         .btn-secondary:hover {
             background-color: var(--primary);
             color: var(--white);
+        }
+        
+        .btn-success {
+            background-color: var(--success);
+            color: var(--white);
+        }
+        
+        .btn-success:hover {
+            background-color: #0da271;
+            transform: translateY(-2px);
         }
         
         .section {
@@ -386,6 +392,150 @@
             margin-bottom: 0.5rem;
         }
         
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: var(--gray-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-content {
+            padding: 1.5rem;
+        }
+        
+        .product-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .product-description {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--gray-light);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+        
+        .quantity-btn {
+            background-color: var(--light);
+            border: none;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .quantity-input {
+            width: 40px;
+            height: 30px;
+            border: none;
+            text-align: center;
+            background-color: var(--white);
+        }
+        
+        .product-share {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .share-btn {
+            background-color: var(--light);
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .share-btn:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .product-footer {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .product-footer .btn {
+            flex: 1;
+            text-align: center;
+            padding: 0.75rem;
+        }
+        
         /* Services Section */
         .services-grid {
             display: grid;
@@ -586,6 +736,49 @@
             resize: vertical;
         }
         
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            width: 90%;
+            max-width: 500px;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+        
+        .modal-title {
+            margin-bottom: 1.5rem;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--dark);
@@ -728,6 +921,16 @@
                 width: 100%;
                 text-align: center;
             }
+            
+            .product-actions {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+            
+            .product-footer {
+                flex-direction: column;
+            }
         }
         
         @media (max-width: 576px) {
@@ -768,6 +971,9 @@
                         <a href="#about" class="nav-link">About</a>
                     </li>
                     <li class="nav-item">
+                        <a href="#products" class="nav-link">Products</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="#services" class="nav-link">Services</a>
                     </li>
                     <li class="nav-item">
@@ -794,7 +1000,7 @@
                 <h1>Innovative Solutions for Your Business</h1>
                 <p>We provide cutting-edge technology solutions to help businesses grow, optimize operations, and achieve digital transformation.</p>
                 <div class="hero-btns">
-                    <a href="#contact" class="btn btn-light">Get Started</a>
+                    <a href="#products" class="btn btn-light">View Products</a>
                     <a href="#about" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
@@ -852,6 +1058,119 @@
         </div>
     </section>
 
+    <!-- Products Section -->
+    <section class="section products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Products</h2>
+                <p>Explore our innovative software solutions designed to transform your business</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-badge">Popular</div>
+                    <div class="product-image">
+                        <i class="fas fa-chart-bar" style="font-size: 4rem;"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Nexus Analytics Pro</h3>
+                        <div class="product-price">$299<span>/month</span></div>
+                        <p class="product-description">Advanced business intelligence platform with real-time analytics, predictive modeling, and customizable dashboards.</p>
+                        
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="quantity-btn minus" data-product="1">-</button>
+                                <input type="text" class="quantity-input" value="1" data-product="1" readonly>
+                                <button class="quantity-btn plus" data-product="1">+</button>
+                            </div>
+                            
+                            <div class="product-share">
+                                <button class="share-btn" data-product="Nexus Analytics Pro">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                                <button class="share-btn message-btn" data-product="Nexus Analytics Pro">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-footer">
+                            <button class="btn btn-primary order-btn" data-product="1">Order Now</button>
+                            <button class="btn btn-secondary details-btn" data-product="1">Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <i class="fas fa-cloud" style="font-size: 4rem;"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">CloudSync Enterprise</h3>
+                        <div class="product-price">$499<span>/month</span></div>
+                        <p class="product-description">Secure cloud storage and collaboration platform with advanced encryption, team management, and automated backups.</p>
+                        
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="quantity-btn minus" data-product="2">-</button>
+                                <input type="text" class="quantity-input" value="1" data-product="2" readonly>
+                                <button class="quantity-btn plus" data-product="2">+</button>
+                            </div>
+                            
+                            <div class="product-share">
+                                <button class="share-btn" data-product="CloudSync Enterprise">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                                <button class="share-btn message-btn" data-product="CloudSync Enterprise">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-footer">
+                            <button class="btn btn-primary order-btn" data-product="2">Order Now</button>
+                            <button class="btn btn-secondary details-btn" data-product="2">Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-shield-alt" style="font-size: 4rem;"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">SecureGuard Suite</h3>
+                        <div class="product-price">$199<span>/month</span></div>
+                        <p class="product-description">Comprehensive cybersecurity solution with threat detection, firewall protection, and compliance monitoring.</p>
+                        
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="quantity-btn minus" data-product="3">-</button>
+                                <input type="text" class="quantity-input" value="1" data-product="3" readonly>
+                                <button class="quantity-btn plus" data-product="3">+</button>
+                            </div>
+                            
+                            <div class="product-share">
+                                <button class="share-btn" data-product="SecureGuard Suite">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                                <button class="share-btn message-btn" data-product="SecureGuard Suite">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-footer">
+                            <button class="btn btn-primary order-btn" data-product="3">Order Now</button>
+                            <button class="btn btn-secondary details-btn" data-product="3">Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Services Section -->
     <section class="section services" id="services">
         <div class="container">
@@ -883,30 +1202,6 @@
                     </div>
                     <h3>Cloud Solutions</h3>
                     <p>Scalable cloud infrastructure and migration services to optimize your operations and reduce costs.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3>Data Analytics</h3>
-                    <p>Transform your data into actionable insights with our advanced analytics and business intelligence solutions.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Cybersecurity</h3>
-                    <p>Comprehensive security solutions to protect your digital assets and ensure regulatory compliance.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>IT Consulting</h3>
-                    <p>Strategic technology guidance to help you make informed decisions and maximize your IT investments.</p>
                 </div>
             </div>
         </div>
@@ -1104,20 +1399,19 @@
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Services</h3>
+                    <h3>Products</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Software Development</a></li>
-                        <li><a href="#">Mobile App Development</a></li>
-                        <li><a href="#">Cloud Solutions</a></li>
-                        <li><a href="#">Data Analytics</a></li>
-                        <li><a href="#">IT Consulting</a></li>
+                        <li><a href="#">Nexus Analytics Pro</a></li>
+                        <li><a href="#">CloudSync Enterprise</a></li>
+                        <li><a href="#">SecureGuard Suite</a></li>
+                        <li><a href="#">All Products</a></li>
                     </ul>
                 </div>
                 
@@ -1138,6 +1432,73 @@
             </div>
         </div>
     </footer>
+
+    <!-- Order Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2 class="modal-title">Place Your Order</h2>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="orderProduct" class="form-label">Product</label>
+                    <input type="text" id="orderProduct" class="form-control" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="orderQuantity" class="form-label">Quantity</label>
+                    <input type="number" id="orderQuantity" class="form-control" min="1" value="1">
+                </div>
+                
+                <div class="form-group">
+                    <label for="orderName" class="form-label">Your Name</label>
+                    <input type="text" id="orderName" class="form-control" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="orderEmail" class="form-label">Your Email</label>
+                    <input type="email" id="orderEmail" class="form-control" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="orderPhone" class="form-label">Phone Number</label>
+                    <input type="tel" id="orderPhone" class="form-control" placeholder="Enter your phone number" required>
+                </div>
+                
+                <button type="submit" class="btn btn-success" style="width: 100%;">Complete Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Message Modal -->
+    <div class="modal" id="messageModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2 class="modal-title">Message About Product</h2>
+            <form id="messageForm">
+                <div class="form-group">
+                    <label for="messageProduct" class="form-label">Product</label>
+                    <input type="text" id="messageProduct" class="form-control" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="messageName" class="form-label">Your Name</label>
+                    <input type="text" id="messageName" class="form-control" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="messageEmail" class="form-label">Your Email</label>
+                    <input type="email" id="messageEmail" class="form-control" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="messageContent" class="form-label">Your Message</label>
+                    <textarea id="messageContent" class="form-control" placeholder="Enter your message about this product" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </div>
 
     <script>
         // Mobile Navigation Toggle
@@ -1160,6 +1521,119 @@
             e.preventDefault();
             alert('Thank you for your message! We will get back to you soon.');
             this.reset();
+        });
+        
+        // Product quantity controls
+        document.querySelectorAll('.quantity-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const productId = this.getAttribute('data-product');
+                const input = document.querySelector(`.quantity-input[data-product="${productId}"]`);
+                let value = parseInt(input.value);
+                
+                if (this.classList.contains('plus')) {
+                    value++;
+                } else if (this.classList.contains('minus') && value > 1) {
+                    value--;
+                }
+                
+                input.value = value;
+            });
+        });
+        
+        // Order modal functionality
+        const orderModal = document.getElementById('orderModal');
+        const orderForm = document.getElementById('orderForm');
+        
+        document.querySelectorAll('.order-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const productId = this.getAttribute('data-product');
+                const productCard = this.closest('.product-card');
+                const productName = productCard.querySelector('.product-title').textContent;
+                const productQuantity = productCard.querySelector('.quantity-input').value;
+                
+                document.getElementById('orderProduct').value = productName;
+                document.getElementById('orderQuantity').value = productQuantity;
+                
+                orderModal.classList.add('active');
+            });
+        });
+        
+        // Message modal functionality
+        const messageModal = document.getElementById('messageModal');
+        const messageForm = document.getElementById('messageForm');
+        
+        document.querySelectorAll('.message-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const productName = this.getAttribute('data-product');
+                document.getElementById('messageProduct').value = productName;
+                messageModal.classList.add('active');
+            });
+        });
+        
+        // Share functionality
+        document.querySelectorAll('.share-btn:not(.message-btn)').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const productName = this.getAttribute('data-product');
+                if (navigator.share) {
+                    navigator.share({
+                        title: productName,
+                        text: `Check out ${productName} from Nexus Solution!`,
+                        url: window.location.href,
+                    })
+                    .then(() => console.log('Successful share'))
+                    .catch((error) => console.log('Error sharing:', error));
+                } else {
+                    alert(`Share ${productName} with your network!`);
+                }
+            });
+        });
+        
+        // Modal close functionality
+        document.querySelectorAll('.modal-close').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.closest('.modal').classList.remove('active');
+            });
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('active');
+            }
+        });
+        
+        // Order form submission
+        orderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const product = document.getElementById('orderProduct').value;
+            const quantity = document.getElementById('orderQuantity').value;
+            const name = document.getElementById('orderName').value;
+            
+            alert(`Thank you ${name}! Your order for ${quantity} x ${product} has been received. We will contact you shortly.`);
+            orderModal.classList.remove('active');
+            this.reset();
+        });
+        
+        // Message form submission
+        messageForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const product = document.getElementById('messageProduct').value;
+            const name = document.getElementById('messageName').value;
+            
+            alert(`Thank you ${name}! Your message about ${product} has been sent. We will respond soon.`);
+            messageModal.classList.remove('active');
+            this.reset();
+        });
+        
+        // Product details buttons
+        document.querySelectorAll('.details-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const productId = this.getAttribute('data-product');
+                const productCard = this.closest('.product-card');
+                const productName = productCard.querySelector('.product-title').textContent;
+                
+                alert(`Detailed information about ${productName} would be displayed here.`);
+            });
         });
     </script>
 </body>

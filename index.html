@@ -79,6 +79,11 @@
             --success: #48BB78;
             --warning: #ED8936;
             --whatsapp: #25D366;
+            --facebook: #3b5998;
+            --twitter: #1DA1F2;
+            --linkedin: #0077b5;
+            --tiktok: #000000;
+            --instagram: #E4405F;
             --gradient: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             --radius: 12px;
@@ -831,6 +836,54 @@
             background-color: #20b358;
         }
 
+        /* Social Media Share Buttons */
+        .share-social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            justify-content: center;
+        }
+
+        .share-social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s ease;
+            font-size: 1.25rem;
+        }
+
+        .share-social-link:hover {
+            transform: translateY(-3px);
+        }
+
+        .share-facebook {
+            background-color: var(--facebook);
+        }
+
+        .share-twitter {
+            background-color: var(--twitter);
+        }
+
+        .share-linkedin {
+            background-color: var(--linkedin);
+        }
+
+        .share-whatsapp {
+            background-color: var(--whatsapp);
+        }
+
+        .share-tiktok {
+            background-color: var(--tiktok);
+        }
+
+        .share-instagram {
+            background-color: var(--instagram);
+        }
+
         /* Responsive Styles */
         @media (max-width: 992px) {
             h1 {
@@ -943,7 +996,7 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">
+                <a href="https://nexussolution603.github.io/com/" class="logo">
                     <div class="logo-icon"></div>
                     <span>NEXUS SOLUTION</span>
                 </a>
@@ -1261,9 +1314,9 @@
                         <h3>Alex Johnson</h3>
                         <p>CEO & Founder</p>
                         <div class="member-social">
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="https://wa.me/923169405608?text=Hello%20Alex%20Johnson,%20I%20would%20like%20to%20connect%20with%20you" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="social-link" style="background-color: var(--linkedin);"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link" style="background-color: var(--twitter);"><i class="fab fa-twitter"></i></a>
+                            <a href="https://wa.me/923169405608?text=Hello%20Alex%20Johnson,%20I%20would%20like%20to%20connect%20with%20you" class="social-link" style="background-color: var(--whatsapp);" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1276,9 +1329,9 @@
                         <h3>Sarah Williams</h3>
                         <p>CTO</p>
                         <div class="member-social">
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="https://wa.me/923169405608?text=Hello%20Sarah%20Williams,%20I%20would%20like%20to%20connect%20with%20you" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="social-link" style="background-color: var(--linkedin);"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link" style="background-color: var(--twitter);"><i class="fab fa-twitter"></i></a>
+                            <a href="https://wa.me/923169405608?text=Hello%20Sarah%20Williams,%20I%20would%20like%20to%20connect%20with%20you" class="social-link" style="background-color: var(--whatsapp);" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1291,9 +1344,9 @@
                         <h3>Michael Chen</h3>
                         <p>Lead Developer</p>
                         <div class="member-social">
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="https://wa.me/923169405608?text=Hello%20Michael%20Chen,%20I%20would%20like%20to%20connect%20with%20you" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="social-link" style="background-color: var(--linkedin);"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link" style="background-color: var(--twitter);"><i class="fab fa-twitter"></i></a>
+                            <a href="https://wa.me/923169405608?text=Hello%20Michael%20Chen,%20I%20would%20like%20to%20connect%20with%20you" class="social-link" style="background-color: var(--whatsapp);" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1306,9 +1359,9 @@
                         <h3>Emily Rodriguez</h3>
                         <p>Project Manager</p>
                         <div class="member-social">
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="https://wa.me/923169405608?text=Hello%20Emily%20Rodriguez,%20I%20would%20like%20to%20connect%20with%20you" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="social-link" style="background-color: var(--linkedin);"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link" style="background-color: var(--twitter);"><i class="fab fa-twitter"></i></a>
+                            <a href="https://wa.me/923169405608?text=Hello%20Emily%20Rodriguez,%20I%20would%20like%20to%20connect%20with%20you" class="social-link" style="background-color: var(--whatsapp);" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1446,19 +1499,19 @@
                     <h3>NEXUS SOLUTION</h3>
                     <p>Providing innovative technology solutions to help businesses thrive in the digital age.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link">
+                        <a href="#" class="social-link" style="background-color: var(--facebook);">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="#" class="social-link" style="background-color: var(--twitter);">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="#" class="social-link" style="background-color: var(--linkedin);">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="#" class="social-link" style="background-color: var(--instagram);">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="#" class="social-link" style="background-color: var(--tiktok);">
                             <i class="fab fa-tiktok"></i>
                         </a>
                     </div>
@@ -1508,20 +1561,20 @@
             <button class="modal-close">&times;</button>
             <h2 class="modal-title">Share Service</h2>
             <p id="share-service-name" style="margin-bottom: 1.5rem;"></p>
-            <div class="social-links" style="justify-content: center;">
-                <a href="#" class="social-link share-facebook">
+            <div class="share-social-links">
+                <a href="#" class="share-social-link share-facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="#" class="social-link share-twitter">
+                <a href="#" class="share-social-link share-twitter">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a href="#" class="social-link share-linkedin">
+                <a href="#" class="share-social-link share-linkedin">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="#" class="social-link share-whatsapp">
+                <a href="#" class="share-social-link share-whatsapp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="#" class="social-link share-tiktok">
+                <a href="#" class="share-social-link share-tiktok">
                     <i class="fab fa-tiktok"></i>
                 </a>
             </div>

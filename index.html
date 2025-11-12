@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Nexus Solution 603 - Premium Web Development & Business Services</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="NEXUS SOLUTION 603 - Professional Business Support Services including web development, mobile apps, document creation, gaming, graphics design & digital marketing." />
+  <meta name="keywords" content="web development, mobile apps, business support, documents, games ID, graphics design, digital marketing, Daraz, Git, Nexus Solution" />
+  <meta name="author" content="Nexus Solution" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="en" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="rating" content="general" />
+  <meta name="distribution" content="global" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Nexus Solution 603 - Premium Business Services" />
+  <meta property="og:description" content="Professional Business Support Services including Web Development, Mobile Apps, Document Projects, Games & more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nexussolution603.github.io/com/" />
+  <meta property="og:image" content="https://nexussolution603.github.io/com/preview-image.jpg" />
+  <meta property="og:site_name" content="Nexus Solution" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nexus Solution 603" />
+  <meta name="twitter:description" content="Professional Business Support Services including Web Development, Mobile Apps, Document Projects, Games & more." />
+  <meta name="twitter:image" content="https://nexussolution603.github.io/com/preview-image.jpg" />
+  <meta name="twitter:site" content="@nexussolution" />
+  <meta name="twitter:creator" content="@nexussolution" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://nexussolution603.github.io/com/" />
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#6a11cb" />
+  <meta name="msapplication-navbutton-color" content="#6a11cb" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#6a11cb" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.jpeg" />
+  <link rel="apple-touch-icon" href="favicon.jpeg" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --primary: #6a11cb;
+      --primary-dark: #2575fc;
+      --secondary: #1a1a2e;
+      --accent: #ff2e63;
+      --light: #f8f9fa;
+      --gray: #6c757d;
+      --success: #00b894;
+      --warning: #fdcb6e;
+      --danger: #e84393;
+      --info: #0984e3;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      --gradient: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      --gradient-accent: linear-gradient(135deg, var(--accent), var(--danger));
+    }
+
+    /* ===== BASE STYLES ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--light);
+      color: var(--secondary);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .section-title h1 {
+      font-size: 2.8rem;
+      color: var(--secondary);
+      margin-bottom: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .section-title h1 span {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 5px;
+      background: var(--gradient);
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 5px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--gradient);
+      color: white;
+      border-radius: 50px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: var(--gradient-accent);
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .btn:hover::before {
+      width: 100%;
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(106, 17, 203, 0.3);
+    }
+
+    /* ===== HEADER STYLES ===== */
+    header {
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: var(--shadow);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      padding: 15px 0;
+      backdrop-filter: blur(10px);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--secondary);
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo span {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-left: 30px;
+      position: relative;
+    }
+
+    .nav-links a {
+      color: var(--secondary);
+      font-weight: 600;
+      transition: var(--transition);
+      position: relative;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      background: var(--gradient);
+      bottom: -5px;
+      left: 0;
+      transition: var(--transition);
+      border-radius: 3px;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .header-icons {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-icons a {
+      margin-left: 20px;
+      color: var(--secondary);
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .header-icons a:hover {
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .mobile-menu {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      padding: 180px 0 120px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.05"><polygon fill="white" points="0,1000 1000,0 1000,1000"/></svg>');
+      background-size: cover;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero h2 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      line-height: 1.2;
+    }
+
+    .hero h2 span {
+      background: linear-gradient(135deg, #ff2e63, #ff8a00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid white;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: var(--primary);
+    }
+
+    .floating-shapes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .shape-1 {
+      width: 80px;
+      height: 80px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .shape-2 {
+      width: 120px;
+      height: 120px;
+      top: 60%;
+      left: 80%;
+      animation-delay: 2s;
+    }
+
+    .shape-3 {
+      width: 60px;
+      height: 60px;
+      top: 80%;
+      left: 20%;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(180deg);
+      }
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .about {
+      background-color: white;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient);
+      opacity: 0.2;
+      z-index: 1;
+    }
+
+    .about-image img {
+      width: 100%;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .about-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .about-text h3 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: var(--secondary);
+      position: relative;
+      display: inline-block;
+    }
+
+    .about-text h3::after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 4px;
+      background: var(--gradient);
+      bottom: -10px;
+      left: 0;
+      border-radius: 2px;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+      color: var(--gray);
+      font-size: 1.1rem;
+    }
+
+    .about-features {
+      list-style: none;
+      margin-top: 30px;
+    }
+
+    .about-features li {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+    }
+
+    .about-features i {
+      color: var(--success);
+      margin-right: 15px;
+      font-size: 1.2rem;
+      background: rgba(0, 184, 148, 0.1);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ===== SERVICES SECTION ===== */
+    .services {
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background-color: white;
+      border-radius: 15px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      background: var(--gradient);
+      top: 0;
+      left: 0;
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-card:hover::before {
+      height: 100%;
+      opacity: 0.05;
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--gradient);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      font-size: 2rem;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-icon {
+      transform: scale(1.1) rotate(10deg);
+    }
+
+    .service-card h3 {
+      margin-bottom: 15px;
+      color: var(--secondary);
+      font-size: 1.5rem;
+    }
+
+    .service-card p {
+      color: var(--gray);
+    }
+
+    /* ===== PRODUCTS SECTION ===== */
+    .products {
+      background-color: white;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background-color: var(--light);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-image {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.1);
+    }
+
+    .product-info {
+      padding: 25px;
+    }
+
+    .product-info h3 {
+      margin-bottom: 10px;
+      color: var(--secondary);
+      font-size: 1.3rem;
+    }
+
+    .product-info p {
+      color: var(--gray);
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
+
+    .product-price {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .product-price span {
+      color: var(--gray);
+      text-decoration: line-through;
+      font-size: 1rem;
+      margin-left: 10px;
+    }
+
+    .product-actions {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .product-actions a {
+      flex: 1;
+      margin: 0 5px;
+      text-align: center;
+      padding: 10px 0;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .product-actions .email-btn {
+      background: var(--secondary);
+      color: white;
+    }
+
+    .product-actions .order-btn {
+      background: var(--primary);
+      color: white;
+    }
+
+    .product-actions .share-btn {
+      background: var(--accent);
+      color: white;
+    }
+
+    .product-actions a:hover {
+      opacity: 0.9;
+      transform: translateY(-3px);
+    }
+
+    .discount {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--gradient-accent);
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      z-index: 2;
+      box-shadow: 0 5px 15px rgba(255, 46, 99, 0.3);
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact {
+      background: linear-gradient(135deg, var(--secondary), var(--primary-dark));
+      color: white;
+      position: relative;
+    }
+
+    .contact::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.03"><polygon fill="white" points="0,0 1000,1000 0,1000"/></svg>');
+      background-size: cover;
+    }
+
+    .contact .section-title h1 {
+      color: white;
+    }
+
+    .contact .section-title::after {
+      background: white;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 25px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+    }
+
+    .contact-item:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .contact-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      flex-shrink: 0;
+      font-size: 1.5rem;
+    }
+
+    .contact-details h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .contact-details p {
+      opacity: 0.9;
+    }
+
+    .contact-form {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: var(--secondary);
+      color: white;
+      padding: 80px 0 30px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-column h3 {
+      margin-bottom: 25px;
+      font-size: 1.4rem;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background: var(--gradient);
+      bottom: 0;
+      left: 0;
+      border-radius: 3px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      transition: var(--transition);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-links a i {
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transition: var(--transition);
+      font-size: 1.2rem;
+    }
+
+    .social-links a:hover {
+      background: var(--primary);
+      transform: translateY(-5px);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+    }
+
+    /* ===== WHATSAPP BUTTON ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 70px;
+      height: 70px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 5px 25px rgba(37, 211, 102, 0.5);
+      z-index: 100;
+      animation: pulse 2s infinite;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.7);
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    /* ===== RESPONSIVE STYLES ===== */
+    @media (max-width: 1200px) {
+      .hero h2 {
+        font-size: 3.5rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero h2 {
+        font-size: 3rem;
+      }
+      
+      .about-content,
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+      
+      .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .nav-links li {
+        margin: 10px 0;
+      }
+      
+      .mobile-menu {
+        display: block;
+      }
+      
+      .hero {
+        padding: 150px 0 80px;
+      }
+      
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+      
+      .section-title h1 {
+        font-size: 2.2rem;
+      }
+      
+      .header-icons a {
+        margin-left: 15px;
+      }
+      
+      .product-actions {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .product-actions a {
+        margin: 0;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .container {
+        padding: 0 15px;
+      }
+      
+      section {
+        padding: 80px 0;
+      }
+      
+      .hero {
+        padding: 130px 0 60px;
+      }
+      
+      .hero h2 {
+        font-size: 2rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.4rem;
+      }
+      
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-form {
+        padding: 25px;
+      }
+      
+      .service-card {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container header-container">
+      <a href="#" class="logo">ℕ𝔼𝕏𝕌𝕊<span> 𝕊𝕆𝕃𝕌𝕋𝕀𝕆ℕ</span></a>
+      
+      <div class="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      
+      <div class="header-icons">
+        <a href="#"><i class="fas fa-heart"></i></a>
+        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        <a href="#"><i class="fas fa-user"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    
+    <div class="container hero-content">
+      <h2>ℕ𝔼𝕏𝕌𝕊 <span>𝕊𝕆𝕃𝕌𝕋𝕀𝕆ℕ</span></h2>
+      <div class="hero-subtitle">Premium Business & Technology Solutions</div>
+      <p>Get expert help for your business needs. As a trusted business assistant, I provide personalized support to help you achieve your goals. From web development to digital marketing, we're here to help you grow your business.</p>
+      
+      <div class="hero-buttons">
+        <a href="#products" class="btn">Explore Services</a>
+        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-title">
+        <h1>About <span>Us</span></h1>
+      </div>
+      
+      <div class="about-content">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Nexus Solution Team">
+        </div>
+        
+        <div class="about-text">
+          <h3>Why Choose Nexus Solution?</h3>
+          <p>Nexus Solution is a premier technology company dedicated to providing innovative solutions that help businesses transform and succeed in the digital era. With years of experience and a team of skilled professionals, we deliver high-quality services tailored to meet the unique needs of each client.</p>
+          
+          <p>We combine creativity with technical expertise to deliver solutions that not only meet but exceed expectations. Our commitment to quality, attention to detail, and customer-centric approach sets us apart from the competition.</p>
+          
+          <h4>Our Core Values:</h4>
+          <ul class="about-features">
+            <li><i class="fas fa-check"></i> Innovation and Creativity</li>
+            <li><i class="fas fa-check"></i> Quality and Excellence</li>
+            <li><i class="fas fa-check"></i> Customer Satisfaction</li>
+            <li><i class="fas fa-check"></i> Timely Delivery</li>
+            <li><i class="fas fa-check"></i> Continuous Improvement</li>
+          </ul>
+          
+          <a href="#contact" class="btn" style="margin-top: 20px;">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-title">
+        <h1>Our <span>Services</span></h1>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Web Development</h3>
+          <p>Custom websites and web applications built with latest technologies for optimal performance and user experience.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Mobile Apps</h3>
+          <p>Native and cross-platform mobile applications for iOS and Android that engage users and drive business growth.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3>Document Projects</h3>
+          <p>Professional document creation, formatting, and management for your business and academic needs.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-gamepad"></i>
+          </div>
+          <h3>Game Development</h3>
+          <p>Engaging game development and game ID services for various platforms and gaming experiences.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h3>Graphics Design</h3>
+          <p>Creative and professional graphic design services for all your visual and branding needs.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-bullhorn"></i>
+          </div>
+          <h3>Digital Marketing</h3>
+          <p>Comprehensive digital marketing strategies to increase your online visibility and generate leads.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-title">
+        <h1>Our <span>Products</span></h1>
+      </div>
+      
+      <div class="products-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <span class="discount">-10%</span>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Web Development">
+          </div>
+          <div class="product-info">
+            <h3>Premium Web Development</h3>
+            <p>Custom websites with modern design, responsive layout, and SEO optimization.</p>
+            <div class="product-price">$40.99 <span>$50.99</span></div>
+            <div class="product-actions">
+              <a href="mailto:nexussolution603@gmail.com?subject=WEB DEVELOPMENT&body=Hi%20SIR,%20I%20WANT%20TO%20MAKE%20A%20WEBSITE!" class="email-btn">
+                <i class="fas fa-envelope"></i> Email
+              </a>
+              <a href="https://wa.me/+923169405908?text=HELLO%20SIR%20I%20WANT%20TO%20MAKE%20A%20WEBSITE" target="_blank" class="order-btn">
+                <i class="fas fa-shopping-cart"></i> Order
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="product-card">
+          <span class="discount">-60%</span>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Document Projects">
+          </div>
+          <div class="product-info">
+            <h3>Document Projects</h3>
+            <p>Professional document creation for business, academic, and personal projects.</p>
+            <div class="product-price">$4.99 <span>$10.99</span></div>
+            <div class="product-actions">
+              <a href="mailto:nexussolution603@gmail.com?subject=DOCUMENT PROJECT&body=Hi%20SIR,%20I%20WANT%20TO%20MAKE%20A%20DOCUMENT%20PROJECT!" class="email-btn">
+                <i class="fas fa-envelope"></i> Email
+              </a>
+              <a href="https://wa.me/+923169405908?text=HELLO%20SIR%20I%20WANT%20TO%20MAKE%20A%20DOCUMENT%20PROJECT" target="_blank" class="order-btn">
+                <i class="fas fa-shopping-cart"></i> Order
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 3 -->
+        <div class="product-card">
+          <span class="discount">-20%</span>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Mobile App Development">
+          </div>
+          <div class="product-info">
+            <h3>Mobile App Development</h3>
+            <p>Custom mobile applications for iOS and Android with modern UI/UX design.</p>
+            <div class="product-price">$89.99 <span>$110.99</span></div>
+            <div class="product-actions">
+              <a href="mailto:nexussolution603@gmail.com?subject=MOBILE APP DEVELOPMENT&body=Hi%20SIR,%20I%20WANT%20TO%20MAKE%20A%20MOBILE%20APP!" class="email-btn">
+                <i class="fas fa-envelope"></i> Email
+              </a>
+              <a href="https://wa.me/+923169405908?text=HELLO%20SIR%20I%20WANT%20TO%20MAKE%20A%20MOBILE%20APP" target="_blank" class="order-btn">
+                <i class="fas fa-shopping-cart"></i> Order
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 4 -->
+        <div class="product-card">
+          <span class="discount">-15%</span>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Games ID">
+          </div>
+          <div class="product-info">
+            <h3>Games ID Services</h3>
+            <p>Buying and selling game IDs for popular games with secure transactions.</p>
+            <div class="product-price">$20.99 <span>$30.99</span></div>
+            <div class="product-actions">
+              <a href="mailto:nexussolution603@gmail.com?subject=GAMES ID&body=Hi%20SIR,%20I%20WANT%20TO%20BUY/SELL%20A%20GAME%20ID!" class="email-btn">
+                <i class="fas fa-envelope"></i> Email
+              </a>
+              <a href="https://wa.me/+923169405908?text=HELLO%20SIR%20I%20WANT%20TO%20BUY/SELL%20A%20GAME%20ID" target="_blank" class="order-btn">
+                <i class="fas fa-shopping-cart"></i> Order
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 5 -->
+        <div class="product-card">
+          <span class="discount">-25%</span>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Graphics Design">
+          </div>
+          <div class="product-info">
+            <h3>Graphics Design</h3>
+            <p>Professional logo design, banners, social media graphics, and more.</p>
+            <div class="product-price">$15.99 <span>$25.99</span></div>
+            <div class="product-actions">
+              <a href="mailto:nexussolution603@gmail.com?subject=GRAPHICS DESIGN&body=Hi%20SIR,%20I%20NEED%20GRAPHICS%20DESIGN%20SERVICES!" class="email-btn">
+                <i class="fas fa-envelope"></i> Email
+              </a>
+              <a href="https://wa.me/+923169405908?text=HELLO%20SIR%20I%20NEED%20GRAPHICS%20DESIGN%20SERVICES" target="_blank" class="order-btn">
+                <i class="fas fa-shopping-cart"></i> Order
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 6 -->
+        <div class="product-card">
+          <span class="discount">-30%</span>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Digital Marketing">
+          </div>
+          <div class="product-info">
+            <h3>Digital Marketing</h3>
+            <p>SEO, social media marketing, and online advertising to grow your business.</p>
+            <div class="product-price">$49.99 <span>$69.99</span></div>
+            <div class="product-actions">
+              <a href="mailto:nexussolution603@gmail.com?subject=DIGITAL MARKETING&body=Hi%20SIR,%20I%20NEED%20DIGITAL%20MARKETING%20SERVICES!" class="email-btn">
+                <i class="fas fa-envelope"></i> Email
+              </a>
+              <a href="https://wa.me/+923169405908?text=HELLO%20SIR%20I%20NEED%20DIGITAL%20MARKETING%20SERVICES" target="_blank" class="order-btn">
+                <i class="fas fa-shopping-cart"></i> Order
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h1>Contact <span>Us</span></h1>
+      </div>
+      
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Phone</h3>
+              <p>+92 316 9405908</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <p>nexussolution603@gmail.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div class="contact-details">
+              <h3>WhatsApp</h3>
+              <p>+92 316 9405908</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Address</h3>
+              <p>Pakistan, Hayatabad/Peshawar, Industrial State</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="43f959f6-b52d-4bbd-aa77-6821fbd6306f">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="number">Your Number</label>
+              <input type="text" id="number" name="number" class="form-control" placeholder="Your Number" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" class="form-control" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Nexus Solution</h3>
+          <p>Your trusted partner for innovative business solutions that drive growth and success in the digital age.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a href="#products"><i class="fas fa-chevron-right"></i> Products</a></li>
+            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Document Projects</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Game Development</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Graphics Design</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <ul class="footer-links">
+            <li><a href="tel:+923169405908"><i class="fas fa-phone"></i> +92 316 9405908</a></li>
+            <li><a href="mailto:nexussolution603@gmail.com"><i class="fas fa-envelope"></i> nexussolution603@gmail.com</a></li>
+            <li><a href="https://maps.app.goo.gl/uKbto5oh8D8DpQaC8" target="_blank"><i class="fas fa-map-marker-alt"></i> Pakistan, Peshawar</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2023 Nexus Solution. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> by Nexus Team</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/+923169405908?text=Hi%2C%20I%20have%20a%20task%20for%20you.%20Please%20get%20back%20to%20me." class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // Mobile Menu Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const navLinks = document.querySelector('.nav-links');
+      
+      mobileMenu.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+      });
+      
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 768) {
+            navLinks.classList.remove('active');
+          }
+        });
+      });
+      
+      // Form submission
+      const contactForm = document.querySelector('.contact-form form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert('Thank you for your message! We will get back to you soon.');
+          contactForm.reset();
+        });
+      }
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Header background on scroll
+      window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+          header.style.background = 'rgba(255, 255, 255, 0.98)';
+          header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+        } else {
+          header.style.background = 'rgba(255, 255, 255, 0.95)';
+          header.style.boxShadow = 'var(--shadow)';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

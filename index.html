@@ -16,6 +16,50 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Nexus Solutions | Innovative Business Services">
+    <meta property="og:description" content="Cutting-edge business technology solutions and digital transformation services.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.nexussolutions.com">
+    <meta property="og:image" content="https://www.nexussolutions.com/images/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nexus Solutions | Innovative Business Services">
+    <meta name="twitter:description" content="Cutting-edge business technology solutions and digital transformation services.">
+    <meta name="twitter:image" content="https://www.nexussolutions.com/images/twitter-image.jpg">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Nexus Solutions",
+      "url": "https://www.nexussolutions.com",
+      "logo": "https://www.nexussolutions.com/images/logo.png",
+      "description": "Nexus Solutions provides cutting-edge business technology solutions and digital transformation services.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Business Avenue",
+        "addressLocality": "Tech City",
+        "addressRegion": "TC",
+        "postalCode": "12345",
+        "addressCountry": "USA"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-555-123-4567",
+        "contactType": "customer service"
+      },
+      "sameAs": [
+        "https://www.facebook.com/nexussolutions",
+        "https://www.twitter.com/nexussolutions",
+        "https://www.linkedin.com/company/nexussolutions",
+        "https://www.tiktok.com/@nexussolutions"
+      ]
+    }
+    </script>
+    
     <style>
         /* CSS Variables */
         :root {
@@ -31,6 +75,7 @@
             --white: #FFFFFF;
             --success: #48BB78;
             --warning: #ED8936;
+            --whatsapp: #25D366;
             --gradient: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             --radius: 12px;
@@ -144,6 +189,16 @@
             transform: translateY(-3px);
         }
 
+        .btn-whatsapp {
+            background-color: var(--whatsapp);
+            color: var(--white);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20b358;
+            transform: translateY(-3px);
+        }
+
         .section {
             padding: 5rem 0;
         }
@@ -211,6 +266,13 @@
             justify-content: center;
             color: var(--white);
             font-weight: 900;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon::before {
+            content: "✦";
+            font-size: 1.5rem;
         }
 
         .nav-menu {
@@ -257,22 +319,13 @@
 
         /* Hero Section */
         .hero {
-            background: var(--gradient);
+            background: linear-gradient(rgba(108, 99, 255, 0.85), rgba(54, 209, 220, 0.85)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
             color: var(--white);
             padding: 12rem 0 5rem;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L1000,0 L1000,1000 L0,1000 Z"></path></svg>');
-            background-size: cover;
         }
 
         .hero-content {
@@ -364,7 +417,9 @@
 
         /* About Section */
         .about {
-            background-color: var(--light);
+            background: linear-gradient(rgba(247, 250, 252, 0.9), rgba(247, 250, 252, 0.9)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
         }
 
         .about-content {
@@ -433,7 +488,9 @@
 
         /* Team Section */
         .team {
-            background-color: var(--light);
+            background: linear-gradient(rgba(247, 250, 252, 0.9), rgba(247, 250, 252, 0.9)), url('https://images.unsplash.com/photo-1551836026-d5c88ac5c73d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
         }
 
         .team-grid {
@@ -459,6 +516,9 @@
             height: 250px;
             background-color: var(--gray-light);
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .member-info {
@@ -551,7 +611,9 @@
 
         /* Contact Section */
         .contact {
-            background-color: var(--light);
+            background: linear-gradient(rgba(247, 250, 252, 0.9), rgba(247, 250, 252, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
         }
 
         .contact-container {
@@ -735,6 +797,31 @@
             margin-bottom: 1.5rem;
         }
 
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--whatsapp);
+            color: var(--white);
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: var(--shadow);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #20b358;
+        }
+
         /* Responsive Styles */
         @media (max-width: 992px) {
             h1 {
@@ -828,17 +915,28 @@
             .contact-form {
                 padding: 1.5rem;
             }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923169405608?text=Hello%20Nexus%20Solutions,%20I%20would%20like%20to%20know%20more%20about%20your%20services" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Header -->
     <header>
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">
-                    <div class="logo-icon">N</div>
-                    <span>Nexus Solutions</span>
+                    <div class="logo-icon"></div>
+                    <span>NexusPro</span>
                 </a>
                 
                 <ul class="nav-menu">
@@ -876,7 +974,7 @@
                 <p>We provide cutting-edge technology solutions and services to help businesses grow, optimize operations, and achieve digital transformation.</p>
                 <div class="hero-btns">
                     <a href="#services" class="btn btn-light">Our Services</a>
-                    <a href="#contact" class="btn btn-secondary">Get Started</a>
+                    <a href="https://wa.me/923169405608?text=Hello%20Nexus%20Solutions,%20I%20would%20like%20to%20get%20started%20with%20your%20services" class="btn btn-secondary" target="_blank">Get Started</a>
                 </div>
             </div>
         </div>
@@ -900,7 +998,7 @@
                     <p>Tailored software solutions designed to address your specific business challenges and requirements.</p>
                     <div class="service-actions">
                         <button class="btn btn-primary share-service" data-service="Custom Software Development">Share</button>
-                        <button class="btn btn-secondary consult-service" data-service="Custom Software Development">Consult</button>
+                        <button class="btn btn-whatsapp consult-service" data-service="Custom Software Development">Consult</button>
                         <button class="btn btn-accent message-service" data-service="Custom Software Development">Message</button>
                     </div>
                 </div>
@@ -914,7 +1012,7 @@
                     <p>Engaging and intuitive mobile applications for iOS and Android platforms to reach your customers anywhere.</p>
                     <div class="service-actions">
                         <button class="btn btn-primary share-service" data-service="Mobile App Development">Share</button>
-                        <button class="btn btn-secondary consult-service" data-service="Mobile App Development">Consult</button>
+                        <button class="btn btn-whatsapp consult-service" data-service="Mobile App Development">Consult</button>
                         <button class="btn btn-accent message-service" data-service="Mobile App Development">Message</button>
                     </div>
                 </div>
@@ -928,7 +1026,7 @@
                     <p>Scalable cloud infrastructure and migration services to optimize your operations and reduce costs.</p>
                     <div class="service-actions">
                         <button class="btn btn-primary share-service" data-service="Cloud Solutions">Share</button>
-                        <button class="btn btn-secondary consult-service" data-service="Cloud Solutions">Consult</button>
+                        <button class="btn btn-whatsapp consult-service" data-service="Cloud Solutions">Consult</button>
                         <button class="btn btn-accent message-service" data-service="Cloud Solutions">Message</button>
                     </div>
                 </div>
@@ -942,7 +1040,7 @@
                     <p>Transform your data into actionable insights with our advanced analytics and business intelligence solutions.</p>
                     <div class="service-actions">
                         <button class="btn btn-primary share-service" data-service="Data Analytics">Share</button>
-                        <button class="btn btn-secondary consult-service" data-service="Data Analytics">Consult</button>
+                        <button class="btn btn-whatsapp consult-service" data-service="Data Analytics">Consult</button>
                         <button class="btn btn-accent message-service" data-service="Data Analytics">Message</button>
                     </div>
                 </div>
@@ -956,7 +1054,7 @@
                     <p>Comprehensive security solutions to protect your digital assets and ensure regulatory compliance.</p>
                     <div class="service-actions">
                         <button class="btn btn-primary share-service" data-service="Cybersecurity">Share</button>
-                        <button class="btn btn-secondary consult-service" data-service="Cybersecurity">Consult</button>
+                        <button class="btn btn-whatsapp consult-service" data-service="Cybersecurity">Consult</button>
                         <button class="btn btn-accent message-service" data-service="Cybersecurity">Message</button>
                     </div>
                 </div>
@@ -970,7 +1068,7 @@
                     <p>Strategic technology guidance to help you make informed decisions and maximize your IT investments.</p>
                     <div class="service-actions">
                         <button class="btn btn-primary share-service" data-service="IT Consulting">Share</button>
-                        <button class="btn btn-secondary consult-service" data-service="IT Consulting">Consult</button>
+                        <button class="btn btn-whatsapp consult-service" data-service="IT Consulting">Consult</button>
                         <button class="btn btn-accent message-service" data-service="IT Consulting">Message</button>
                     </div>
                 </div>
@@ -984,7 +1082,7 @@
                     <p>Complete online store development with payment integration, inventory management, and marketing tools.</p>
                     <div class="service-actions">
                         <button class="btn btn-primary share-service" data-service="E-Commerce Solutions">Share</button>
-                        <button class="btn btn-secondary consult-service" data-service="E-Commerce Solutions">Consult</button>
+                        <button class="btn btn-whatsapp consult-service" data-service="E-Commerce Solutions">Consult</button>
                         <button class="btn btn-accent message-service" data-service="E-Commerce Solutions">Message</button>
                     </div>
                 </div>
@@ -998,7 +1096,7 @@
                     <p>Intelligent solutions powered by artificial intelligence to automate processes and gain competitive advantage.</p>
                     <div class="service-actions">
                         <button class="btn btn-primary share-service" data-service="AI & Machine Learning">Share</button>
-                        <button class="btn btn-secondary consult-service" data-service="AI & Machine Learning">Consult</button>
+                        <button class="btn btn-whatsapp consult-service" data-service="AI & Machine Learning">Consult</button>
                         <button class="btn btn-accent message-service" data-service="AI & Machine Learning">Message</button>
                     </div>
                 </div>
@@ -1012,7 +1110,7 @@
                     <p>Connect physical devices to the digital world with our Internet of Things solutions and platforms.</p>
                     <div class="service-actions">
                         <button class="btn btn-primary share-service" data-service="IoT Solutions">Share</button>
-                        <button class="btn btn-secondary consult-service" data-service="IoT Solutions">Consult</button>
+                        <button class="btn btn-whatsapp consult-service" data-service="IoT Solutions">Consult</button>
                         <button class="btn btn-accent message-service" data-service="IoT Solutions">Message</button>
                     </div>
                 </div>
@@ -1026,7 +1124,7 @@
                     <p>Comprehensive strategy and implementation to transform your business for the digital age.</p>
                     <div class="service-actions">
                         <button class="btn btn-primary share-service" data-service="Digital Transformation">Share</button>
-                        <button class="btn btn-secondary consult-service" data-service="Digital Transformation">Consult</button>
+                        <button class="btn btn-whatsapp consult-service" data-service="Digital Transformation">Consult</button>
                         <button class="btn btn-accent message-service" data-service="Digital Transformation">Message</button>
                     </div>
                 </div>
@@ -1040,7 +1138,7 @@
                     <p>Increase your online visibility and reach your target audience with our digital marketing strategies.</p>
                     <div class="service-actions">
                         <button class="btn btn-primary share-service" data-service="SEO & Digital Marketing">Share</button>
-                        <button class="btn btn-secondary consult-service" data-service="SEO & Digital Marketing">Consult</button>
+                        <button class="btn btn-whatsapp consult-service" data-service="SEO & Digital Marketing">Consult</button>
                         <button class="btn btn-accent message-service" data-service="SEO & Digital Marketing">Message</button>
                     </div>
                 </div>
@@ -1054,7 +1152,7 @@
                     <p>Proactive IT management and support to keep your systems running smoothly and securely.</p>
                     <div class="service-actions">
                         <button class="btn btn-primary share-service" data-service="Managed IT Services">Share</button>
-                        <button class="btn btn-secondary consult-service" data-service="Managed IT Services">Consult</button>
+                        <button class="btn btn-whatsapp consult-service" data-service="Managed IT Services">Consult</button>
                         <button class="btn btn-accent message-service" data-service="Managed IT Services">Message</button>
                     </div>
                 </div>
@@ -1067,8 +1165,8 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About Nexus Solutions</h2>
-                    <p>Nexus Solutions is a leading provider of innovative business technology solutions. With over a decade of experience, we help companies transform their operations through cutting-edge software, digital strategies, and IT consulting.</p>
+                    <h2>About NexusPro</h2>
+                    <p>NexusPro is a leading provider of innovative business technology solutions. With over a decade of experience, we help companies transform their operations through cutting-edge software, digital strategies, and IT consulting.</p>
                     <p>Our team of experts specializes in creating custom solutions that drive growth, improve efficiency, and enhance customer experiences across various industries.</p>
                     
                     <div class="about-features">
@@ -1142,13 +1240,13 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our Team</h2>
-                <p>Meet the talented professionals behind Nexus Solutions</p>
+                <p>Meet the talented professionals behind NexusPro</p>
             </div>
             
             <div class="team-grid">
                 <div class="team-member">
                     <div class="member-image">
-                        <i class="fas fa-user-tie" style="font-size: 5rem; margin-top: 60px; color: #6C63FF;"></i>
+                        <i class="fas fa-user-tie" style="font-size: 5rem; color: #6C63FF;"></i>
                     </div>
                     <div class="member-info">
                         <h3>Alex Johnson</h3>
@@ -1156,14 +1254,14 @@
                         <div class="member-social">
                             <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                            <a href="https://wa.me/923169405608?text=Hello%20Alex%20Johnson,%20I%20would%20like%20to%20connect%20with%20you" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="team-member">
                     <div class="member-image">
-                        <i class="fas fa-user-tie" style="font-size: 5rem; margin-top: 60px; color: #6C63FF;"></i>
+                        <i class="fas fa-user-tie" style="font-size: 5rem; color: #6C63FF;"></i>
                     </div>
                     <div class="member-info">
                         <h3>Sarah Williams</h3>
@@ -1171,14 +1269,14 @@
                         <div class="member-social">
                             <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                            <a href="https://wa.me/923169405608?text=Hello%20Sarah%20Williams,%20I%20would%20like%20to%20connect%20with%20you" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="team-member">
                     <div class="member-image">
-                        <i class="fas fa-user-tie" style="font-size: 5rem; margin-top: 60px; color: #6C63FF;"></i>
+                        <i class="fas fa-user-tie" style="font-size: 5rem; color: #6C63FF;"></i>
                     </div>
                     <div class="member-info">
                         <h3>Michael Chen</h3>
@@ -1186,14 +1284,14 @@
                         <div class="member-social">
                             <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                            <a href="https://wa.me/923169405608?text=Hello%20Michael%20Chen,%20I%20would%20like%20to%20connect%20with%20you" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="team-member">
                     <div class="member-image">
-                        <i class="fas fa-user-tie" style="font-size: 5rem; margin-top: 60px; color: #6C63FF;"></i>
+                        <i class="fas fa-user-tie" style="font-size: 5rem; color: #6C63FF;"></i>
                     </div>
                     <div class="member-info">
                         <h3>Emily Rodriguez</h3>
@@ -1201,7 +1299,7 @@
                         <div class="member-social">
                             <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                            <a href="https://wa.me/923169405608?text=Hello%20Emily%20Rodriguez,%20I%20would%20like%20to%20connect%20with%20you" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1220,7 +1318,7 @@
             <div class="testimonials-container">
                 <div class="testimonial">
                     <div class="testimonial-content">
-                        <p>"Nexus Solutions transformed our legacy systems into modern, efficient platforms. Their team was professional, knowledgeable, and delivered beyond our expectations."</p>
+                        <p>"NexusPro transformed our legacy systems into modern, efficient platforms. Their team was professional, knowledgeable, and delivered beyond our expectations."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
@@ -1235,7 +1333,7 @@
                 
                 <div class="testimonial">
                     <div class="testimonial-content">
-                        <p>"The mobile app developed by Nexus Solutions has significantly improved our customer engagement. Their attention to detail and user experience focus was impressive."</p>
+                        <p>"The mobile app developed by NexusPro has significantly improved our customer engagement. Their attention to detail and user experience focus was impressive."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
@@ -1287,7 +1385,7 @@
                         </div>
                         <div>
                             <h3>Email Address</h3>
-                            <p>info@nexussolutions.com</p>
+                            <p>info@nexuspro.com</p>
                         </div>
                     </div>
                     
@@ -1336,7 +1434,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Nexus Solutions</h3>
+                    <h3>NexusPro</h3>
                     <p>Providing innovative technology solutions to help businesses thrive in the digital age.</p>
                     <div class="social-links">
                         <a href="#" class="social-link">
@@ -1350,6 +1448,9 @@
                         </a>
                         <a href="#" class="social-link">
                             <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-tiktok"></i>
                         </a>
                     </div>
                 </div>
@@ -1387,7 +1488,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 Nexus Solutions. All rights reserved.</p>
+                <p>&copy; 2023 NexusPro. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1410,6 +1511,9 @@
                 </a>
                 <a href="#" class="social-link share-whatsapp">
                     <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" class="social-link share-tiktok">
+                    <i class="fab fa-tiktok"></i>
                 </a>
             </div>
         </div>
@@ -1519,7 +1623,7 @@
                 shareModal.classList.add('active');
                 
                 // Update share links
-                const shareText = `Check out ${serviceName} from Nexus Solutions!`;
+                const shareText = `Check out ${serviceName} from NexusPro!`;
                 const shareUrl = encodeURIComponent(window.location.href);
                 const text = encodeURIComponent(shareText);
                 
@@ -1527,19 +1631,17 @@
                 document.querySelector('.share-twitter').href = `https://twitter.com/intent/tweet?text=${text}&url=${shareUrl}`;
                 document.querySelector('.share-linkedin').href = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
                 document.querySelector('.share-whatsapp').href = `https://api.whatsapp.com/send?text=${text} ${shareUrl}`;
+                document.querySelector('.share-tiktok').href = `https://www.tiktok.com/share?url=${shareUrl}`;
             });
         });
         
-        // Service Consult functionality
-        const consultModal = document.getElementById('consultModal');
-        const consultServiceName = document.getElementById('consult-service-name');
-        const consultForm = document.getElementById('consultForm');
-        
+        // Service Consult functionality - Direct to WhatsApp
         document.querySelectorAll('.consult-service').forEach(btn => {
             btn.addEventListener('click', function() {
                 const serviceName = this.getAttribute('data-service');
-                consultServiceName.textContent = `Request a consultation for "${serviceName}"`;
-                consultModal.classList.add('active');
+                const message = `Hello NexusPro, I would like to consult about your ${serviceName} service.`;
+                const whatsappUrl = `https://wa.me/923169405608?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
             });
         });
         
@@ -1573,7 +1675,7 @@
                 <p>We use the information we collect to provide, maintain, and improve our services, to develop new services, and to protect our company and our users.</p>
                 
                 <h3>3. Information Sharing</h3>
-                <p>We do not share personal information with companies, organizations, or individuals outside of Nexus Solutions except in the following cases:</p>
+                <p>We do not share personal information with companies, organizations, or individuals outside of NexusPro except in the following cases:</p>
                 <ul>
                     <li>With your consent</li>
                     <li>For external processing</li>
@@ -1598,16 +1700,16 @@
                 <p>By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.</p>
                 
                 <h3>2. Use License</h3>
-                <p>Permission is granted to temporarily download one copy of the materials on Nexus Solutions' website for personal, non-commercial transitory viewing only.</p>
+                <p>Permission is granted to temporarily download one copy of the materials on NexusPro's website for personal, non-commercial transitory viewing only.</p>
                 
                 <h3>3. Disclaimer</h3>
-                <p>The materials on Nexus Solutions' website are provided on an 'as is' basis. Nexus Solutions makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+                <p>The materials on NexusPro's website are provided on an 'as is' basis. NexusPro makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
                 
                 <h3>4. Limitations</h3>
-                <p>In no event shall Nexus Solutions or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Nexus Solutions' website.</p>
+                <p>In no event shall NexusPro or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on NexusPro's website.</p>
                 
                 <h3>5. Revisions and Errata</h3>
-                <p>The materials appearing on Nexus Solutions' website could include technical, typographical, or photographic errors. Nexus Solutions does not warrant that any of the materials on its website are accurate, complete, or current.</p>
+                <p>The materials appearing on NexusPro's website could include technical, typographical, or photographic errors. NexusPro does not warrant that any of the materials on its website are accurate, complete, or current.</p>
             `;
             policiesModal.classList.add('active');
         });
@@ -1655,13 +1757,13 @@
         });
         
         // Consult form submission
-        consultForm.addEventListener('submit', function(e) {
+        document.getElementById('consultForm')?.addEventListener('submit', function(e) {
             e.preventDefault();
-            const service = consultServiceName.textContent.replace('Request a consultation for "', '').replace('"', '');
+            const service = document.getElementById('consult-service-name').textContent.replace('Request a consultation for "', '').replace('"', '');
             const name = document.getElementById('consultName').value;
             
             alert(`Thank you ${name}! Your consultation request for ${service} has been received. We will contact you shortly.`);
-            consultModal.classList.remove('active');
+            document.getElementById('consultModal').classList.remove('active');
             this.reset();
         });
         

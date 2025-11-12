@@ -1,101 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Essential Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- SEO Meta Tags -->
-    <title>Nexus Solution | Innovative Business Solutions & Technology Services</title>
-    <meta name="description" content="Nexus Solution provides cutting-edge business technology solutions, software development, and digital transformation services for modern enterprises.">
-    <meta name="keywords" content="business solutions, technology services, software development, digital transformation, IT consulting, Nexus Solution">
-    <meta name="author" content="Nexus Solution">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph Meta Tags (for social media) -->
-    <meta property="og:title" content="Nexus Solution | Innovative Business Solutions">
-    <meta property="og:description" content="Cutting-edge business technology solutions and digital transformation services.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.nexussolution.com">
-    <meta property="og:image" content="https://www.nexussolution.com/images/og-image.jpg">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nexus Solution | Innovative Business Solutions">
-    <meta name="twitter:description" content="Cutting-edge business technology solutions and digital transformation services.">
-    <meta name="twitter:image" content="https://www.nexussolution.com/images/twitter-image.jpg">
+    <title>Nexus Solutions | Innovative Business Services & Technology Solutions</title>
+    <meta name="description" content="Nexus Solutions provides cutting-edge business services, technology solutions, and digital transformation services for modern enterprises.">
+    <meta name="keywords" content="business solutions, technology services, software development, digital transformation, IT consulting, Nexus Solutions">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
-    <!-- Preconnect to important domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="#">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Nexus Solution",
-      "url": "https://www.nexussolution.com",
-      "logo": "https://www.nexussolution.com/images/logo.png",
-      "description": "Nexus Solution provides cutting-edge business technology solutions and digital transformation services.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Business Avenue",
-        "addressLocality": "Tech City",
-        "addressRegion": "TC",
-        "postalCode": "12345",
-        "addressCountry": "USA"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+1-555-123-4567",
-        "contactType": "customer service"
-      },
-      "sameAs": [
-        "https://www.facebook.com/nexussolution",
-        "https://www.twitter.com/nexussolution",
-        "https://www.linkedin.com/company/nexussolution"
-      ]
-    }
-    </script>
-    
     <style>
-        /* Reset and Base Styles */
+        /* CSS Variables */
+        :root {
+            --primary: #6C63FF;
+            --primary-dark: #554fd8;
+            --secondary: #FF6584;
+            --accent: #36D1DC;
+            --dark: #2D3748;
+            --darker: #1A202C;
+            --light: #F7FAFC;
+            --gray: #718096;
+            --gray-light: #E2E8F0;
+            --white: #FFFFFF;
+            --success: #48BB78;
+            --warning: #ED8936;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 12px;
+        }
+
+        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #7c3aed;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --gray-light: #e2e8f0;
-            --white: #ffffff;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --radius: 8px;
-        }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
@@ -103,52 +54,53 @@
             background-color: var(--white);
             overflow-x: hidden;
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 1rem;
         }
-        
+
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
         }
-        
+
         h2 {
             font-size: 2.5rem;
         }
-        
+
         h3 {
             font-size: 1.75rem;
         }
-        
+
         p {
             margin-bottom: 1rem;
             color: var(--gray);
         }
-        
+
         a {
             text-decoration: none;
             color: inherit;
             transition: all 0.3s ease;
         }
-        
+
         ul {
             list-style: none;
         }
-        
+
         img {
             max-width: 100%;
             height: auto;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
-        
+
         .btn {
             display: inline-block;
             padding: 0.75rem 1.5rem;
@@ -158,70 +110,71 @@
             transition: all 0.3s ease;
             border: none;
             font-size: 1rem;
+            text-align: center;
         }
-        
+
         .btn-primary {
-            background-color: var(--primary);
+            background: var(--gradient);
             color: var(--white);
         }
-        
+
         .btn-primary:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
         }
-        
+
         .btn-secondary {
             background-color: transparent;
             color: var(--primary);
             border: 2px solid var(--primary);
         }
-        
+
         .btn-secondary:hover {
             background-color: var(--primary);
             color: var(--white);
         }
-        
-        .btn-success {
-            background-color: var(--success);
+
+        .btn-accent {
+            background-color: var(--accent);
             color: var(--white);
         }
-        
-        .btn-success:hover {
-            background-color: #0da271;
-            transform: translateY(-2px);
+
+        .btn-accent:hover {
+            background-color: #2bb4c4;
+            transform: translateY(-3px);
         }
-        
+
         .section {
             padding: 5rem 0;
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
         }
-        
+
         .section-title h2 {
             position: relative;
             display: inline-block;
             margin-bottom: 1rem;
         }
-        
+
         .section-title h2::after {
             content: '';
             position: absolute;
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
+            width: 80px;
             height: 4px;
-            background-color: var(--primary);
+            background: var(--gradient);
             border-radius: 2px;
         }
-        
+
         .text-center {
             text-align: center;
         }
-        
+
         /* Header Styles */
         header {
             background-color: var(--white);
@@ -231,41 +184,48 @@
             top: 0;
             z-index: 1000;
         }
-        
+
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem 0;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
-            font-weight: 700;
-            font-size: 1.5rem;
+            font-weight: 900;
+            font-size: 1.75rem;
             color: var(--dark);
         }
-        
-        .logo i {
-            color: var(--primary);
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 50%;
             margin-right: 0.5rem;
-            font-size: 1.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 900;
         }
-        
+
         .nav-menu {
             display: flex;
         }
-        
+
         .nav-item {
             margin-left: 2rem;
         }
-        
+
         .nav-link {
             font-weight: 500;
             position: relative;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -273,19 +233,19 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--primary);
+            background: var(--gradient);
             transition: width 0.3s ease;
         }
-        
+
         .nav-link:hover::after {
             width: 100%;
         }
-        
+
         .hamburger {
             display: none;
             cursor: pointer;
         }
-        
+
         .bar {
             display: block;
             width: 25px;
@@ -294,16 +254,16 @@
             background-color: var(--dark);
             transition: all 0.3s ease;
         }
-        
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: var(--gradient);
             color: var(--white);
-            padding: 10rem 0 5rem;
+            padding: 12rem 0 5rem;
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
@@ -314,247 +274,64 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L1000,0 L1000,1000 L0,1000 Z"></path></svg>');
             background-size: cover;
         }
-        
+
         .hero-content {
-            max-width: 600px;
+            max-width: 700px;
             position: relative;
             z-index: 1;
         }
-        
+
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
         }
-        
+
         .hero p {
             font-size: 1.25rem;
             margin-bottom: 2rem;
             color: rgba(255, 255, 255, 0.9);
         }
-        
+
         .hero-btns {
             display: flex;
             gap: 1rem;
         }
-        
+
         .hero-btns .btn {
             padding: 0.875rem 2rem;
         }
-        
+
         .btn-light {
             background-color: var(--white);
             color: var(--primary);
         }
-        
+
         .btn-light:hover {
             background-color: var(--gray-light);
+            transform: translateY(-3px);
         }
-        
-        /* About Section */
-        .about {
-            background-color: var(--light);
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .about-text h2 {
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-features {
-            margin-top: 2rem;
-        }
-        
-        .feature {
-            display: flex;
-            margin-bottom: 1.5rem;
-        }
-        
-        .feature-icon {
-            background-color: var(--primary);
-            color: var(--white);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
-            flex-shrink: 0;
-        }
-        
-        .feature-text h3 {
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Products Section */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .product-card {
-            background-color: var(--white);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .product-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            z-index: 2;
-        }
-        
-        .product-image {
-            height: 200px;
-            background-color: var(--gray-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .product-card:hover .product-image img {
-            transform: scale(1.1);
-        }
-        
-        .product-content {
-            padding: 1.5rem;
-        }
-        
-        .product-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .product-price {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .product-description {
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-        }
-        
-        .product-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .quantity-selector {
-            display: flex;
-            align-items: center;
-            border: 1px solid var(--gray-light);
-            border-radius: var(--radius);
-            overflow: hidden;
-        }
-        
-        .quantity-btn {
-            background-color: var(--light);
-            border: none;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-        
-        .quantity-input {
-            width: 40px;
-            height: 30px;
-            border: none;
-            text-align: center;
-            background-color: var(--white);
-        }
-        
-        .product-share {
-            display: flex;
-            gap: 0.5rem;
-        }
-        
-        .share-btn {
-            background-color: var(--light);
-            border: none;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .share-btn:hover {
-            background-color: var(--primary);
-            color: var(--white);
-        }
-        
-        .product-footer {
-            display: flex;
-            gap: 0.5rem;
-        }
-        
-        .product-footer .btn {
-            flex: 1;
-            text-align: center;
-            padding: 0.75rem;
-        }
-        
+
         /* Services Section */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
-        
+
         .service-card {
             background-color: var(--white);
             border-radius: var(--radius);
             padding: 2rem;
             box-shadow: var(--shadow);
             transition: transform 0.3s ease;
+            position: relative;
+            border-top: 4px solid var(--primary);
         }
-        
+
         .service-card:hover {
             transform: translateY(-10px);
         }
-        
+
         .service-icon {
             background-color: var(--light);
             color: var(--primary);
@@ -567,82 +344,189 @@
             margin-bottom: 1.5rem;
             font-size: 1.75rem;
         }
-        
+
         .service-card h3 {
             margin-bottom: 1rem;
         }
-        
-        /* Portfolio Section */
-        .portfolio {
+
+        .service-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            gap: 0.5rem;
+        }
+
+        .service-actions .btn {
+            flex: 1;
+            padding: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        /* About Section */
+        .about {
             background-color: var(--light);
         }
-        
-        .portfolio-grid {
+
+        .about-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
-        
-        .portfolio-item {
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            position: relative;
+
+        .about-text h2 {
+            margin-bottom: 1.5rem;
         }
-        
-        .portfolio-img {
-            height: 250px;
-            background-color: var(--gray-light);
+
+        .about-features {
+            margin-top: 2rem;
+        }
+
+        .feature {
+            display: flex;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-icon {
+            background: var(--gradient);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--gray);
+            margin-right: 1rem;
+            flex-shrink: 0;
         }
-        
-        .portfolio-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(37, 99, 235, 0.9);
-            color: var(--white);
-            padding: 1.5rem;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .portfolio-item:hover .portfolio-overlay {
-            transform: translateY(0);
-        }
-        
-        .portfolio-overlay h3 {
+
+        .feature-text h3 {
             margin-bottom: 0.5rem;
         }
-        
+
+        /* Stats Section */
+        .stats {
+            background: var(--gradient);
+            color: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-text {
+            font-size: 1.125rem;
+            opacity: 0.9;
+        }
+
+        /* Team Section */
+        .team {
+            background-color: var(--light);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-member {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .member-image {
+            height: 250px;
+            background-color: var(--gray-light);
+            position: relative;
+        }
+
+        .member-info {
+            padding: 1.5rem;
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: var(--light);
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--gradient);
+            color: var(--white);
+        }
+
         /* Testimonials Section */
         .testimonials-container {
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .testimonial {
             background-color: var(--white);
             border-radius: var(--radius);
             padding: 2rem;
             box-shadow: var(--shadow);
             margin-bottom: 2rem;
+            position: relative;
         }
-        
+
+        .testimonial::before {
+            content: """;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+
         .testimonial-content {
             margin-bottom: 1.5rem;
             font-style: italic;
+            position: relative;
+            z-index: 1;
         }
-        
+
         .testimonial-author {
             display: flex;
             align-items: center;
         }
-        
+
         .author-avatar {
             width: 50px;
             height: 50px;
@@ -654,41 +538,41 @@
             justify-content: center;
             color: var(--gray);
         }
-        
+
         .author-info h4 {
             margin-bottom: 0.25rem;
         }
-        
+
         .author-info p {
             margin-bottom: 0;
             font-size: 0.875rem;
             color: var(--gray);
         }
-        
+
         /* Contact Section */
         .contact {
             background-color: var(--light);
         }
-        
+
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
         }
-        
+
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 2rem;
         }
-        
+
         .contact-item {
             display: flex;
             align-items: flex-start;
         }
-        
+
         .contact-icon {
-            background-color: var(--primary);
+            background: var(--gradient);
             color: var(--white);
             width: 50px;
             height: 50px;
@@ -699,24 +583,24 @@
             margin-right: 1rem;
             flex-shrink: 0;
         }
-        
+
         .contact-form {
             background-color: var(--white);
             border-radius: var(--radius);
             padding: 2rem;
             box-shadow: var(--shadow);
         }
-        
+
         .form-group {
             margin-bottom: 1.5rem;
         }
-        
+
         .form-label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
         }
-        
+
         .form-control {
             width: 100%;
             padding: 0.75rem 1rem;
@@ -725,17 +609,89 @@
             font-family: 'Inter', sans-serif;
             transition: border-color 0.3s ease;
         }
-        
+
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
         }
-        
+
         textarea.form-control {
             min-height: 150px;
             resize: vertical;
         }
-        
+
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient);
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--gray-light);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--gray-light);
+        }
+
         /* Modal Styles */
         .modal {
             display: none;
@@ -749,11 +705,11 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .modal.active {
             display: flex;
         }
-        
+
         .modal-content {
             background-color: var(--white);
             border-radius: var(--radius);
@@ -763,7 +719,7 @@
             position: relative;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
-        
+
         .modal-close {
             position: absolute;
             top: 1rem;
@@ -774,83 +730,11 @@
             cursor: pointer;
             color: var(--gray);
         }
-        
+
         .modal-title {
             margin-bottom: 1.5rem;
         }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 4rem 0 2rem;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-column h3 {
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.75rem;
-        }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background-color: var(--primary);
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-        
-        .footer-links a {
-            color: var(--gray-light);
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--white);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .social-link:hover {
-            background-color: var(--primary);
-            transform: translateY(-3px);
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            text-align: center;
-            color: var(--gray-light);
-        }
-        
+
         /* Responsive Styles */
         @media (max-width: 992px) {
             h1 {
@@ -922,13 +806,7 @@
                 text-align: center;
             }
             
-            .product-actions {
-                flex-direction: column;
-                gap: 1rem;
-                align-items: flex-start;
-            }
-            
-            .product-footer {
+            .service-actions {
                 flex-direction: column;
             }
         }
@@ -959,8 +837,8 @@
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">
-                    <i class="fas fa-code-branch"></i>
-                    <span>Nexus Solution</span>
+                    <div class="logo-icon">N</div>
+                    <span>Nexus Solutions</span>
                 </a>
                 
                 <ul class="nav-menu">
@@ -968,16 +846,13 @@
                         <a href="#home" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#about" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#products" class="nav-link">Products</a>
-                    </li>
-                    <li class="nav-item">
                         <a href="#services" class="nav-link">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#portfolio" class="nav-link">Portfolio</a>
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#team" class="nav-link">Team</a>
                     </li>
                     <li class="nav-item">
                         <a href="#contact" class="nav-link">Contact</a>
@@ -997,11 +872,191 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Innovative Solutions for Your Business</h1>
-                <p>We provide cutting-edge technology solutions to help businesses grow, optimize operations, and achieve digital transformation.</p>
+                <h1>Transform Your Business with Innovative Solutions</h1>
+                <p>We provide cutting-edge technology solutions and services to help businesses grow, optimize operations, and achieve digital transformation.</p>
                 <div class="hero-btns">
-                    <a href="#products" class="btn btn-light">View Products</a>
-                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                    <a href="#services" class="btn btn-light">Our Services</a>
+                    <a href="#contact" class="btn btn-secondary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We offer a comprehensive range of services to meet your business needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Custom Software Development</h3>
+                    <p>Tailored software solutions designed to address your specific business challenges and requirements.</p>
+                    <div class="service-actions">
+                        <button class="btn btn-primary share-service" data-service="Custom Software Development">Share</button>
+                        <button class="btn btn-secondary consult-service" data-service="Custom Software Development">Consult</button>
+                        <button class="btn btn-accent message-service" data-service="Custom Software Development">Message</button>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile App Development</h3>
+                    <p>Engaging and intuitive mobile applications for iOS and Android platforms to reach your customers anywhere.</p>
+                    <div class="service-actions">
+                        <button class="btn btn-primary share-service" data-service="Mobile App Development">Share</button>
+                        <button class="btn btn-secondary consult-service" data-service="Mobile App Development">Consult</button>
+                        <button class="btn btn-accent message-service" data-service="Mobile App Development">Message</button>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Solutions</h3>
+                    <p>Scalable cloud infrastructure and migration services to optimize your operations and reduce costs.</p>
+                    <div class="service-actions">
+                        <button class="btn btn-primary share-service" data-service="Cloud Solutions">Share</button>
+                        <button class="btn btn-secondary consult-service" data-service="Cloud Solutions">Consult</button>
+                        <button class="btn btn-accent message-service" data-service="Cloud Solutions">Message</button>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Data Analytics</h3>
+                    <p>Transform your data into actionable insights with our advanced analytics and business intelligence solutions.</p>
+                    <div class="service-actions">
+                        <button class="btn btn-primary share-service" data-service="Data Analytics">Share</button>
+                        <button class="btn btn-secondary consult-service" data-service="Data Analytics">Consult</button>
+                        <button class="btn btn-accent message-service" data-service="Data Analytics">Message</button>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>Comprehensive security solutions to protect your digital assets and ensure regulatory compliance.</p>
+                    <div class="service-actions">
+                        <button class="btn btn-primary share-service" data-service="Cybersecurity">Share</button>
+                        <button class="btn btn-secondary consult-service" data-service="Cybersecurity">Consult</button>
+                        <button class="btn btn-accent message-service" data-service="Cybersecurity">Message</button>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>IT Consulting</h3>
+                    <p>Strategic technology guidance to help you make informed decisions and maximize your IT investments.</p>
+                    <div class="service-actions">
+                        <button class="btn btn-primary share-service" data-service="IT Consulting">Share</button>
+                        <button class="btn btn-secondary consult-service" data-service="IT Consulting">Consult</button>
+                        <button class="btn btn-accent message-service" data-service="IT Consulting">Message</button>
+                    </div>
+                </div>
+                
+                <!-- Service 7 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>E-Commerce Solutions</h3>
+                    <p>Complete online store development with payment integration, inventory management, and marketing tools.</p>
+                    <div class="service-actions">
+                        <button class="btn btn-primary share-service" data-service="E-Commerce Solutions">Share</button>
+                        <button class="btn btn-secondary consult-service" data-service="E-Commerce Solutions">Consult</button>
+                        <button class="btn btn-accent message-service" data-service="E-Commerce Solutions">Message</button>
+                    </div>
+                </div>
+                
+                <!-- Service 8 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Intelligent solutions powered by artificial intelligence to automate processes and gain competitive advantage.</p>
+                    <div class="service-actions">
+                        <button class="btn btn-primary share-service" data-service="AI & Machine Learning">Share</button>
+                        <button class="btn btn-secondary consult-service" data-service="AI & Machine Learning">Consult</button>
+                        <button class="btn btn-accent message-service" data-service="AI & Machine Learning">Message</button>
+                    </div>
+                </div>
+                
+                <!-- Service 9 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>IoT Solutions</h3>
+                    <p>Connect physical devices to the digital world with our Internet of Things solutions and platforms.</p>
+                    <div class="service-actions">
+                        <button class="btn btn-primary share-service" data-service="IoT Solutions">Share</button>
+                        <button class="btn btn-secondary consult-service" data-service="IoT Solutions">Consult</button>
+                        <button class="btn btn-accent message-service" data-service="IoT Solutions">Message</button>
+                    </div>
+                </div>
+                
+                <!-- Service 10 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-digital-tachograph"></i>
+                    </div>
+                    <h3>Digital Transformation</h3>
+                    <p>Comprehensive strategy and implementation to transform your business for the digital age.</p>
+                    <div class="service-actions">
+                        <button class="btn btn-primary share-service" data-service="Digital Transformation">Share</button>
+                        <button class="btn btn-secondary consult-service" data-service="Digital Transformation">Consult</button>
+                        <button class="btn btn-accent message-service" data-service="Digital Transformation">Message</button>
+                    </div>
+                </div>
+                
+                <!-- Service 11 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO & Digital Marketing</h3>
+                    <p>Increase your online visibility and reach your target audience with our digital marketing strategies.</p>
+                    <div class="service-actions">
+                        <button class="btn btn-primary share-service" data-service="SEO & Digital Marketing">Share</button>
+                        <button class="btn btn-secondary consult-service" data-service="SEO & Digital Marketing">Consult</button>
+                        <button class="btn btn-accent message-service" data-service="SEO & Digital Marketing">Message</button>
+                    </div>
+                </div>
+                
+                <!-- Service 12 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Managed IT Services</h3>
+                    <p>Proactive IT management and support to keep your systems running smoothly and securely.</p>
+                    <div class="service-actions">
+                        <button class="btn btn-primary share-service" data-service="Managed IT Services">Share</button>
+                        <button class="btn btn-secondary consult-service" data-service="Managed IT Services">Consult</button>
+                        <button class="btn btn-accent message-service" data-service="Managed IT Services">Message</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1012,8 +1067,8 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About Nexus Solution</h2>
-                    <p>Nexus Solution is a leading provider of innovative business technology solutions. With over a decade of experience, we help companies transform their operations through cutting-edge software, digital strategies, and IT consulting.</p>
+                    <h2>About Nexus Solutions</h2>
+                    <p>Nexus Solutions is a leading provider of innovative business technology solutions. With over a decade of experience, we help companies transform their operations through cutting-edge software, digital strategies, and IT consulting.</p>
                     <p>Our team of experts specializes in creating custom solutions that drive growth, improve efficiency, and enhance customer experiences across various industries.</p>
                     
                     <div class="about-features">
@@ -1050,7 +1105,7 @@
                 </div>
                 
                 <div class="about-image">
-                    <div style="background-color: #e2e8f0; height: 400px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #64748b;">
+                    <div style="background-color: #e2e8f0; height: 400px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #64748b;">
                         <i class="fas fa-chart-line" style="font-size: 4rem;"></i>
                     </div>
                 </div>
@@ -1058,191 +1113,96 @@
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section class="section products" id="products">
+    <!-- Stats Section -->
+    <section class="section stats">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Products</h2>
-                <p>Explore our innovative software solutions designed to transform your business</p>
-            </div>
-            
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-badge">Popular</div>
-                    <div class="product-image">
-                        <i class="fas fa-chart-bar" style="font-size: 4rem;"></i>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Nexus Analytics Pro</h3>
-                        <div class="product-price">$299<span>/month</span></div>
-                        <p class="product-description">Advanced business intelligence platform with real-time analytics, predictive modeling, and customizable dashboards.</p>
-                        
-                        <div class="product-actions">
-                            <div class="quantity-selector">
-                                <button class="quantity-btn minus" data-product="1">-</button>
-                                <input type="text" class="quantity-input" value="1" data-product="1" readonly>
-                                <button class="quantity-btn plus" data-product="1">+</button>
-                            </div>
-                            
-                            <div class="product-share">
-                                <button class="share-btn" data-product="Nexus Analytics Pro">
-                                    <i class="fas fa-share-alt"></i>
-                                </button>
-                                <button class="share-btn message-btn" data-product="Nexus Analytics Pro">
-                                    <i class="fas fa-envelope"></i>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="product-footer">
-                            <button class="btn btn-primary order-btn" data-product="1">Order Now</button>
-                            <button class="btn btn-secondary details-btn" data-product="1">Details</button>
-                        </div>
-                    </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">250+</div>
+                    <div class="stat-text">Projects Completed</div>
                 </div>
-                
-                <div class="product-card">
-                    <div class="product-badge">New</div>
-                    <div class="product-image">
-                        <i class="fas fa-cloud" style="font-size: 4rem;"></i>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">CloudSync Enterprise</h3>
-                        <div class="product-price">$499<span>/month</span></div>
-                        <p class="product-description">Secure cloud storage and collaboration platform with advanced encryption, team management, and automated backups.</p>
-                        
-                        <div class="product-actions">
-                            <div class="quantity-selector">
-                                <button class="quantity-btn minus" data-product="2">-</button>
-                                <input type="text" class="quantity-input" value="1" data-product="2" readonly>
-                                <button class="quantity-btn plus" data-product="2">+</button>
-                            </div>
-                            
-                            <div class="product-share">
-                                <button class="share-btn" data-product="CloudSync Enterprise">
-                                    <i class="fas fa-share-alt"></i>
-                                </button>
-                                <button class="share-btn message-btn" data-product="CloudSync Enterprise">
-                                    <i class="fas fa-envelope"></i>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="product-footer">
-                            <button class="btn btn-primary order-btn" data-product="2">Order Now</button>
-                            <button class="btn btn-secondary details-btn" data-product="2">Details</button>
-                        </div>
-                    </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-text">Client Satisfaction</div>
                 </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <i class="fas fa-shield-alt" style="font-size: 4rem;"></i>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">SecureGuard Suite</h3>
-                        <div class="product-price">$199<span>/month</span></div>
-                        <p class="product-description">Comprehensive cybersecurity solution with threat detection, firewall protection, and compliance monitoring.</p>
-                        
-                        <div class="product-actions">
-                            <div class="quantity-selector">
-                                <button class="quantity-btn minus" data-product="3">-</button>
-                                <input type="text" class="quantity-input" value="1" data-product="3" readonly>
-                                <button class="quantity-btn plus" data-product="3">+</button>
-                            </div>
-                            
-                            <div class="product-share">
-                                <button class="share-btn" data-product="SecureGuard Suite">
-                                    <i class="fas fa-share-alt"></i>
-                                </button>
-                                <button class="share-btn message-btn" data-product="SecureGuard Suite">
-                                    <i class="fas fa-envelope"></i>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="product-footer">
-                            <button class="btn btn-primary order-btn" data-product="3">Order Now</button>
-                            <button class="btn btn-secondary details-btn" data-product="3">Details</button>
-                        </div>
-                    </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-text">Team Members</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12</div>
+                    <div class="stat-text">Years Experience</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section services" id="services">
+    <!-- Team Section -->
+    <section class="section team" id="team">
         <div class="container">
             <div class="section-title">
-                <h2>Our Services</h2>
-                <p>We offer a comprehensive range of services to meet your business needs</p>
+                <h2>Our Team</h2>
+                <p>Meet the talented professionals behind Nexus Solutions</p>
             </div>
             
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <i class="fas fa-user-tie" style="font-size: 5rem; margin-top: 60px; color: #6C63FF;"></i>
                     </div>
-                    <h3>Custom Software Development</h3>
-                    <p>Tailored software solutions designed to address your specific business challenges and requirements.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Mobile App Development</h3>
-                    <p>Engaging and intuitive mobile applications for iOS and Android platforms to reach your customers anywhere.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3>Cloud Solutions</h3>
-                    <p>Scalable cloud infrastructure and migration services to optimize your operations and reduce costs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="section portfolio" id="portfolio">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Portfolio</h2>
-                <p>Explore some of our successful projects and client solutions</p>
-            </div>
-            
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <i class="fas fa-shopping-cart" style="font-size: 3rem;"></i>
-                    </div>
-                    <div class="portfolio-overlay">
-                        <h3>E-Commerce Platform</h3>
-                        <p>Custom online store with advanced inventory management</p>
+                    <div class="member-info">
+                        <h3>Alex Johnson</h3>
+                        <p>CEO & Founder</p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <i class="fas fa-mobile-alt" style="font-size: 3rem;"></i>
+                <div class="team-member">
+                    <div class="member-image">
+                        <i class="fas fa-user-tie" style="font-size: 5rem; margin-top: 60px; color: #6C63FF;"></i>
                     </div>
-                    <div class="portfolio-overlay">
-                        <h3>Banking Mobile App</h3>
-                        <p>Secure financial application for a leading bank</p>
+                    <div class="member-info">
+                        <h3>Sarah Williams</h3>
+                        <p>CTO</p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <i class="fas fa-chart-bar" style="font-size: 3rem;"></i>
+                <div class="team-member">
+                    <div class="member-image">
+                        <i class="fas fa-user-tie" style="font-size: 5rem; margin-top: 60px; color: #6C63FF;"></i>
                     </div>
-                    <div class="portfolio-overlay">
-                        <h3>Business Intelligence Dashboard</h3>
-                        <p>Real-time analytics platform for enterprise clients</p>
+                    <div class="member-info">
+                        <h3>Michael Chen</h3>
+                        <p>Lead Developer</p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <i class="fas fa-user-tie" style="font-size: 5rem; margin-top: 60px; color: #6C63FF;"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Emily Rodriguez</h3>
+                        <p>Project Manager</p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1260,7 +1220,7 @@
             <div class="testimonials-container">
                 <div class="testimonial">
                     <div class="testimonial-content">
-                        <p>"Nexus Solution transformed our legacy systems into modern, efficient platforms. Their team was professional, knowledgeable, and delivered beyond our expectations."</p>
+                        <p>"Nexus Solutions transformed our legacy systems into modern, efficient platforms. Their team was professional, knowledgeable, and delivered beyond our expectations."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
@@ -1275,7 +1235,7 @@
                 
                 <div class="testimonial">
                     <div class="testimonial-content">
-                        <p>"The mobile app developed by Nexus Solution has significantly improved our customer engagement. Their attention to detail and user experience focus was impressive."</p>
+                        <p>"The mobile app developed by Nexus Solutions has significantly improved our customer engagement. Their attention to detail and user experience focus was impressive."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
@@ -1327,7 +1287,7 @@
                         </div>
                         <div>
                             <h3>Email Address</h3>
-                            <p>info@nexussolution.com</p>
+                            <p>info@nexussolutions.com</p>
                         </div>
                     </div>
                     
@@ -1364,7 +1324,7 @@
                             <textarea id="message" class="form-control" placeholder="Enter your message" required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -1376,7 +1336,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Nexus Solution</h3>
+                    <h3>Nexus Solutions</h3>
                     <p>Providing innovative technology solutions to help businesses thrive in the digital age.</p>
                     <div class="social-links">
                         <a href="#" class="social-link">
@@ -1398,88 +1358,102 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#products">Products</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Our Team</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Products</h3>
+                    <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Nexus Analytics Pro</a></li>
-                        <li><a href="#">CloudSync Enterprise</a></li>
-                        <li><a href="#">SecureGuard Suite</a></li>
-                        <li><a href="#">All Products</a></li>
+                        <li><a href="#">Software Development</a></li>
+                        <li><a href="#">Mobile App Development</a></li>
+                        <li><a href="#">Cloud Solutions</a></li>
+                        <li><a href="#">Data Analytics</a></li>
+                        <li><a href="#">All Services</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for updates and insights.</p>
-                    <form class="newsletter-form">
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your email address" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </form>
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" id="privacy-link">Privacy Policy</a></li>
+                        <li><a href="#" id="terms-link">Terms of Service</a></li>
+                        <li><a href="#" id="cookies-link">Cookie Policy</a></li>
+                    </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 Nexus Solution. All rights reserved.</p>
+                <p>&copy; 2023 Nexus Solutions. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Order Modal -->
-    <div class="modal" id="orderModal">
+    <!-- Service Share Modal -->
+    <div class="modal" id="shareModal">
         <div class="modal-content">
             <button class="modal-close">&times;</button>
-            <h2 class="modal-title">Place Your Order</h2>
-            <form id="orderForm">
+            <h2 class="modal-title">Share Service</h2>
+            <p id="share-service-name" style="margin-bottom: 1.5rem;"></p>
+            <div class="social-links" style="justify-content: center;">
+                <a href="#" class="social-link share-facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-link share-twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link share-linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-link share-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Consult Modal -->
+    <div class="modal" id="consultModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2 class="modal-title">Consultation Request</h2>
+            <p id="consult-service-name" style="margin-bottom: 1.5rem;"></p>
+            <form id="consultForm">
                 <div class="form-group">
-                    <label for="orderProduct" class="form-label">Product</label>
-                    <input type="text" id="orderProduct" class="form-control" readonly>
+                    <label for="consultName" class="form-label">Your Name</label>
+                    <input type="text" id="consultName" class="form-control" placeholder="Enter your name" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="orderQuantity" class="form-label">Quantity</label>
-                    <input type="number" id="orderQuantity" class="form-control" min="1" value="1">
+                    <label for="consultEmail" class="form-label">Your Email</label>
+                    <input type="email" id="consultEmail" class="form-control" placeholder="Enter your email" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="orderName" class="form-label">Your Name</label>
-                    <input type="text" id="orderName" class="form-control" placeholder="Enter your name" required>
+                    <label for="consultPhone" class="form-label">Phone Number</label>
+                    <input type="tel" id="consultPhone" class="form-control" placeholder="Enter your phone number" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="orderEmail" class="form-label">Your Email</label>
-                    <input type="email" id="orderEmail" class="form-control" placeholder="Enter your email" required>
+                    <label for="consultMessage" class="form-label">Your Requirements</label>
+                    <textarea id="consultMessage" class="form-control" placeholder="Briefly describe your requirements" required></textarea>
                 </div>
                 
-                <div class="form-group">
-                    <label for="orderPhone" class="form-label">Phone Number</label>
-                    <input type="tel" id="orderPhone" class="form-control" placeholder="Enter your phone number" required>
-                </div>
-                
-                <button type="submit" class="btn btn-success" style="width: 100%;">Complete Order</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Request Consultation</button>
             </form>
         </div>
     </div>
 
-    <!-- Message Modal -->
+    <!-- Service Message Modal -->
     <div class="modal" id="messageModal">
         <div class="modal-content">
             <button class="modal-close">&times;</button>
-            <h2 class="modal-title">Message About Product</h2>
+            <h2 class="modal-title">Message About Service</h2>
+            <p id="message-service-name" style="margin-bottom: 1.5rem;"></p>
             <form id="messageForm">
-                <div class="form-group">
-                    <label for="messageProduct" class="form-label">Product</label>
-                    <input type="text" id="messageProduct" class="form-control" readonly>
-                </div>
-                
                 <div class="form-group">
                     <label for="messageName" class="form-label">Your Name</label>
                     <input type="text" id="messageName" class="form-control" placeholder="Enter your name" required>
@@ -1492,11 +1466,22 @@
                 
                 <div class="form-group">
                     <label for="messageContent" class="form-label">Your Message</label>
-                    <textarea id="messageContent" class="form-control" placeholder="Enter your message about this product" required></textarea>
+                    <textarea id="messageContent" class="form-control" placeholder="Enter your message about this service" required></textarea>
                 </div>
                 
                 <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
             </form>
+        </div>
+    </div>
+
+    <!-- Policies Modal -->
+    <div class="modal" id="policiesModal">
+        <div class="modal-content" style="max-width: 700px; max-height: 80vh; overflow-y: auto;">
+            <button class="modal-close">&times;</button>
+            <h2 class="modal-title" id="policies-title">Privacy Policy</h2>
+            <div id="policies-content">
+                <!-- Content will be loaded here -->
+            </div>
         </div>
     </div>
 
@@ -1523,69 +1508,136 @@
             this.reset();
         });
         
-        // Product quantity controls
-        document.querySelectorAll('.quantity-btn').forEach(btn => {
+        // Service Share functionality
+        const shareModal = document.getElementById('shareModal');
+        const shareServiceName = document.getElementById('share-service-name');
+        
+        document.querySelectorAll('.share-service').forEach(btn => {
             btn.addEventListener('click', function() {
-                const productId = this.getAttribute('data-product');
-                const input = document.querySelector(`.quantity-input[data-product="${productId}"]`);
-                let value = parseInt(input.value);
+                const serviceName = this.getAttribute('data-service');
+                shareServiceName.textContent = `Share "${serviceName}" with others:`;
+                shareModal.classList.add('active');
                 
-                if (this.classList.contains('plus')) {
-                    value++;
-                } else if (this.classList.contains('minus') && value > 1) {
-                    value--;
-                }
+                // Update share links
+                const shareText = `Check out ${serviceName} from Nexus Solutions!`;
+                const shareUrl = encodeURIComponent(window.location.href);
+                const text = encodeURIComponent(shareText);
                 
-                input.value = value;
+                document.querySelector('.share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
+                document.querySelector('.share-twitter').href = `https://twitter.com/intent/tweet?text=${text}&url=${shareUrl}`;
+                document.querySelector('.share-linkedin').href = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
+                document.querySelector('.share-whatsapp').href = `https://api.whatsapp.com/send?text=${text} ${shareUrl}`;
             });
         });
         
-        // Order modal functionality
-        const orderModal = document.getElementById('orderModal');
-        const orderForm = document.getElementById('orderForm');
+        // Service Consult functionality
+        const consultModal = document.getElementById('consultModal');
+        const consultServiceName = document.getElementById('consult-service-name');
+        const consultForm = document.getElementById('consultForm');
         
-        document.querySelectorAll('.order-btn').forEach(btn => {
+        document.querySelectorAll('.consult-service').forEach(btn => {
             btn.addEventListener('click', function() {
-                const productId = this.getAttribute('data-product');
-                const productCard = this.closest('.product-card');
-                const productName = productCard.querySelector('.product-title').textContent;
-                const productQuantity = productCard.querySelector('.quantity-input').value;
-                
-                document.getElementById('orderProduct').value = productName;
-                document.getElementById('orderQuantity').value = productQuantity;
-                
-                orderModal.classList.add('active');
+                const serviceName = this.getAttribute('data-service');
+                consultServiceName.textContent = `Request a consultation for "${serviceName}"`;
+                consultModal.classList.add('active');
             });
         });
         
-        // Message modal functionality
+        // Service Message functionality
         const messageModal = document.getElementById('messageModal');
+        const messageServiceName = document.getElementById('message-service-name');
         const messageForm = document.getElementById('messageForm');
         
-        document.querySelectorAll('.message-btn').forEach(btn => {
+        document.querySelectorAll('.message-service').forEach(btn => {
             btn.addEventListener('click', function() {
-                const productName = this.getAttribute('data-product');
-                document.getElementById('messageProduct').value = productName;
+                const serviceName = this.getAttribute('data-service');
+                messageServiceName.textContent = `Send a message about "${serviceName}"`;
                 messageModal.classList.add('active');
             });
         });
         
-        // Share functionality
-        document.querySelectorAll('.share-btn:not(.message-btn)').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const productName = this.getAttribute('data-product');
-                if (navigator.share) {
-                    navigator.share({
-                        title: productName,
-                        text: `Check out ${productName} from Nexus Solution!`,
-                        url: window.location.href,
-                    })
-                    .then(() => console.log('Successful share'))
-                    .catch((error) => console.log('Error sharing:', error));
-                } else {
-                    alert(`Share ${productName} with your network!`);
-                }
-            });
+        // Policies Modal
+        const policiesModal = document.getElementById('policiesModal');
+        const policiesTitle = document.getElementById('policies-title');
+        const policiesContent = document.getElementById('policies-content');
+        
+        // Privacy Policy
+        document.getElementById('privacy-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            policiesTitle.textContent = 'Privacy Policy';
+            policiesContent.innerHTML = `
+                <h3>1. Information We Collect</h3>
+                <p>We collect information you provide directly to us, such as when you create an account, subscribe to our newsletter, or contact us for support.</p>
+                
+                <h3>2. How We Use Your Information</h3>
+                <p>We use the information we collect to provide, maintain, and improve our services, to develop new services, and to protect our company and our users.</p>
+                
+                <h3>3. Information Sharing</h3>
+                <p>We do not share personal information with companies, organizations, or individuals outside of Nexus Solutions except in the following cases:</p>
+                <ul>
+                    <li>With your consent</li>
+                    <li>For external processing</li>
+                    <li>For legal reasons</li>
+                </ul>
+                
+                <h3>4. Data Security</h3>
+                <p>We work hard to protect our users from unauthorized access to or unauthorized alteration, disclosure, or destruction of information we hold.</p>
+                
+                <h3>5. Changes to This Policy</h3>
+                <p>We may change this privacy policy from time to time. We will post any privacy policy changes on this page.</p>
+            `;
+            policiesModal.classList.add('active');
+        });
+        
+        // Terms of Service
+        document.getElementById('terms-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            policiesTitle.textContent = 'Terms of Service';
+            policiesContent.innerHTML = `
+                <h3>1. Acceptance of Terms</h3>
+                <p>By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.</p>
+                
+                <h3>2. Use License</h3>
+                <p>Permission is granted to temporarily download one copy of the materials on Nexus Solutions' website for personal, non-commercial transitory viewing only.</p>
+                
+                <h3>3. Disclaimer</h3>
+                <p>The materials on Nexus Solutions' website are provided on an 'as is' basis. Nexus Solutions makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+                
+                <h3>4. Limitations</h3>
+                <p>In no event shall Nexus Solutions or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Nexus Solutions' website.</p>
+                
+                <h3>5. Revisions and Errata</h3>
+                <p>The materials appearing on Nexus Solutions' website could include technical, typographical, or photographic errors. Nexus Solutions does not warrant that any of the materials on its website are accurate, complete, or current.</p>
+            `;
+            policiesModal.classList.add('active');
+        });
+        
+        // Cookie Policy
+        document.getElementById('cookies-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            policiesTitle.textContent = 'Cookie Policy';
+            policiesContent.innerHTML = `
+                <h3>1. What Are Cookies</h3>
+                <p>Cookies are small text files that are placed on your computer by websites that you visit. They are widely used in order to make websites work, or work more efficiently, as well as to provide information to the owners of the site.</p>
+                
+                <h3>2. How We Use Cookies</h3>
+                <p>We use cookies to understand how you use our website and to improve your experience. This includes remembering your preferences, personalizing content, and analyzing site traffic.</p>
+                
+                <h3>3. Types of Cookies We Use</h3>
+                <ul>
+                    <li><strong>Essential Cookies:</strong> These are necessary for the website to function properly.</li>
+                    <li><strong>Performance Cookies:</strong> These help us understand how visitors interact with our website.</li>
+                    <li><strong>Functionality Cookies:</strong> These allow the website to remember choices you make.</li>
+                    <li><strong>Targeting Cookies:</strong> These are used to deliver ads relevant to you.</li>
+                </ul>
+                
+                <h3>4. Managing Cookies</h3>
+                <p>Most web browsers allow you to control cookies through their settings preferences. However, if you limit the ability of websites to set cookies, you may worsen your overall user experience.</p>
+                
+                <h3>5. Changes to This Policy</h3>
+                <p>We may update this Cookie Policy from time to time. We will notify you of any changes by posting the new Cookie Policy on this page.</p>
+            `;
+            policiesModal.classList.add('active');
         });
         
         // Modal close functionality
@@ -1602,38 +1654,36 @@
             }
         });
         
-        // Order form submission
-        orderForm.addEventListener('submit', function(e) {
+        // Consult form submission
+        consultForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            const product = document.getElementById('orderProduct').value;
-            const quantity = document.getElementById('orderQuantity').value;
-            const name = document.getElementById('orderName').value;
+            const service = consultServiceName.textContent.replace('Request a consultation for "', '').replace('"', '');
+            const name = document.getElementById('consultName').value;
             
-            alert(`Thank you ${name}! Your order for ${quantity} x ${product} has been received. We will contact you shortly.`);
-            orderModal.classList.remove('active');
+            alert(`Thank you ${name}! Your consultation request for ${service} has been received. We will contact you shortly.`);
+            consultModal.classList.remove('active');
             this.reset();
         });
         
         // Message form submission
         messageForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            const product = document.getElementById('messageProduct').value;
+            const service = messageServiceName.textContent.replace('Send a message about "', '').replace('"', '');
             const name = document.getElementById('messageName').value;
             
-            alert(`Thank you ${name}! Your message about ${product} has been sent. We will respond soon.`);
+            alert(`Thank you ${name}! Your message about ${service} has been sent. We will respond soon.`);
             messageModal.classList.remove('active');
             this.reset();
         });
         
-        // Product details buttons
-        document.querySelectorAll('.details-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const productId = this.getAttribute('data-product');
-                const productCard = this.closest('.product-card');
-                const productName = productCard.querySelector('.product-title').textContent;
-                
-                alert(`Detailed information about ${productName} would be displayed here.`);
-            });
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = 'var(--shadow)';
+            }
         });
     </script>
 </body>

@@ -3,1418 +3,1738 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus Solution - IT Services & Digital Solutions</title>
+    <title>NEXUS SOLUTION 603 | Premium IT Services & Digital Solutions</title>
+    
+    <!-- Complete SEO Meta Tags -->
+    <meta name="description" content="NEXUS SOLUTION 603 provides premium IT services, software development, cybersecurity, and digital transformation solutions for businesses worldwide.">
+    <meta name="keywords" content="IT services, software development, cybersecurity, cloud solutions, web development, mobile apps, digital transformation, NEXUS SOLUTION 603">
+    <meta name="author" content="NEXUS SOLUTION 603">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="NEXUS SOLUTION 603 | Premium IT Services & Digital Solutions">
+    <meta property="og:description" content="Premium IT services and digital solutions for businesses worldwide">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nexussolution603.github.io/com/">
+    <meta property="og:image" content="https://nexussolution603.github.io/com/images/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NEXUS SOLUTION 603">
+    <meta name="twitter:description" content="Premium IT services and digital solutions">
+    <meta name="twitter:image" content="https://nexussolution603.github.io/com/images/twitter-card.jpg">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "NEXUS SOLUTION 603",
+      "url": "https://nexussolution603.github.io/com/",
+      "logo": "https://nexussolution603.github.io/com/logo.png",
+      "description": "Premium IT services and digital solutions provider",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "City",
+        "addressRegion": "State",
+        "addressCountry": "Country"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+92-316-9405908",
+        "contactType": "Customer Service"
+      }
+    }
+    </script>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://nexussolution603.github.io/com/">
+    
+    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Base Styles */
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #7c3aed;
-            --accent: #f59e0b;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --success: #10b981;
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --transition: all 0.3s ease;
-        }
-
+        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            user-select: none; /* Prevent text selection */
         }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        
         body {
-            background-color: var(--light);
-            color: var(--dark);
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
             overflow-x: hidden;
+            position: relative;
         }
-
+        
+        /* Security Overlay */
+        #security-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            display: none;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
         }
-
-        section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            border-radius: 2px;
-        }
-
-        .section-title p {
-            color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
-        }
-
-        .btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
-        }
-
-        .btn-secondary {
-            background: var(--secondary);
-        }
-
-        .btn-secondary:hover {
-            background: #6d28d9;
-        }
-
-        .btn-accent {
-            background: var(--accent);
-            color: var(--dark);
-        }
-
-        .btn-accent:hover {
-            background: #eab308;
-        }
-
-        .card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        /* Header */
-        header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar {
+        
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
         }
-
+        
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
+            font-size: 28px;
             font-weight: 700;
-            color: var(--dark);
+            color: #1a73e8;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
         }
-
-        .logo-text span {
-            color: var(--primary);
+        
+        .logo span {
+            color: #ff6b00;
         }
-
-        .nav-menu {
+        
+        .nav-links {
             display: flex;
             list-style: none;
-            gap: 30px;
         }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 600;
-            transition: var(--transition);
+        
+        .nav-links li {
+            margin-left: 30px;
             position: relative;
         }
-
-        .nav-link:hover {
-            color: var(--primary);
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+            padding: 5px 0;
         }
-
-        .nav-link::after {
-            content: '';
+        
+        .nav-links a:hover {
+            color: #1a73e8;
+        }
+        
+        .dropdown-content {
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: var(--transition);
+            background: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            z-index: 1;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s;
         }
-
-        .nav-link:hover::after {
-            width: 100%;
+        
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
-
-        .hamburger {
+        
+        .dropdown-content a {
+            display: block;
+            padding: 12px 16px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #1a73e8, #0d47a1);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            background: linear-gradient(135deg, #0d47a1, #1a73e8);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(13, 71, 161, 0.3);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
             display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: #333;
             cursor: pointer;
         }
-
-        .bar {
-            display: block;
-            width: 25px;
-            height: 3px;
-            margin: 5px auto;
-            background: var(--dark);
-            transition: var(--transition);
+        
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 999;
         }
-
+        
+        .mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+        }
+        
+        .mobile-menu li {
+            margin-bottom: 15px;
+        }
+        
+        .mobile-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 18px;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(124, 58, 237, 0.9)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1772&q=80');
             background-size: cover;
             background-position: center;
             color: white;
             padding: 180px 0 100px;
             text-align: center;
-            position: relative;
+            margin-top: 70px;
         }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
+        
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 48px;
             margin-bottom: 20px;
-            line-height: 1.2;
+            font-weight: 700;
         }
-
+        
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
+            font-size: 20px;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
-
-        .hero-btns {
+        
+        .hero-buttons {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
         }
-
-        .typing-container {
-            min-height: 60px;
-            margin: 20px 0;
-        }
-
-        .typing-text {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--accent);
-            display: inline-block;
-        }
-
-        .cursor {
-            display: inline-block;
-            width: 3px;
-            background-color: var(--accent);
-            margin-left: 5px;
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-
-        .about-text p {
-            color: var(--gray);
-            margin-bottom: 20px;
-        }
-
-        .about-features {
-            margin-top: 30px;
-        }
-
-        .feature {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .feature-icon {
-            background: var(--primary);
+        
+        .whatsapp-button {
+            background: #25D366;
             color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            flex-shrink: 0;
+            gap: 10px;
+            transition: all 0.3s;
         }
-
-        .feature-text h4 {
-            margin-bottom: 5px;
-            color: var(--dark);
+        
+        .whatsapp-button:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
         }
-
-        .about-img {
-            position: relative;
-        }
-
-        .about-img img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .experience-badge {
-            position: absolute;
-            bottom: -20px;
-            right: -20px;
-            background: var(--accent);
-            color: var(--dark);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: var(--shadow);
-        }
-
-        .experience-badge h3 {
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-        }
-
+        
         /* Services Section */
-        .services {
-            background: #f1f5f9;
+        .section {
+            padding: 80px 0;
         }
-
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: #1a73e8;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-
+        
         .service-card {
-            padding: 30px;
-            text-align: center;
+            background: white;
             border-radius: 10px;
-            transition: var(--transition);
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-
+        
         .service-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
-
+        
         .service-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: white;
-            font-size: 1.8rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-
-        .service-card p {
-            color: var(--gray);
+            font-size: 40px;
+            color: #1a73e8;
             margin-bottom: 20px;
         }
-
-        /* Tasks Section */
-        .tasks-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .task-card {
-            padding: 25px;
-            border-left: 4px solid var(--primary);
-        }
-
-        .task-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .task-header h3 {
-            font-size: 1.3rem;
-            color: var(--dark);
-        }
-
-        .task-status {
-            display: inline-block;
-            padding: 5px 12px;
-            background: var(--success);
-            color: white;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .task-body p {
-            color: var(--gray);
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-
-        .task-features {
-            margin-bottom: 15px;
-        }
-
-        .task-feature {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-        }
-
-        .task-feature i {
-            color: var(--success);
-            margin-right: 8px;
-            font-size: 0.8rem;
-        }
-
-        .task-actions {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-        }
-
-        .task-btn {
-            flex: 1;
-            text-align: center;
-            padding: 8px 5px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: var(--transition);
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .task-btn.whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        .task-btn.share {
-            background: var(--primary);
-            color: white;
-        }
-
-        .task-btn.message {
-            background: var(--secondary);
-            color: white;
-        }
-
-        .task-btn:hover {
-            opacity: 0.9;
-            transform: translateY(-3px);
-        }
-
-        /* Projects Section */
-        .projects {
-            background: #f1f5f9;
-        }
-
-        .projects-grid {
+        
+        /* Products Section */
+        .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-
-        .project-card {
-            position: relative;
-            overflow: hidden;
+        
+        .product-card {
+            background: white;
             border-radius: 10px;
-        }
-
-        .project-img {
-            height: 250px;
             overflow: hidden;
-        }
-
-        .project-img img {
-            width: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
             height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .project-card:hover .project-img img {
-            transform: scale(1.1);
-        }
-
-        .project-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(37, 99, 235, 0.9);
             display: flex;
             flex-direction: column;
-            justify-content: center;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .product-image {
+            height: 180px;
+            background: linear-gradient(135deg, #1a73e8, #0d47a1);
+            display: flex;
             align-items: center;
-            opacity: 0;
-            transition: var(--transition);
-            padding: 20px;
-            text-align: center;
+            justify-content: center;
             color: white;
+            font-size: 50px;
         }
-
-        .project-card:hover .project-overlay {
-            opacity: 1;
+        
+        .product-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
-
-        .project-overlay h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+        
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
         }
-
-        .project-overlay p {
-            margin-bottom: 20px;
+        
+        .consult-whatsapp {
+            background: #25D366;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
         }
-
+        
+        .consult-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .share-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-share { background: #25D366; }
+        .facebook-share { background: #1877F2; }
+        .twitter-share { background: #1DA1F2; }
+        
         /* Team Section */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
-
+        
         .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             text-align: center;
             padding: 30px 20px;
-            border-radius: 10px;
-            transition: var(--transition);
+            transition: transform 0.3s;
         }
-
+        
         .team-member:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
-
-        .member-img {
+        
+        .member-photo {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 20px;
-            border: 5px solid var(--primary);
-        }
-
-        .member-img img {
-            width: 100%;
-            height: 100%;
             object-fit: cover;
+            margin: 0 auto 20px;
+            border: 5px solid #f0f0f0;
         }
-
-        .member-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-            color: var(--dark);
-        }
-
-        .member-info p {
-            color: var(--gray);
-            margin-bottom: 15px;
-        }
-
-        .social-links {
+        
+        .member-social {
             display: flex;
             justify-content: center;
             gap: 10px;
+            margin-top: 20px;
         }
-
-        .social-link {
-            width: 35px;
-            height: 35px;
+        
+        .member-social a {
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            background: #f1f5f9;
+            background: #f0f0f0;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: var(--transition);
-            color: var(--dark);
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s;
         }
-
-        .social-link:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Contact Section */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-
-        .contact-info p {
-            margin-bottom: 30px;
-            color: var(--gray);
-        }
-
-        .contact-details {
-            margin-bottom: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .contact-icon {
-            background: var(--primary);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-
-        .contact-text h4 {
-            margin-bottom: 5px;
-            color: var(--dark);
-        }
-
-        .social-media {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-media a {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: #f1f5f9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            color: var(--dark);
-        }
-
-        .social-media a:hover {
-            background: var(--primary);
+        
+        .member-social a:hover {
+            background: #1a73e8;
             color: white;
             transform: translateY(-3px);
         }
-
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: #1a73e8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        
         .contact-form {
+            background: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: var(--shadow);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-
+        
         .form-group {
             margin-bottom: 20px;
         }
-
+        
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--dark);
+            font-weight: 500;
         }
-
+        
         .form-control {
             width: 100%;
             padding: 12px 15px;
-            border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            font-size: 1rem;
-            transition: var(--transition);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
         }
-
-        .form-control:focus {
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
+        
         /* Footer */
         footer {
-            background: var(--dark);
+            background: #1a237e;
             color: white;
-            padding: 60px 0 20px;
+            padding: 60px 0 30px;
         }
-
-        .footer-content {
+        
+        .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
-
-        .footer-col h3 {
-            font-size: 1.3rem;
+        
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
             margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
+            display: inline-block;
         }
-
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--primary);
-        }
-
-        .footer-col p {
+        
+        .footer-links h3 {
+            font-size: 20px;
             margin-bottom: 20px;
-            opacity: 0.8;
+            color: #fff;
         }
-
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
         .footer-links li {
             margin-bottom: 10px;
         }
-
+        
         .footer-links a {
-            opacity: 0.8;
-            transition: var(--transition);
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
             text-decoration: none;
+            transition: all 0.3s;
         }
-
-        .footer-links a:hover {
-            opacity: 1;
-            color: var(--primary);
-            padding-left: 5px;
+        
+        .social-icon:hover {
+            background: #1a73e8;
+            transform: translateY(-3px);
         }
-
-        .copyright {
+        
+        .newsletter {
+            margin-top: 20px;
+        }
+        
+        .newsletter-input {
+            display: flex;
+            margin-top: 10px;
+        }
+        
+        .newsletter-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+        
+        .newsletter-input button {
+            background: #ff6b00;
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        
+        .footer-bottom {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0.7;
-            font-size: 0.9rem;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #ccc;
+            font-size: 14px;
         }
-
-        /* Floating Elements */
-        .floating-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+        
+        .footer-bottom a {
+            color: #ff6b00;
+            text-decoration: none;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
             top: 0;
             left: 0;
-            overflow: hidden;
-            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 10000;
+            overflow-y: auto;
         }
-
-        .floating-element {
+        
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            border-radius: 10px;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .close-modal {
             position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 15s infinite linear;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
         }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-1000px) rotate(720deg);
-                opacity: 0;
-            }
+        
+        /* Cookie Consent */
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #1a237e;
+            color: white;
+            padding: 20px;
+            display: none;
+            z-index: 1000;
         }
-
-        /* Responsive Design */
+        
+        .cookie-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Responsive Styles */
         @media (max-width: 992px) {
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
+            .hero h1 {
+                font-size: 36px;
             }
-
-            .about-img {
-                order: -1;
+            
+            .hero p {
+                font-size: 18px;
             }
-        }
-
-        @media (max-width: 768px) {
-            .hamburger {
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
                 display: block;
             }
-
-            .hamburger.active .bar:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active .bar:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-
-            .hamburger.active .bar:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
-
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background-color: white;
-                width: 100%;
-                text-align: center;
-                transition: var(--transition);
-                box-shadow: var(--shadow);
-                padding: 20px 0;
-                gap: 0;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-item {
-                margin: 15px 0;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .section-title h2 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero-btns {
+            
+            .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-
-            .btn {
-                width: 100%;
-                max-width: 250px;
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
             }
-
-            .task-actions {
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .product-actions {
                 flex-direction: column;
+                gap: 10px;
+            }
+            
+            .share-buttons {
+                justify-content: center;
+            }
+            
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
             }
         }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .service-card, .product-card, .team-member {
+                padding: 20px;
+            }
+            
+            .modal-content {
+                padding: 20px;
+                width: 95%;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        /* Badges & Ratings */
+        .badge {
+            display: inline-block;
+            background: #ff6b00;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        
+        .rating {
+            color: #ffc107;
+            margin: 10px 0;
+        }
+        
+        /* Product Colors for Icons */
+        .product-1 { background: linear-gradient(135deg, #1a73e8, #0d47a1); }
+        .product-2 { background: linear-gradient(135deg, #34a853, #0d652d); }
+        .product-3 { background: linear-gradient(135deg, #ea4335, #b3140a); }
+        .product-4 { background: linear-gradient(135deg, #fbbc05, #c98f00); }
+        .product-5 { background: linear-gradient(135deg, #4285f4, #0d47a1); }
+        .product-6 { background: linear-gradient(135deg, #8e44ad, #5e3370); }
+        .product-7 { background: linear-gradient(135deg, #00bcd4, #006064); }
+        .product-8 { background: linear-gradient(135deg, #ff5722, #c41c00); }
+        .product-9 { background: linear-gradient(135deg, #9c27b0, #6a0080); }
+        .product-10 { background: linear-gradient(135deg, #4caf50, #087f23); }
     </style>
 </head>
 <body>
+    <!-- Security Overlay -->
+    <div id="security-overlay">
+        <i class="fas fa-shield-alt fa-4x" style="margin-bottom: 20px;"></i>
+        <h2>Security Protection Active</h2>
+        <p>This website is protected against unauthorized copying and distribution.</p>
+        <button id="close-security" style="margin-top: 20px; padding: 10px 20px; background: #1a73e8; color: white; border: none; border-radius: 5px; cursor: pointer;">I Understand</button>
+    </div>
+    
     <!-- Header -->
     <header>
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <div class="logo-icon">NS</div>
-                    <div class="logo-text">NEXUS <span>SOLUTION</span></div>
-                </div>
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="#tasks" class="nav-link">Tasks</a></li>
-                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                    <li class="nav-item"><a href="#team" class="nav-link">Team</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        <div class="container nav-container">
+            <a href="#" class="logo">NEXUS <span>SOLUTION 603</span></a>
+            
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#custom-software">Custom Software Development</a>
+                            <a href="#web-mobile">Web & Mobile App Development</a>
+                            <a href="#cloud-devops">Cloud Solutions & DevOps</a>
+                            <a href="#ui-ux">UI/UX Design</a>
+                            <a href="#it-consulting">IT Consulting</a>
+                            <a href="#cybersecurity">Cybersecurity Services</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#industries">Industries <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#fintech">FinTech</a>
+                            <a href="#healthcare">Healthcare</a>
+                            <a href="#ecommerce">E-commerce</a>
+                            <a href="#logistics">Logistics</a>
+                        </div>
+                    </li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
             </nav>
+            
+            <a href="#contact" class="cta-button">Get Free Consultation</a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#industries">Industries</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </header>
-
+    
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="floating-elements"></div>
         <div class="container">
-            <div class="hero-content">
-                <h1>Innovative IT Solutions for Your Business</h1>
-                <div class="typing-container">
-                    <span class="typing-text" id="typing-text"></span>
-                    <span class="cursor"></span>
-                </div>
-                <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. From web development to mobile apps, we've got you covered.</p>
-                <div class="hero-btns">
-                    <a href="#contact" class="btn">Get Started</a>
-                    <a href="#projects" class="btn btn-secondary">Our Projects</a>
-                </div>
+            <h1>Transform Your Business With Digital Innovation</h1>
+            <p>We provide cutting-edge IT solutions that drive growth, enhance efficiency, and secure your digital assets. Partner with us for your digital transformation journey.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/923169405908?text=Hello%20NEXUS%20SOLUTION%20603,%20I%20need%20information%20about%20your%20services" class="whatsapp-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+                <a href="#contact" class="cta-button">Start Your Project</a>
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
-    <section class="section" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Us</h2>
-                <p>Learn more about our company and what makes us the right choice for your IT needs.</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>We Are Nexus Solution</h3>
-                    <p>Nexus Solution is a leading IT company dedicated to providing innovative technology solutions to businesses of all sizes. With a team of experienced professionals, we deliver high-quality services that drive growth and success.</p>
-                    <p>Our mission is to bridge the gap between technology and business needs, creating solutions that are not only functional but also user-friendly and scalable.</p>
-                    <div class="about-features">
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Expert Team</h4>
-                                <p>Our team consists of skilled professionals with years of experience in the IT industry.</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Quality Assurance</h4>
-                                <p>We ensure that all our projects meet the highest standards of quality and performance.</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Customer Support</h4>
-                                <p>We provide ongoing support and maintenance to ensure your solutions run smoothly.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="About Nexus Solution">
-                    <div class="experience-badge">
-                        <h3>5+</h3>
-                        <p>Years of Experience</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Services Section -->
-    <section class="section services" id="services">
+    <section class="section" id="services">
         <div class="container">
             <div class="section-title">
                 <h2>Our Services</h2>
-                <p>We offer a wide range of IT services to meet your business needs.</p>
+                <p>Comprehensive IT services tailored to meet your business needs and drive digital transformation.</p>
             </div>
+            
             <div class="services-grid">
-                <div class="service-card card">
+                <div class="service-card fade-in">
                     <div class="service-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3>Web Development</h3>
-                    <p>We create responsive, user-friendly websites that help your business stand out online.</p>
-                    <a href="#" class="btn btn-secondary">Learn More</a>
+                    <h3>Custom Software Development</h3>
+                    <p>Tailored software solutions built from scratch to address your unique business challenges and requirements.</p>
                 </div>
-                <div class="service-card card">
+                
+                <div class="service-card fade-in">
                     <div class="service-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>Mobile App Development</h3>
-                    <p>We develop native and cross-platform mobile applications for iOS and Android.</p>
-                    <a href="#" class="btn btn-secondary">Learn More</a>
+                    <h3>Web & Mobile App Development</h3>
+                    <p>Responsive web applications and native/hybrid mobile apps for iOS and Android platforms.</p>
                 </div>
-                <div class="service-card card">
+                
+                <div class="service-card fade-in">
                     <div class="service-icon">
-                        <i class="fas fa-palette"></i>
+                        <i class="fas fa-cloud"></i>
                     </div>
-                    <h3>UI/UX Design</h3>
-                    <p>We design intuitive and engaging user interfaces that enhance user experience.</p>
-                    <a href="#" class="btn btn-secondary">Learn More</a>
+                    <h3>Cloud Solutions & DevOps</h3>
+                    <p>Cloud migration, infrastructure setup, and DevOps implementation for scalable and resilient systems.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity Services</h3>
+                    <p>Comprehensive security assessments, penetration testing, and implementation of robust security measures.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Tasks Section -->
-    <section class="section" id="tasks">
+    
+    <!-- Products Section -->
+    <section class="section" style="background: #f0f7ff;">
         <div class="container">
             <div class="section-title">
-                <h2>Our IT Tasks & Solutions</h2>
-                <p>Explore our comprehensive range of IT tasks and solutions for your business needs.</p>
+                <h2>10 Premium Products</h2>
+                <p>Our flagship software products designed to solve critical business challenges across industries.</p>
             </div>
-            <div class="tasks-grid">
-                <!-- Task 1 -->
-                <div class="task-card card">
-                    <div class="task-header">
-                        <h3>Website Development</h3>
-                        <span class="task-status">Completed</span>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card fade-in">
+                    <div class="product-image product-1">
+                        <i class="fas fa-envelope"></i>
                     </div>
-                    <div class="task-body">
-                        <p>Custom website development with responsive design and modern technologies.</p>
-                        <div class="task-features">
-                            <div class="task-feature"><i class="fas fa-check"></i> Responsive Design</div>
-                            <div class="task-feature"><i class="fas fa-check"></i> SEO Optimized</div>
-                            <div class="task-feature"><i class="fas fa-check"></i> Fast Loading</div>
+                    <div class="product-content">
+                        <h3>NEXUS SecureMail Pro <span class="badge">New</span></h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span style="color: #666; margin-left: 5px;">4.5/5</span>
                         </div>
-                        <div class="task-actions">
-                            <a href="https://wa.me/03169405908?text=Hi, I'm interested in Website Development" class="task-btn whatsapp" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
+                        <p>Enterprise-grade secure email solution with end-to-end encryption, advanced threat protection, and regulatory compliance features for business communication.</p>
+                        <div class="product-actions">
+                            <a href="https://wa.me/923169405908?text=I'm%20interested%20in%20NEXUS%20SecureMail%20Pro" class="consult-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Consult
                             </a>
-                            <button class="task-btn share" onclick="shareProduct('Website Development', 'Custom website development with responsive design')">
-                                <i class="fas fa-share-alt"></i> Share
-                            </button>
-                            <a href="#contact" class="task-btn message" data-task="Website Development">
-                                <i class="fas fa-envelope"></i> Message
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Task 2 -->
-                <div class="task-card card">
-                    <div class="task-header">
-                        <h3>E-commerce Solution</h3>
-                        <span class="task-status">Completed</span>
-                    </div>
-                    <div class="task-body">
-                        <p>Complete e-commerce platform with payment integration and inventory management.</p>
-                        <div class="task-features">
-                            <div class="task-feature"><i class="fas fa-check"></i> Payment Gateway</div>
-                            <div class="task-feature"><i class="fas fa-check"></i> Inventory Management</div>
-                            <div class="task-feature"><i class="fas fa-check"></i> Order Tracking</div>
-                        </div>
-                        <div class="task-actions">
-                            <a href="https://wa.me/03169405908?text=Hi, I'm interested in E-commerce Solution" class="task-btn whatsapp" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </a>
-                            <button class="task-btn share" onclick="shareProduct('E-commerce Solution', 'Complete e-commerce platform with payment integration')">
-                                <i class="fas fa-share-alt"></i> Share
-                            </button>
-                            <a href="#contact" class="task-btn message" data-task="E-commerce Solution">
-                                <i class="fas fa-envelope"></i> Message
-                            </a>
+                            <div class="share-buttons">
+                                <a href="https://wa.me/?text=Check%20out%20NEXUS%20SecureMail%20Pro%20-%20Secure%20email%20solution%20by%20NEXUS%20SOLUTION%20603" class="share-btn whatsapp-share" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://nexussolution603.github.io/com/" class="share-btn facebook-share" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?text=Check%20out%20NEXUS%20SecureMail%20Pro%20by%20%40NexusSolution603&url=https://nexussolution603.github.io/com/" class="share-btn twitter-share" target="_blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Task 3 -->
-                <div class="task-card card">
-                    <div class="task-header">
-                        <h3>Mobile App Development</h3>
-                        <span class="task-status">In Progress</span>
+                
+                <!-- Product 2 -->
+                <div class="product-card fade-in">
+                    <div class="product-image product-2">
+                        <i class="fas fa-chart-bar"></i>
                     </div>
-                    <div class="task-body">
-                        <p>Native and cross-platform mobile app development for iOS and Android.</p>
-                        <div class="task-features">
-                            <div class="task-feature"><i class="fas fa-check"></i> iOS & Android</div>
-                            <div class="task-feature"><i class="fas fa-check"></i> User-Friendly UI</div>
-                            <div class="task-feature"><i class="fas fa-check"></i> App Store Deployment</div>
+                    <div class="product-content">
+                        <h3>DataInsight Pro <span class="badge">Popular</span></h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span style="color: #666; margin-left: 5px;">4.0/5</span>
                         </div>
-                        <div class="task-actions">
-                            <a href="https://wa.me/03169405908?text=Hi, I'm interested in Mobile App Development" class="task-btn whatsapp" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
+                        <p>Advanced analytics platform with predictive modeling, real-time data visualization, interactive dashboards, and business intelligence reporting.</p>
+                        <div class="product-actions">
+                            <a href="https://wa.me/923169405908?text=I'm%20interested%20in%20DataInsight%20Pro" class="consult-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Consult
                             </a>
-                            <button class="task-btn share" onclick="shareProduct('Mobile App Development', 'Native and cross-platform mobile app development')">
-                                <i class="fas fa-share-alt"></i> Share
-                            </button>
-                            <a href="#contact" class="task-btn message" data-task="Mobile App Development">
-                                <i class="fas fa-envelope"></i> Message
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Task 4 -->
-                <div class="task-card card">
-                    <div class="task-header">
-                        <h3>UI/UX Design</h3>
-                        <span class="task-status">Completed</span>
-                    </div>
-                    <div class="task-body">
-                        <p>User interface and experience design for websites and mobile applications.</p>
-                        <div class="task-features">
-                            <div class="task-feature"><i class="fas fa-check"></i> User Research</div>
-                            <div class="task-feature"><i class="fas fa-check"></i> Wireframing</div>
-                            <div class="task-feature"><i class="fas fa-check"></i> Prototyping</div>
-                        </div>
-                        <div class="task-actions">
-                            <a href="https://wa.me/03169405908?text=Hi, I'm interested in UI/UX Design" class="task-btn whatsapp" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </a>
-                            <button class="task-btn share" onclick="shareProduct('UI/UX Design', 'User interface and experience design for websites and apps')">
-                                <i class="fas fa-share-alt"></i> Share
-                            </button>
-                            <a href="#contact" class="task-btn message" data-task="UI/UX Design">
-                                <i class="fas fa-envelope"></i> Message
-                            </a>
+                            <div class="share-buttons">
+                                <a href="https://wa.me/?text=Check%20out%20DataInsight%20Pro%20-%20Advanced%20analytics%20platform%20by%20NEXUS%20SOLUTION%20603" class="share-btn whatsapp-share" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://nexussolution603.github.io/com/" class="share-btn facebook-share" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?text=Check%20out%20DataInsight%20Pro%20by%20%40NexusSolution603&url=https://nexussolution603.github.io/com/" class="share-btn twitter-share" target="_blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Additional tasks would continue here... -->
+                
+                <!-- Product 3 -->
+                <div class="product-card fade-in">
+                    <div class="product-image product-3">
+                        <i class="fas fa-cloud-shield-alt"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>CloudShield Security</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span style="color: #666; margin-left: 5px;">5.0/5</span>
+                        </div>
+                        <p>Comprehensive cloud security solution with AI-driven threat detection, data encryption, access control, and compliance monitoring for cloud infrastructure.</p>
+                        <div class="product-actions">
+                            <a href="https://wa.me/923169405908?text=I'm%20interested%20in%20CloudShield%20Security" class="consult-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Consult
+                            </a>
+                            <div class="share-buttons">
+                                <a href="https://wa.me/?text=Check%20out%20CloudShield%20Security%20-%20Cloud%20security%20solution%20by%20NEXUS%20SOLUTION%20603" class="share-btn whatsapp-share" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://nexussolution603.github.io/com/" class="share-btn facebook-share" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?text=Check%20out%20CloudShield%20Security%20by%20%40NexusSolution603&url=https://nexussolution603.github.io/com/" class="share-btn twitter-share" target="_blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card fade-in">
+                    <div class="product-image product-4">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Network Guardian Pro</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span style="color: #666; margin-left: 5px;">4.5/5</span>
+                        </div>
+                        <p>Enterprise network security solution with firewall management, intrusion detection, network monitoring, and vulnerability assessment tools.</p>
+                        <div class="product-actions">
+                            <a href="https://wa.me/923169405908?text=I'm%20interested%20in%20Network%20Guardian%20Pro" class="consult-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Consult
+                            </a>
+                            <div class="share-buttons">
+                                <a href="https://wa.me/?text=Check%20out%20Network%20Guardian%20Pro%20-%20Network%20security%20solution%20by%20NEXUS%20SOLUTION%20603" class="share-btn whatsapp-share" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://nexussolution603.github.io/com/" class="share-btn facebook-share" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?text=Check%20out%20Network%20Guardian%20Pro%20by%20%40NexusSolution603&url=https://nexussolution603.github.io/com/" class="share-btn twitter-share" target="_blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card fade-in">
+                    <div class="product-image product-5">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>AI Analytics Suite</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span style="color: #666; margin-left: 5px;">4.0/5</span>
+                        </div>
+                        <p>Artificial Intelligence platform with machine learning models, natural language processing, computer vision, and predictive analytics capabilities.</p>
+                        <div class="product-actions">
+                            <a href="https://wa.me/923169405908?text=I'm%20interested%20in%20AI%20Analytics%20Suite" class="consult-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Consult
+                            </a>
+                            <div class="share-buttons">
+                                <a href="https://wa.me/?text=Check%20out%20AI%20Analytics%20Suite%20-%20AI%20platform%20by%20NEXUS%20SOLUTION%20603" class="share-btn whatsapp-share" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://nexussolution603.github.io/com/" class="share-btn facebook-share" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?text=Check%20out%20AI%20Analytics%20Suite%20by%20%40NexusSolution603&url=https://nexussolution603.github.io/com/" class="share-btn twitter-share" target="_blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card fade-in">
+                    <div class="product-image product-6">
+                        <i class="fas fa-hdd"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Backup & Recovery Pro</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span style="color: #666; margin-left: 5px;">5.0/5</span>
+                        </div>
+                        <p>Enterprise data backup and disaster recovery solution with automated backups, versioning, cloud storage, and rapid recovery capabilities.</p>
+                        <div class="product-actions">
+                            <a href="https://wa.me/923169405908?text=I'm%20interested%20in%20Backup%20%26%20Recovery%20Pro" class="consult-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Consult
+                            </a>
+                            <div class="share-buttons">
+                                <a href="https://wa.me/?text=Check%20out%20Backup%20%26%20Recovery%20Pro%20-%20Data%20backup%20solution%20by%20NEXUS%20SOLUTION%20603" class="share-btn whatsapp-share" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://nexussolution603.github.io/com/" class="share-btn facebook-share" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?text=Check%20out%20Backup%20%26%20Recovery%20Pro%20by%20%40NexusSolution603&url=https://nexussolution603.github.io/com/" class="share-btn twitter-share" target="_blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="product-card fade-in">
+                    <div class="product-image product-7">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>E-Commerce Pro Suite</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span style="color: #666; margin-left: 5px;">4.5/5</span>
+                        </div>
+                        <p>Complete e-commerce platform with product management, shopping cart, payment gateway integration, inventory management, and analytics.</p>
+                        <div class="product-actions">
+                            <a href="https://wa.me/923169405908?text=I'm%20interested%20in%20E-Commerce%20Pro%20Suite" class="consult-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Consult
+                            </a>
+                            <div class="share-buttons">
+                                <a href="https://wa.me/?text=Check%20out%20E-Commerce%20Pro%20Suite%20-%20E-commerce%20platform%20by%20NEXUS%20SOLUTION%20603" class="share-btn whatsapp-share" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://nexussolution603.github.io/com/" class="share-btn facebook-share" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?text=Check%20out%20E-Commerce%20Pro%20Suite%20by%20%40NexusSolution603&url=https://nexussolution603.github.io/com/" class="share-btn twitter-share" target="_blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="product-card fade-in">
+                    <div class="product-image product-8">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>CRM Enterprise</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span style="color: #666; margin-left: 5px;">4.0/5</span>
+                        </div>
+                        <p>Customer Relationship Management system with lead tracking, sales pipeline management, customer support, marketing automation, and analytics.</p>
+                        <div class="product-actions">
+                            <a href="https://wa.me/923169405908?text=I'm%20interested%20in%20CRM%20Enterprise" class="consult-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Consult
+                            </a>
+                            <div class="share-buttons">
+                                <a href="https://wa.me/?text=Check%20out%20CRM%20Enterprise%20-%20CRM%20system%20by%20NEXUS%20SOLUTION%20603" class="share-btn whatsapp-share" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://nexussolution603.github.io/com/" class="share-btn facebook-share" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?text=Check%20out%20CRM%20Enterprise%20by%20%40NexusSolution603&url=https://nexussolution603.github.io/com/" class="share-btn twitter-share" target="_blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 9 -->
+                <div class="product-card fade-in">
+                    <div class="product-image product-9">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Project Management Pro</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span style="color: #666; margin-left: 5px;">4.5/5</span>
+                        </div>
+                        <p>Comprehensive project management tool with task tracking, team collaboration, resource allocation, Gantt charts, and progress reporting.</p>
+                        <div class="product-actions">
+                            <a href="https://wa.me/923169405908?text=I'm%20interested%20in%20Project%20Management%20Pro" class="consult-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Consult
+                            </a>
+                            <div class="share-buttons">
+                                <a href="https://wa.me/?text=Check%20out%20Project%20Management%20Pro%20-%20Project%20management%20tool%20by%20NEXUS%20SOLUTION%20603" class="share-btn whatsapp-share" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://nexussolution603.github.io/com/" class="share-btn facebook-share" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?text=Check%20out%20Project%20Management%20Pro%20by%20%40NexusSolution603&url=https://nexussolution603.github.io/com/" class="share-btn twitter-share" target="_blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 10 -->
+                <div class="product-card fade-in">
+                    <div class="product-image product-10">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>HR Management System</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span style="color: #666; margin-left: 5px;">4.0/5</span>
+                        </div>
+                        <p>Human Resources management platform with employee records, payroll processing, leave management, performance reviews, and recruitment modules.</p>
+                        <div class="product-actions">
+                            <a href="https://wa.me/923169405908?text=I'm%20interested%20in%20HR%20Management%20System" class="consult-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Consult
+                            </a>
+                            <div class="share-buttons">
+                                <a href="https://wa.me/?text=Check%20out%20HR%20Management%20System%20-%20HR%20platform%20by%20NEXUS%20SOLUTION%20603" class="share-btn whatsapp-share" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://nexussolution603.github.io/com/" class="share-btn facebook-share" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?text=Check%20out%20HR%20Management%20System%20by%20%40NexusSolution603&url=https://nexussolution603.github.io/com/" class="share-btn twitter-share" target="_blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#contact" class="cta-button">Get Custom Solution Consultation</a>
             </div>
         </div>
     </section>
-
-    <!-- Projects Section -->
-    <section class="section projects" id="projects">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Projects</h2>
-                <p>Take a look at some of our successful projects delivered to clients.</p>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2060&q=80" alt="E-commerce Website">
-                    </div>
-                    <div class="project-overlay">
-                        <h3>E-commerce Platform</h3>
-                        <p>Fully responsive e-commerce website with payment integration and admin panel.</p>
-                        <a href="#" class="btn">View Details</a>
-                    </div>
-                </div>
-                <div class="project-card card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Mobile Banking App">
-                    </div>
-                    <div class="project-overlay">
-                        <h3>Mobile Banking App</h3>
-                        <p>Secure mobile banking application with biometric authentication and transaction features.</p>
-                        <a href="#" class="btn">View Details</a>
-                    </div>
-                </div>
-                <div class="project-card card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Hospital Management System">
-                    </div>
-                    <div class="project-overlay">
-                        <h3>Hospital Management System</h3>
-                        <p>Comprehensive system for managing patient records, appointments, and billing.</p>
-                        <a href="#" class="btn">View Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Team Section -->
     <section class="section" id="team">
         <div class="container">
             <div class="section-title">
-                <h2>Our Team</h2>
-                <p>Meet the talented professionals behind Nexus Solution.</p>
+                <h2>Our Leadership Team</h2>
+                <p>Meet the experts driving innovation and delivering exceptional results for our clients.</p>
             </div>
+            
             <div class="team-grid">
-                <div class="team-member card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="John Doe">
-                    </div>
-                    <div class="member-info">
-                        <h3>John Doe</h3>
-                        <p>CEO & Founder</p>
-                        <div class="social-links">
-                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Jane Smith">
-                    </div>
-                    <div class="member-info">
-                        <h3>Jane Smith</h3>
-                        <p>Lead Developer</p>
-                        <div class="social-links">
-                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
+                <!-- Team Member 1 -->
+                <div class="team-member fade-in">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member" class="member-photo">
+                    <h3>Alex Johnson</h3>
+                    <p style="color: #1a73e8; font-weight: 600;">CEO & Founder</p>
+                    <p>15+ years in IT leadership and digital transformation. Passionate about leveraging technology to solve business challenges.</p>
+                    <div class="member-social">
+                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/923169405908" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="team-member card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80" alt="Michael Johnson">
-                    </div>
-                    <div class="member-info">
-                        <h3>Michael Johnson</h3>
-                        <p>UI/UX Designer</p>
-                        <div class="social-links">
-                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member fade-in">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member" class="member-photo">
+                    <h3>Sarah Williams</h3>
+                    <p style="color: #1a73e8; font-weight: 600;">CTO</p>
+                    <p>Expert in cloud architecture and software development with 12+ years experience building scalable enterprise solutions.</p>
+                    <div class="member-social">
+                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/923169405908" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="team-member card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Sarah Williams">
+                
+                <!-- Team Member 3 -->
+                <div class="team-member fade-in">
+                    <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Team Member" class="member-photo">
+                    <h3>Michael Chen</h3>
+                    <p style="color: #1a73e8; font-weight: 600;">Head of Cybersecurity</p>
+                    <p>Cybersecurity specialist with certifications in ethical hacking and 10+ years protecting enterprise networks.</p>
+                    <div class="member-social">
+                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/923169405908" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                    <div class="member-info">
-                        <h3>Sarah Williams</h3>
-                        <p>Project Manager</p>
-                        <div class="social-links">
-                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-member fade-in">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Team Member" class="member-photo">
+                    <h3>Priya Sharma</h3>
+                    <p style="color: #1a73e8; font-weight: 600;">Head of Product Development</p>
+                    <p>Product management expert with a track record of launching successful digital products across multiple industries.</p>
+                    <div class="member-social">
+                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/923169405908" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Contact Section -->
-    <section class="section" id="contact">
+    <section class="section" id="contact" style="background: #f0f7ff;">
         <div class="container">
             <div class="section-title">
                 <h2>Contact Us</h2>
-                <p>Get in touch with us for any inquiries or project discussions.</p>
+                <p>Get in touch with us for a free consultation or to discuss your project requirements.</p>
             </div>
-            <div class="contact-content">
+            
+            <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Let's Talk About Your Project</h3>
-                    <p>We're here to help you bring your ideas to life. Contact us today to discuss your project requirements.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Address</h4>
-                                <p>123 Business Street, City, Country</p>
-                            </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Phone</h4>
-                                <p>03169405908</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Email</h4>
-                                <p>info@nexussolution.com</p>
-                            </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+92-316-9405908</p>
+                            <p>Mon-Fri, 9:00 AM - 6:00 PM</p>
                         </div>
                     </div>
-                    <div class="social-media">
-                        <a href="https://vm.tiktok.com/ZSHTMKvaao8u9-p9TjL/" target="_blank"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://www.facebook.com/share/1DrkqTjsYJ/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.youtube.com/@nexussolution603" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a href="https://wa.me/03169405908" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@nexussolution603.com</p>
+                            <p>Response within 24 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>+92-316-9405908</p>
+                            <p>Quick response via WhatsApp</p>
+                            <a href="https://wa.me/923169405908?text=Hello%20NEXUS%20SOLUTION%20603,%20I%20need%20information%20about%20your%20services" class="whatsapp-button" style="padding: 8px 16px; font-size: 14px; margin-top: 10px;" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Message Now
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Office Address</h3>
+                            <p>IT Tower, Digital Zone</p>
+                            <p>Karachi, Pakistan</p>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-form card">
+                
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 20px;">Send us a Message</h3>
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">Your Name</label>
+                            <label for="name">Full Name *</label>
                             <input type="text" id="name" class="form-control" required>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="email">Your Email</label>
+                            <label for="email">Email Address *</label>
                             <input type="email" id="email" class="form-control" required>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" class="form-control" required>
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
                         </div>
+                        
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" class="form-control" required></textarea>
+                            <label for="service">Service Interest</label>
+                            <select id="service" class="form-control">
+                                <option value="">Select a service</option>
+                                <option value="software-dev">Software Development</option>
+                                <option value="web-dev">Web Development</option>
+                                <option value="mobile-dev">Mobile App Development</option>
+                                <option value="cloud">Cloud Solutions</option>
+                                <option value="cybersecurity">Cybersecurity</option>
+                                <option value="consulting">IT Consulting</option>
+                            </select>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        
+                        <div class="form-group">
+                            <label for="product">Product Interest</label>
+                            <select id="product" class="form-control">
+                                <option value="">Select a product</option>
+                                <option value="securemail">NEXUS SecureMail Pro</option>
+                                <option value="datainsight">DataInsight Pro</option>
+                                <option value="cloudshield">CloudShield Security</option>
+                                <option value="network-guardian">Network Guardian Pro</option>
+                                <option value="ai-analytics">AI Analytics Suite</option>
+                                <option value="backup-recovery">Backup & Recovery Pro</option>
+                                <option value="ecommerce">E-Commerce Pro Suite</option>
+                                <option value="crm">CRM Enterprise</option>
+                                <option value="project-management">Project Management Pro</option>
+                                <option value="hr-system">HR Management System</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget">Project Budget</label>
+                            <select id="budget" class="form-control">
+                                <option value="">Select budget range</option>
+                                <option value="under-5k">Under $5,000</option>
+                                <option value="5k-10k">$5,000 - $10,000</option>
+                                <option value="10k-25k">$10,000 - $25,000</option>
+                                <option value="25k-50k">$25,000 - $50,000</option>
+                                <option value="50k-plus">$50,000+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details *</label>
+                            <textarea id="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h3>Nexus Solution</h3>
-                    <p>Your trusted partner for innovative IT solutions that drive business growth and success.</p>
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="footer-logo">NEXUS SOLUTION 603</a>
+                    <p>Providing cutting-edge IT solutions and digital transformation services since 2015. We help businesses leverage technology for growth and success.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/1HBGnG9QyF/" class="social-icon" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com" class="social-icon" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nexussolution603" class="social-icon" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@nexussolution603" class="social-icon" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://vm.tiktok.com/ZSHw5JoY3oJWS-BNDE2/" class="social-icon" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://wa.me/923169405908" class="social-icon" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="footer-col">
+                
+                <div class="footer-links">
                     <h3>Quick Links</h3>
-                    <ul class="footer-links">
+                    <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#tasks">Tasks</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#team">Team</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#industries">Industries</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+                
+                <div class="footer-links">
                     <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Mobile App Development</a></li>
-                        <li><a href="#">UI/UX Design</a></li>
-                        <li><a href="#">Digital Marketing</a></li>
-                        <li><a href="#">IT Consulting</a></li>
+                    <ul>
+                        <li><a href="#custom-software">Custom Software</a></li>
+                        <li><a href="#web-mobile">Web & Mobile Apps</a></li>
+                        <li><a href="#cloud-devops">Cloud & DevOps</a></li>
+                        <li><a href="#cybersecurity">Cybersecurity</a></li>
+                        <li><a href="#it-consulting">IT Consulting</a></li>
+                        <li><a href="#ui-ux">UI/UX Design</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h3>Contact Info</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Business Street, City, Country</li>
-                        <li><i class="fas fa-phone"></i> 03169405908</li>
-                        <li><i class="fas fa-envelope"></i> info@nexussolution.com</li>
+                
+                <div class="footer-links">
+                    <h3>Premium Products</h3>
+                    <ul>
+                        <li><a href="#products">SecureMail Pro</a></li>
+                        <li><a href="#products">DataInsight Pro</a></li>
+                        <li><a href="#products">CloudShield Security</a></li>
+                        <li><a href="#products">AI Analytics Suite</a></li>
+                        <li><a href="#products">E-Commerce Pro Suite</a></li>
+                        <li><a href="#products">CRM Enterprise</a></li>
                     </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on our latest products and services.</p>
+                    <div class="newsletter">
+                        <div class="newsletter-input">
+                            <input type="email" placeholder="Your email address">
+                            <button type="button">Subscribe</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 Nexus Solution. All Rights Reserved.</p>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> NEXUS SOLUTION 603. All rights reserved. | 
+                   <a href="#" id="privacyLink">Privacy Policy</a> | 
+                   <a href="#" id="termsLink">Terms of Service</a> | 
+                   <a href="#" id="cookieLink">Cookie Policy</a> | 
+                   <a href="#" id="disclaimerLink">Disclaimer</a>
+                </p>
+                <p style="margin-top: 10px; font-size: 12px;">
+                    Protected by NEXUS SOLUTION Security System | 
+                    <a href="https://nexussolution603.github.io/com/" style="color: #ccc; text-decoration: none;" target="_blank">NEXUS SOLUTION</a>
+                </p>
             </div>
         </div>
     </footer>
+    
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-content">
+            <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+            <div>
+                <button id="acceptCookies" class="cta-button" style="padding: 10px 20px;">Accept</button>
+                <button id="declineCookies" style="background: transparent; border: 1px solid white; color: white; padding: 10px 20px; margin-left: 10px; border-radius: 5px; cursor: pointer;">Decline</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Privacy Policy Modal -->
+    <div class="modal" id="privacyModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closePrivacy">&times;</span>
+            <h2>Privacy Policy</h2>
+            <p>Last updated: <span id="currentDate"></span></p>
+            
+            <h3>Information We Collect</h3>
+            <p>We collect information that you provide directly to us, including:</p>
+            <ul>
+                <li>Name and contact information</li>
+                <li>Company information</li>
+                <li>Project requirements and details</li>
+                <li>Communication preferences</li>
+            </ul>
+            
+            <h3>How We Use Your Information</h3>
+            <p>We use the information we collect to:</p>
+            <ul>
+                <li>Provide and improve our services</li>
+                <li>Communicate with you about projects</li>
+                <li>Send technical updates and marketing communications</li>
+                <li>Comply with legal obligations</li>
+            </ul>
+            
+            <h3>Data Security</h3>
+            <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.</p>
+        </div>
+    </div>
+    
+    <!-- Terms of Service Modal -->
+    <div class="modal" id="termsModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeTerms">&times;</span>
+            <h2>Terms of Service</h2>
+            <p>By accessing our website and using our services, you agree to these terms:</p>
+            
+            <h3>Service Agreement</h3>
+            <p>All projects are governed by a separate service agreement that outlines project scope, timelines, deliverables, and payment terms.</p>
+            
+            <h3>Intellectual Property</h3>
+            <p>All intellectual property rights for delivered work are transferred to the client upon full payment, unless otherwise specified in the agreement.</p>
+            
+            <h3>Limitation of Liability</h3>
+            <p>NEXUS SOLUTION 603 shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from the use of our services.</p>
+        </div>
+    </div>
+    
+    <!-- Cookie Policy Modal -->
+    <div class="modal" id="cookieModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeCookie">&times;</span>
+            <h2>Cookie Policy</h2>
+            <p>We use cookies and similar technologies to provide and improve our services.</p>
+            
+            <h3>Types of Cookies We Use</h3>
+            <ul>
+                <li><strong>Essential Cookies:</strong> Required for basic site functionality</li>
+                <li><strong>Performance Cookies:</strong> Help us understand how visitors interact with our site</li>
+                <li><strong>Functionality Cookies:</strong> Remember your preferences</li>
+                <li><strong>Marketing Cookies:</strong> Used to deliver relevant advertisements</li>
+            </ul>
+            
+            <h3>Managing Cookies</h3>
+            <p>You can control cookie preferences through your browser settings. However, disabling essential cookies may affect site functionality.</p>
+        </div>
+    </div>
+    
+    <!-- Disclaimer Modal -->
+    <div class="modal" id="disclaimerModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeDisclaimer">&times;</span>
+            <h2>Disclaimer</h2>
+            
+            <h3>General Information</h3>
+            <p>The information contained on this website is for general information purposes only. While we strive to keep information up-to-date and correct, we make no representations or warranties of any kind about the completeness, accuracy, reliability, suitability, or availability of the website or information.</p>
+            
+            <h3>Professional Advice</h3>
+            <p>The content on this website does not constitute professional advice. You should consult with qualified professionals for specific advice tailored to your situation.</p>
+            
+            <h3>Third-Party Links</h3>
+            <p>Our website may contain links to external websites. We have no control over the content and nature of these sites and are not responsible for their content or privacy practices.</p>
+        </div>
+    </div>
 
     <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Set current date in privacy policy
+        const currentDate = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        document.getElementById('currentDate').textContent = currentDate;
+        
         // Mobile Menu Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mobileMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
         });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        }));
-
-        // Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
         });
-
-        // Smooth Scrolling for Anchor Links
+        
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
@@ -1429,112 +1749,217 @@
                 }
             });
         });
-
-        // Typing Animation
-        const typingText = document.getElementById('typing-text');
-        const texts = [
-            "Custom Web Development",
-            "Mobile App Solutions",
-            "UI/UX Design Services",
-            "Digital Marketing",
-            "E-commerce Solutions",
-            "Cloud Services",
-            "IT Consulting",
-            "Software Development"
-        ];
         
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typingSpeed = 100;
-        
-        function typeText() {
-            const currentText = texts[textIndex];
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            if (isDeleting) {
-                typingText.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-                typingSpeed = 50;
-            } else {
-                typingText.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-                typingSpeed = 100;
-            }
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                service: document.getElementById('service').value,
+                product: document.getElementById('product').value,
+                budget: document.getElementById('budget').value,
+                message: document.getElementById('message').value
+            };
             
-            if (!isDeleting && charIndex === currentText.length) {
-                isDeleting = true;
-                typingSpeed = 1000; // Pause at the end
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                textIndex = (textIndex + 1) % texts.length;
-                typingSpeed = 500; // Pause before starting next text
-            }
+            // In a real application, you would send this data to a server
+            // For demo purposes, we'll just show an alert
+            alert('Thank you for your message! We will contact you within 24 hours.');
             
-            setTimeout(typeText, typingSpeed);
-        }
-        
-        // Start typing animation after page loads
-        window.addEventListener('load', () => {
-            setTimeout(typeText, 1000);
+            // Reset form
+            this.reset();
+            
+            // Optionally, send to WhatsApp
+            const whatsappMessage = `New Contact Form Submission:%0A%0AName: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AService: ${formData.service}%0AProduct: ${formData.product}%0ABudget: ${formData.budget}%0AMessage: ${formData.message}`;
+            
+            // Uncomment to actually send to WhatsApp
+            // window.open(`https://wa.me/923169405908?text=${whatsappMessage}`, '_blank');
         });
-
-        // Create floating elements
-        function createFloatingElements() {
-            const container = document.querySelector('.floating-elements');
-            const colors = ['rgba(255, 255, 255, 0.3)', 'rgba(255, 255, 255, 0.2)', 'rgba(255, 255, 255, 0.1)'];
-            
-            for (let i = 0; i < 15; i++) {
-                const element = document.createElement('div');
-                element.classList.add('floating-element');
-                
-                // Random size
-                const size = Math.random() * 60 + 20;
-                element.style.width = `${size}px`;
-                element.style.height = `${size}px`;
-                
-                // Random position
-                element.style.left = `${Math.random() * 100}%`;
-                element.style.top = `${Math.random() * 100 + 100}%`;
-                
-                // Random color
-                element.style.background = colors[Math.floor(Math.random() * colors.length)];
-                
-                // Random animation duration
-                const duration = Math.random() * 20 + 10;
-                element.style.animationDuration = `${duration}s`;
-                
-                // Random animation delay
-                const delay = Math.random() * 5;
-                element.style.animationDelay = `${delay}s`;
-                
-                container.appendChild(element);
-            }
+        
+        // Modal Controls
+        const privacyLink = document.getElementById('privacyLink');
+        const termsLink = document.getElementById('termsLink');
+        const cookieLink = document.getElementById('cookieLink');
+        const disclaimerLink = document.getElementById('disclaimerLink');
+        
+        const privacyModal = document.getElementById('privacyModal');
+        const termsModal = document.getElementById('termsModal');
+        const cookieModal = document.getElementById('cookieModal');
+        const disclaimerModal = document.getElementById('disclaimerModal');
+        
+        // Open modals
+        privacyLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            privacyModal.style.display = 'block';
+        });
+        
+        termsLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            termsModal.style.display = 'block';
+        });
+        
+        cookieLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            cookieModal.style.display = 'block';
+        });
+        
+        disclaimerLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            disclaimerModal.style.display = 'block';
+        });
+        
+        // Close modals
+        document.getElementById('closePrivacy').addEventListener('click', () => {
+            privacyModal.style.display = 'none';
+        });
+        
+        document.getElementById('closeTerms').addEventListener('click', () => {
+            termsModal.style.display = 'none';
+        });
+        
+        document.getElementById('closeCookie').addEventListener('click', () => {
+            cookieModal.style.display = 'none';
+        });
+        
+        document.getElementById('closeDisclaimer').addEventListener('click', () => {
+            disclaimerModal.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if(e.target === privacyModal) privacyModal.style.display = 'none';
+            if(e.target === termsModal) termsModal.style.display = 'none';
+            if(e.target === cookieModal) cookieModal.style.display = 'none';
+            if(e.target === disclaimerModal) disclaimerModal.style.display = 'none';
+        });
+        
+        // Cookie Consent
+        const cookieConsent = document.getElementById('cookieConsent');
+        const acceptCookies = document.getElementById('acceptCookies');
+        const declineCookies = document.getElementById('declineCookies');
+        
+        // Show cookie consent if not already accepted
+        if(!localStorage.getItem('cookiesAccepted')) {
+            setTimeout(() => {
+                cookieConsent.style.display = 'block';
+            }, 2000);
         }
         
-        // Create floating elements when page loads
-        window.addEventListener('load', createFloatingElements);
-
-        // Share product function
-        function shareProduct(title, description) {
-            if (navigator.share) {
-                navigator.share({
-                    title: title,
-                    text: description,
-                    url: window.location.href
-                })
-                .then(() => console.log('Successful share'))
-                .catch((error) => console.log('Error sharing:', error));
-            } else {
-                // Fallback for browsers that don't support the Web Share API
-                alert(`Share "${title}" with your friends!\n\n${description}`);
+        acceptCookies.addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            cookieConsent.style.display = 'none';
+        });
+        
+        declineCookies.addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'false');
+            cookieConsent.style.display = 'none';
+        });
+        
+        // Enhanced Security Features
+        const securityOverlay = document.getElementById('security-overlay');
+        const closeSecurity = document.getElementById('close-security');
+        
+        // Disable right-click
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            securityOverlay.style.display = 'flex';
+        });
+        
+        // Disable text selection
+        document.addEventListener('selectstart', (e) => {
+            e.preventDefault();
+        });
+        
+        // Disable copy
+        document.addEventListener('copy', (e) => {
+            e.preventDefault();
+            securityOverlay.style.display = 'flex';
+        });
+        
+        // Disable cut
+        document.addEventListener('cut', (e) => {
+            e.preventDefault();
+            securityOverlay.style.display = 'flex';
+        });
+        
+        // Disable paste
+        document.addEventListener('paste', (e) => {
+            e.preventDefault();
+            securityOverlay.style.display = 'flex';
+        });
+        
+        // Detect developer tools
+        const devtools = /./;
+        devtools.toString = function() {
+            securityOverlay.style.display = 'flex';
+            return '';
+        };
+        
+        console.log('%c', devtools);
+        
+        // Detect keyboard shortcuts for dev tools
+        document.addEventListener('keydown', (e) => {
+            // F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+            if(e.keyCode === 123 || 
+               (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) ||
+               (e.ctrlKey && e.keyCode === 85)) {
+                e.preventDefault();
+                securityOverlay.style.display = 'flex';
             }
-        }
-
-        // Set task in contact form when message button is clicked
-        document.querySelectorAll('.task-btn.message').forEach(button => {
-            button.addEventListener('click', function() {
-                const taskTitle = this.getAttribute('data-task');
-                document.getElementById('subject').value = `Inquiry about ${taskTitle}`;
+        });
+        
+        // Close security overlay
+        closeSecurity.addEventListener('click', () => {
+            securityOverlay.style.display = 'none';
+        });
+        
+        // Newsletter subscription
+        document.querySelector('.newsletter button').addEventListener('click', () => {
+            const emailInput = document.querySelector('.newsletter input');
+            if(emailInput.value && emailInput.value.includes('@')) {
+                alert('Thank you for subscribing to our newsletter!');
+                emailInput.value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+        
+        // Fade in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if(elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for fade elements
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        // Trigger once on load
+        fadeInOnScroll();
+        
+        // WhatsApp sharing for products
+        document.querySelectorAll('.whatsapp-share').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Prevent default only if it's a share button
+                if(this.classList.contains('share-btn')) {
+                    e.stopPropagation();
+                }
             });
         });
     </script>

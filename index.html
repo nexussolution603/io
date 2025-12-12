@@ -104,94 +104,6 @@
           "publisher": {
             "@id": "https://nexussolution603.github.io/in/#organization"
           }
-        },
-        {
-          "@type": "LocalBusiness",
-          "name": "NEXUS SOLUTION 603",
-          "image": "https://nexussolution603.github.io/in/images/og-image.jpg",
-          "@id": "",
-          "url": "https://nexussolution603.github.io/in/",
-          "telephone": "+92-316-9405908",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "IT Tower, Digital Zone",
-            "addressLocality": "Karachi",
-            "addressRegion": "Sindh",
-            "postalCode": "75500",
-            "addressCountry": "PK"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 24.8607,
-            "longitude": 67.0011
-          },
-          "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday"
-            ],
-            "opens": "09:00",
-            "closes": "18:00"
-          }
-        },
-        {
-          "@type": "Service",
-          "name": "Custom Software Development",
-          "description": "Tailored software solutions built from scratch to address unique business challenges",
-          "provider": {
-            "@type": "Organization",
-            "name": "NEXUS SOLUTION 603"
-          }
-        },
-        {
-          "@type": "Service",
-          "name": "Cybersecurity Services",
-          "description": "Comprehensive security assessments, penetration testing, and implementation of robust security measures",
-          "provider": {
-            "@type": "Organization",
-            "name": "NEXUS SOLUTION 603"
-          }
-        }
-      ]
-    }
-    </script>
-    
-    <!-- Additional Schema for Products -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "item": {
-            "@type": "SoftwareApplication",
-            "name": "NEXUS SecureMail Pro",
-            "description": "Enterprise-grade secure email solution with end-to-end encryption",
-            "applicationCategory": "BusinessApplication",
-            "operatingSystem": "Windows, macOS, Linux",
-            "offers": {
-              "@type": "Offer",
-              "price": "Contact for pricing",
-              "priceCurrency": "USD"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "item": {
-            "@type": "SoftwareApplication",
-            "name": "DataInsight Pro",
-            "description": "Advanced analytics platform with predictive modeling and real-time data visualization",
-            "applicationCategory": "BusinessApplication",
-            "operatingSystem": "Web-based"
-          }
         }
       ]
     }
@@ -199,7 +111,6 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%231a237e%22>N</text></svg>">
-    <link rel="apple-touch-icon" href="https://nexussolution603.github.io/in/images/apple-touch-icon.png">
     
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -218,6 +129,10 @@
             padding: 0;
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
@@ -503,6 +418,8 @@
             transform: rotate(180deg);
         }
         
+        /* ========== SECTIONS STYLES ========== */
+        
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(26, 35, 126, 0.85), rgba(26, 35, 126, 0.9)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1772&q=80');
@@ -557,7 +474,7 @@
             box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
         }
         
-        /* Services Section */
+        /* All Sections Common */
         .section {
             padding: 80px 0;
         }
@@ -579,6 +496,7 @@
             margin: 0 auto;
         }
         
+        /* Services Section */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -604,6 +522,116 @@
             font-size: 40px;
             color: #1a237e;
             margin-bottom: 20px;
+        }
+        
+        /* Industries Section */
+        .industries-section {
+            background: #f9f9f9;
+        }
+        
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .industry-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border-top: 4px solid #1a237e;
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .industry-icon {
+            font-size: 50px;
+            color: #1a237e;
+            margin-bottom: 20px;
+        }
+        
+        /* Portfolio Section */
+        .portfolio-section {
+            background: #fff;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .portfolio-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .portfolio-image {
+            height: 200px;
+            background: linear-gradient(135deg, #1a237e, #283593);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 50px;
+        }
+        
+        .portfolio-content {
+            padding: 20px;
+        }
+        
+        /* About Section */
+        .about-section {
+            background: #f0f7ff;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            color: #1a237e;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a237e;
+            margin-bottom: 5px;
         }
         
         /* Products Section */
@@ -699,6 +727,89 @@
         .whatsapp-share { background: #25D366; }
         .facebook-share { background: #1877F2; }
         .twitter-share { background: #1DA1F2; }
+        
+        /* Blog Section */
+        .blog-section {
+            background: #f9f9f9;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .blog-post {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .blog-image {
+            height: 180px;
+            background: linear-gradient(135deg, #1a237e, #283593);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+        }
+        
+        .blog-content {
+            padding: 25px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        /* Careers Section */
+        .careers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .career-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border-top: 4px solid #1a237e;
+        }
+        
+        .career-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .career-tags {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        
+        .career-tag {
+            background: #e8eaf6;
+            color: #1a237e;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
         
         /* Team Section */
         .team-grid {
@@ -1031,6 +1142,139 @@
             margin: 0 auto;
         }
         
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .whatsapp-float .whatsapp-text {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: #25D366;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .whatsapp-float:hover .whatsapp-text {
+            opacity: 1;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+            background: #1a237e;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 20px;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(26, 35, 126, 0.3);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: #283593;
+            transform: translateY(-5px);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        /* Badges & Ratings */
+        .badge {
+            display: inline-block;
+            background: #0d47a1;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        
+        .rating {
+            color: #ffc107;
+            margin: 10px 0;
+        }
+        
+        /* Product Colors for Icons */
+        .product-1 { background: linear-gradient(135deg, #1a237e, #283593); }
+        .product-2 { background: linear-gradient(135deg, #0d47a1, #1565c0); }
+        .product-3 { background: linear-gradient(135deg, #1565c0, #1976d2); }
+        .product-4 { background: linear-gradient(135deg, #1976d2, #2196f3); }
+        .product-5 { background: linear-gradient(135deg, #283593, #303f9f); }
+        .product-6 { background: linear-gradient(135deg, #303f9f, #3f51b5); }
+        .product-7 { background: linear-gradient(135deg, #3f51b5, #5c6bc0); }
+        .product-8 { background: linear-gradient(135deg, #0d47a1, #1e88e5); }
+        .product-9 { background: linear-gradient(135deg, #1e88e5, #42a5f5); }
+        .product-10 { background: linear-gradient(135deg, #1565c0, #64b5f6); }
+        
+        /* Industry Colors */
+        .industry-1 { background: linear-gradient(135deg, #1a237e, #283593); }
+        .industry-2 { background: linear-gradient(135deg, #0d47a1, #1565c0); }
+        .industry-3 { background: linear-gradient(135deg, #1565c0, #1976d2); }
+        .industry-4 { background: linear-gradient(135deg, #1976d2, #2196f3); }
+        
+        /* Portfolio Colors */
+        .portfolio-1 { background: linear-gradient(135deg, #1a237e, #283593); }
+        .portfolio-2 { background: linear-gradient(135deg, #0d47a1, #1565c0); }
+        .portfolio-3 { background: linear-gradient(135deg, #1565c0, #1976d2); }
+        .portfolio-4 { background: linear-gradient(135deg, #1976d2, #2196f3); }
+        
+        /* Blog Colors */
+        .blog-1 { background: linear-gradient(135deg, #1a237e, #283593); }
+        .blog-2 { background: linear-gradient(135deg, #0d47a1, #1565c0); }
+        .blog-3 { background: linear-gradient(135deg, #1565c0, #1976d2); }
+        
         /* ========== RESPONSIVE STYLES ========== */
         @media (max-width: 1200px) {
             .container {
@@ -1077,6 +1321,19 @@
             .nav-links {
                 flex-direction: column;
             }
+            
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 30px;
+                right: 30px;
+                font-size: 28px;
+            }
+            
+            .back-to-top {
+                bottom: 90px;
+                right: 30px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -1115,6 +1372,26 @@
             .footer-grid {
                 gap: 30px;
             }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 25px;
+                right: 25px;
+                font-size: 26px;
+            }
+            
+            .back-to-top {
+                bottom: 80px;
+                right: 25px;
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+            
+            .whatsapp-float .whatsapp-text {
+                display: none;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1130,7 +1407,7 @@
                 font-size: 16px;
             }
             
-            .service-card, .product-card, .team-member {
+            .service-card, .product-card, .team-member, .industry-card, .blog-post, .career-card {
                 padding: 20px;
             }
             
@@ -1158,6 +1435,22 @@
             .contact-form {
                 padding: 20px;
             }
+            
+            .whatsapp-float {
+                width: 45px;
+                height: 45px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 24px;
+            }
+            
+            .back-to-top {
+                bottom: 70px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
         }
         
         @media (max-width: 400px) {
@@ -1170,80 +1463,25 @@
                 font-size: 14px;
             }
             
-            .product-image {
+            .product-image, .portfolio-image, .blog-image {
                 height: 150px;
             }
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
-        }
-        
-        /* Badges & Ratings */
-        .badge {
-            display: inline-block;
-            background: #0d47a1;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-left: 10px;
-        }
-        
-        .rating {
-            color: #ffc107;
-            margin: 10px 0;
-        }
-        
-        /* Product Colors for Icons */
-        .product-1 { background: linear-gradient(135deg, #1a237e, #283593); }
-        .product-2 { background: linear-gradient(135deg, #0d47a1, #1565c0); }
-        .product-3 { background: linear-gradient(135deg, #1565c0, #1976d2); }
-        .product-4 { background: linear-gradient(135deg, #1976d2, #2196f3); }
-        .product-5 { background: linear-gradient(135deg, #283593, #303f9f); }
-        .product-6 { background: linear-gradient(135deg, #303f9f, #3f51b5); }
-        .product-7 { background: linear-gradient(135deg, #3f51b5, #5c6bc0); }
-        .product-8 { background: linear-gradient(135deg, #0d47a1, #1e88e5); }
-        .product-9 { background: linear-gradient(135deg, #1e88e5, #42a5f5); }
-        .product-10 { background: linear-gradient(135deg, #1565c0, #64b5f6); }
-        
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: #1a237e;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 20px;
-            z-index: 99;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(26, 35, 126, 0.3);
-        }
-        
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .back-to-top:hover {
-            background: #283593;
-            transform: translateY(-5px);
+            
+            .whatsapp-float {
+                width: 40px;
+                height: 40px;
+                bottom: 15px;
+                right: 15px;
+                font-size: 22px;
+            }
+            
+            .back-to-top {
+                bottom: 60px;
+                right: 15px;
+                width: 35px;
+                height: 35px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -1255,6 +1493,12 @@
         <p>This website is protected against unauthorized copying and distribution.</p>
         <button id="close-security" style="margin-top: 20px; padding: 10px 20px; background: #1a237e; color: white; border: none; border-radius: 5px; cursor: pointer;">I Understand</button>
     </div>
+    
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923169405908?text=Hello%20NEXUS%20SOLUTION%20603,%20I%20need%20information%20about%20your%20services" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat on WhatsApp</span>
+    </a>
     
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top" id="backToTop">
@@ -1392,6 +1636,162 @@
                     </div>
                     <h3>Cybersecurity Services</h3>
                     <p>Comprehensive security assessments, penetration testing, and implementation of robust security measures.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>User-centered design solutions that create intuitive, engaging, and visually appealing digital experiences.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>IT Consulting</h3>
+                    <p>Strategic IT consulting services to help you leverage technology for business growth and competitive advantage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Industries Section -->
+    <section class="section industries-section" id="industries">
+        <div class="container">
+            <div class="section-title">
+                <h2>Industries We Serve</h2>
+                <p>We have extensive experience delivering IT solutions across various industries.</p>
+            </div>
+            
+            <div class="industries-grid">
+                <div class="industry-card fade-in">
+                    <div class="industry-icon industry-1">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>FinTech</h3>
+                    <p>Secure banking solutions, payment gateways, financial analytics, and blockchain technology for the finance industry.</p>
+                </div>
+                
+                <div class="industry-card fade-in">
+                    <div class="industry-icon industry-2">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Healthcare</h3>
+                    <p>Healthcare management systems, telemedicine platforms, EHR solutions, and medical data analytics.</p>
+                </div>
+                
+                <div class="industry-card fade-in">
+                    <div class="industry-icon industry-3">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>E-commerce</h3>
+                    <p>Custom e-commerce platforms, inventory management, payment integration, and customer relationship management.</p>
+                </div>
+                
+                <div class="industry-card fade-in">
+                    <div class="industry-icon industry-4">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Logistics</h3>
+                    <p>Supply chain management, fleet tracking, warehouse management, and logistics optimization solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio Section -->
+    <section class="section portfolio-section" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Portfolio</h2>
+                <p>Explore some of our successful projects and client case studies.</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-image portfolio-1">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Banking Management System</h3>
+                        <p>Comprehensive banking solution for a leading financial institution with real-time transaction processing.</p>
+                        <a href="#contact" class="cta-button" style="padding: 8px 16px; font-size: 14px; margin-top: 15px; display: inline-block;">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-image portfolio-2">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Hospital Management System</h3>
+                        <p>Integrated healthcare management platform for a chain of hospitals with patient management modules.</p>
+                        <a href="#contact" class="cta-button" style="padding: 8px 16px; font-size: 14px; margin-top: 15px; display: inline-block;">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-image portfolio-3">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>E-commerce Platform</h3>
+                        <p>Custom e-commerce solution with inventory management, payment gateway, and analytics dashboard.</p>
+                        <a href="#contact" class="cta-button" style="padding: 8px 16px; font-size: 14px; margin-top: 15px; display: inline-block;">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-image portfolio-4">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Logistics Tracking System</h3>
+                        <p>Real-time fleet tracking and supply chain management solution for a logistics company.</p>
+                        <a href="#contact" class="cta-button" style="padding: 8px 16px; font-size: 14px; margin-top: 15px; display: inline-block;">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About NEXUS SOLUTION 603</h2>
+                <p>Learn more about our company, mission, and values.</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3>Driving Digital Transformation Since 2015</h3>
+                    <p>NEXUS SOLUTION 603 is a leading IT services and digital solutions provider based in Karachi, Pakistan. We specialize in delivering cutting-edge technology solutions that help businesses transform and thrive in the digital age.</p>
+                    
+                    <p>Our team of experienced professionals combines technical expertise with business acumen to deliver solutions that drive growth, enhance efficiency, and secure digital assets. We believe in building long-term partnerships with our clients, understanding their unique challenges, and providing tailored solutions that deliver measurable results.</p>
+                    
+                    <p>With a client-centric approach and commitment to excellence, we have successfully delivered projects for businesses across various industries, from startups to large enterprises.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">8+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Clients</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">20+</div>
+                            <div class="stat-label">Team Members</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1759,6 +2159,116 @@
             
             <div style="text-align: center; margin-top: 40px;">
                 <a href="#contact" class="cta-button">Get Custom Solution Consultation</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Blog Section -->
+    <section class="section blog-section" id="blog">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest Blog Posts</h2>
+                <p>Insights, trends, and updates from the world of technology and business.</p>
+            </div>
+            
+            <div class="blog-grid">
+                <div class="blog-post fade-in">
+                    <div class="blog-image blog-1">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Cybersecurity Trends 2024</h3>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> March 15, 2024</span>
+                            <span><i class="far fa-user"></i> Alex Johnson</span>
+                        </div>
+                        <p>Explore the latest cybersecurity trends and best practices to protect your business from emerging threats in 2024.</p>
+                        <a href="#contact" class="cta-button" style="padding: 8px 16px; font-size: 14px; margin-top: 15px; display: inline-block;">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="blog-post fade-in">
+                    <div class="blog-image blog-2">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Cloud Migration Strategies</h3>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> March 10, 2024</span>
+                            <span><i class="far fa-user"></i> Sarah Williams</span>
+                        </div>
+                        <p>Learn about effective cloud migration strategies and how to ensure a smooth transition to cloud infrastructure.</p>
+                        <a href="#contact" class="cta-button" style="padding: 8px 16px; font-size: 14px; margin-top: 15px; display: inline-block;">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="blog-post fade-in">
+                    <div class="blog-image blog-3">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="blog-content">
+                        <h3>AI in Business Transformation</h3>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> March 5, 2024</span>
+                            <span><i class="far fa-user"></i> Michael Chen</span>
+                        </div>
+                        <p>Discover how artificial intelligence is revolutionizing business processes and driving digital transformation across industries.</p>
+                        <a href="#contact" class="cta-button" style="padding: 8px 16px; font-size: 14px; margin-top: 15px; display: inline-block;">Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#contact" class="cta-button">View All Blog Posts</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Careers Section -->
+    <section class="section" id="careers">
+        <div class="container">
+            <div class="section-title">
+                <h2>Join Our Team</h2>
+                <p>Explore career opportunities and be part of our innovative team.</p>
+            </div>
+            
+            <div class="careers-grid">
+                <div class="career-card fade-in">
+                    <h3>Senior Software Developer</h3>
+                    <div class="career-tags">
+                        <span class="career-tag">Full-time</span>
+                        <span class="career-tag">Karachi</span>
+                        <span class="career-tag">3+ years experience</span>
+                    </div>
+                    <p>We're looking for an experienced software developer to join our team and work on cutting-edge projects for global clients.</p>
+                    <a href="#contact" class="cta-button" style="padding: 8px 16px; font-size: 14px; margin-top: 15px; display: inline-block;">Apply Now</a>
+                </div>
+                
+                <div class="career-card fade-in">
+                    <h3>Cybersecurity Analyst</h3>
+                    <div class="career-tags">
+                        <span class="career-tag">Full-time</span>
+                        <span class="career-tag">Karachi</span>
+                        <span class="career-tag">2+ years experience</span>
+                    </div>
+                    <p>Join our cybersecurity team to help protect client systems and develop robust security solutions.</p>
+                    <a href="#contact" class="cta-button" style="padding: 8px 16px; font-size: 14px; margin-top: 15px; display: inline-block;">Apply Now</a>
+                </div>
+                
+                <div class="career-card fade-in">
+                    <h3>UI/UX Designer</h3>
+                    <div class="career-tags">
+                        <span class="career-tag">Full-time</span>
+                        <span class="career-tag">Remote</span>
+                        <span class="career-tag">2+ years experience</span>
+                    </div>
+                    <p>Create beautiful and intuitive user interfaces for web and mobile applications. Must have portfolio.</p>
+                    <a href="#contact" class="cta-button" style="padding: 8px 16px; font-size: 14px; margin-top: 15px; display: inline-block;">Apply Now</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#contact" class="cta-button">View All Career Opportunities</a>
             </div>
         </div>
     </section>

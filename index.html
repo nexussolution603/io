@@ -9,8 +9,8 @@
     <!-- ========== SEO META TAGS ========== -->
     <!-- Primary Meta Tags -->
     <meta name="title" content="NEXUS SOLUTION 603 - Premium IT Services Pakistan">
-    <meta name="description" content="Premium IT services, software development, cybersecurity, cloud solutions, web development, mobile apps, and digital transformation solutions in Karachi, Pakistan.">
-    <meta name="keywords" content="IT services Pakistan, software development Karachi, cybersecurity solutions, cloud computing Pakistan, web development, mobile app development, digital transformation, IT consulting, NEXUS SOLUTION 603, premium software solutions">
+    <meta name="description" content="Premium IT services, software development, cybersecurity, cloud solutions, web development, mobile apps, and digital transformation solutions in Peshawar, Pakistan.">
+    <meta name="keywords" content="IT services Pakistan, software development Peshawar, cybersecurity solutions, cloud computing Pakistan, web development, mobile app development, digital transformation, IT consulting, NEXUS SOLUTION 603, premium software solutions">
     <meta name="author" content="NEXUS SOLUTION 603">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
@@ -58,13 +58,13 @@
       "name": "NEXUS SOLUTION 603",
       "url": "https://nexussolution603.github.io/",
       "logo": "https://nexussolution603.github.io/images/logo.png",
-      "description": "Premium IT services and digital transformation solutions provider based in Karachi, Pakistan",
+      "description": "Premium IT services and digital transformation solutions provider based in Peshawar, Pakistan",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Industrial Estate",
-        "addressLocality": "Karachi",
-        "addressRegion": "Sindh",
-        "postalCode": "75500",
+        "streetAddress": "Peshawar Industrial Estate",
+        "addressLocality": "Peshawar",
+        "addressRegion": "Khyber Pakhtunkhwa",
+        "postalCode": "25000",
         "addressCountry": "Pakistan"
       },
       "contactPoint": {
@@ -1022,6 +1022,90 @@
             transform: translateY(-5px);
         }
         
+        /* SMS Schema Form Modal */
+        .sms-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 99999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .sms-modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        .sms-modal h3 {
+            color: #1a237e;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .sms-modal p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #f0f0f0;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+        
+        .sms-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .sms-btn {
+            padding: 12px 25px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            flex: 1;
+        }
+        
+        .sms-btn-primary {
+            background: #1a237e;
+            color: white;
+        }
+        
+        .sms-btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .sms-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
         /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -1076,6 +1160,10 @@
                 bottom: 90px;
                 right: 30px;
             }
+            
+            .sms-modal-content {
+                padding: 30px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -1117,6 +1205,14 @@
                 bottom: 80px;
                 right: 25px;
             }
+            
+            .sms-modal-content {
+                padding: 25px;
+            }
+            
+            .sms-actions {
+                flex-direction: column;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1148,6 +1244,55 @@
         <h2>Security Protection Active</h2>
         <p>This website is protected against unauthorized copying and distribution.</p>
         <button id="close-security" style="margin-top: 20px; padding: 10px 20px; background: #1a237e; color: white; border: none; border-radius: 5px; cursor: pointer;">I Understand</button>
+    </div>
+    
+    <!-- SMS Schema Form Modal -->
+    <div id="smsModal" class="sms-modal">
+        <div class="sms-modal-content">
+            <button class="close-modal" id="closeSmsModal">&times;</button>
+            <h3>Send Message via SMS</h3>
+            <p>Please fill in your details and message below. We'll send it as an SMS to our support team.</p>
+            
+            <form id="smsSchemaForm">
+                <div class="form-group">
+                    <label for="smsName">Your Name *</label>
+                    <input type="text" id="smsName" name="name" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="smsPhone">Your Phone Number *</label>
+                    <input type="tel" id="smsPhone" name="phone" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="smsEmail">Email Address</label>
+                    <input type="email" id="smsEmail" name="email" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label for="smsSubject">Subject *</label>
+                    <select id="smsSubject" name="subject" class="form-control" required>
+                        <option value="">Select a subject</option>
+                        <option value="service-inquiry">Service Inquiry</option>
+                        <option value="product-info">Product Information</option>
+                        <option value="support">Technical Support</option>
+                        <option value="quotation">Quotation Request</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="smsMessage">Your Message *</label>
+                    <textarea id="smsMessage" name="message" class="form-control" rows="4" required maxlength="500"></textarea>
+                    <small style="color: #666; display: block; margin-top: 5px;">Maximum 500 characters</small>
+                </div>
+                
+                <div class="sms-actions">
+                    <button type="submit" class="sms-btn sms-btn-primary">Send SMS</button>
+                    <button type="button" class="sms-btn sms-btn-secondary" id="cancelSms">Cancel</button>
+                </div>
+            </form>
+        </div>
     </div>
     
     <!-- WhatsApp Floating Button -->
@@ -1186,6 +1331,7 @@
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#team">Team</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" id="sendSmsBtn" style="color: #25D366;"><i class="fas fa-comment-alt"></i> Send SMS</a></li>
                 </ul>
             </nav>
             
@@ -1204,6 +1350,7 @@
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#" id="sendSmsBtnMobile"><i class="fas fa-comment-alt"></i> Send SMS</a></li>
             </ul>
         </div>
     </header>
@@ -1649,8 +1796,8 @@
                         </div>
                         <div>
                             <h3>Office Address</h3>
-                            <p>Industrial Estate, Karachi</p>
-                            <p>Pakistan</p>
+                            <p>Peshawar Industrial Estate, Peshawar</p>
+                            <p>Khyber Pakhtunkhwa, Pakistan</p>
                             <a href="https://maps.app.goo.gl/UB3Tiq6t3HEbhD149" target="_blank" rel="noopener noreferrer" style="color: #1a237e; text-decoration: none; margin-top: 10px; display: inline-block;">
                                 <i class="fas fa-map-marker-alt"></i> View on Google Maps
                             </a>
@@ -1700,7 +1847,7 @@
             
             <!-- Map Section -->
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462118.0244688645!2d66.59497996134921!3d25.19338913920009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e06651d4bbf%3A0x9cf92f44555a0c23!2sKarachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105896.08134128761!2d71.4688904375!3d33.9778103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d917b45b4d4c77%3A0x7fba71f3b6b69979!2sPeshawar%20Industrial%20Estate%2C%20Peshawar%2C%20Khyber%20Pakhtunkhwa%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
                         class="map-frame" 
                         allowfullscreen="" 
                         loading="lazy" 
@@ -1762,7 +1909,7 @@
                     <ul>
                         <li><i class="fas fa-phone"></i> +92-316-9405908</li>
                         <li><i class="fas fa-envelope"></i> info@nexussolution603.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Industrial Estate, Karachi</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Peshawar Industrial Estate, Peshawar</li>
                         <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM</li>
                     </ul>
                 </div>
@@ -1857,6 +2004,91 @@
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                 document.body.style.overflow = '';
             });
+        });
+        
+        // ========== SMS SCHEMA FORM ==========
+        const smsModal = document.getElementById('smsModal');
+        const sendSmsBtn = document.getElementById('sendSmsBtn');
+        const sendSmsBtnMobile = document.getElementById('sendSmsBtnMobile');
+        const closeSmsModal = document.getElementById('closeSmsModal');
+        const cancelSms = document.getElementById('cancelSms');
+        const smsSchemaForm = document.getElementById('smsSchemaForm');
+        
+        // Open SMS modal
+        sendSmsBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            smsModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+        
+        sendSmsBtnMobile.addEventListener('click', (e) => {
+            e.preventDefault();
+            smsModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            // Close mobile menu if open
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // Close SMS modal
+        closeSmsModal.addEventListener('click', () => {
+            smsModal.style.display = 'none';
+            document.body.style.overflow = '';
+        });
+        
+        cancelSms.addEventListener('click', () => {
+            smsModal.style.display = 'none';
+            document.body.style.overflow = '';
+        });
+        
+        // Close modal when clicking outside
+        smsModal.addEventListener('click', (e) => {
+            if (e.target === smsModal) {
+                smsModal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // SMS form submission
+        smsSchemaForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('smsName').value,
+                phone: document.getElementById('smsPhone').value,
+                email: document.getElementById('smsEmail').value,
+                subject: document.getElementById('smsSubject').value,
+                message: document.getElementById('smsMessage').value
+            };
+            
+            // Create SMS body
+            let smsBody = `New SMS from NEXUS SOLUTION 603 Website:\n\n`;
+            smsBody += `Name: ${formData.name}\n`;
+            smsBody += `Phone: ${formData.phone}\n`;
+            if (formData.email) smsBody += `Email: ${formData.email}\n`;
+            smsBody += `Subject: ${formData.subject}\n`;
+            smsBody += `Message: ${formData.message}`;
+            
+            // Create SMS link
+            const phoneNumber = '923169405908';
+            const encodedMessage = encodeURIComponent(smsBody);
+            const smsLink = `sms:${phoneNumber}?body=${encodedMessage}`;
+            
+            // Open SMS app
+            window.open(smsLink, '_blank');
+            
+            // Reset form
+            this.reset();
+            
+            // Close modal
+            smsModal.style.display = 'none';
+            document.body.style.overflow = '';
+            
+            // Show confirmation
+            alert('Your SMS app will open with the pre-filled message. Please send it to complete the process.');
         });
         
         // ========== SMOOTH SCROLLING ==========

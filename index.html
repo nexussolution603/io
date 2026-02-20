@@ -1,28 +1,440 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS AI Assistant</title>
-    <link rel="stylesheet" href="style.css">
+    <title>NEXUS AI - Chat Assistant</title>
+    <style>
+        /* === CSS Styles === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 900px;
+            height: 85vh;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 32px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .chat-header {
+            padding: 24px 28px;
+            background: rgba(15, 23, 42, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            color: white;
+            transform: rotate(3deg);
+            box-shadow: 0 8px 16px -4px rgba(59, 130, 246, 0.4);
+        }
+
+        .logo-text h1 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #f0f9ff, #a5f3fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .logo-text p {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            margin-top: 2px;
+        }
+
+        /* Chat Messages Area */
+        .chat-messages {
+            flex: 1;
+            padding: 28px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            scroll-behavior: smooth;
+        }
+
+        .message {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            max-width: 85%;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message.user {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
+
+        .avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 500;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .message.user .avatar {
+            background: linear-gradient(145deg, #2563eb, #4f46e5);
+        }
+
+        .message.bot .avatar {
+            background: linear-gradient(145deg, #475569, #1e293b);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .bubble {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            padding: 14px 18px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            word-wrap: break-word;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .message.user .bubble {
+            background: linear-gradient(145deg, #2563eb, #4f46e5);
+            color: white;
+            border: none;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message.bot .bubble {
+            border-bottom-left-radius: 4px;
+        }
+
+        .bubble p {
+            margin: 0;
+        }
+
+        /* Typing Indicator */
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 8px 0;
+        }
+
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: #94a3b8;
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.6; }
+            30% { transform: translateY(-6px); opacity: 1; }
+        }
+
+        /* Input Area */
+        .chat-input-area {
+            padding: 24px 28px;
+            background: rgba(15, 23, 42, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        #userInput {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 100px;
+            padding: 16px 22px;
+            font-size: 1rem;
+            color: #f1f5f9;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        #userInput:focus {
+            border-color: #3b82f6;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        #userInput::placeholder {
+            color: #64748b;
+        }
+
+        #sendButton {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border: none;
+            border-radius: 100px;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 8px 18px -6px rgba(59, 130, 246, 0.5);
+        }
+
+        #sendButton:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 22px -4px #3b82f6;
+        }
+
+        #sendButton svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
+        }
+
+        #sendButton:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Scrollbar Styling */
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 100px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: #5f6b7e;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🤖 NEXUS AI Assistant</h1>
-            <p>Your intelligent helper – ask me anything!</p>
-        </header>
-
-        <div id="chat-box" class="chat-box">
-            <!-- Messages will appear here -->
+    <div class="chat-container">
+        <!-- Header -->
+        <div class="chat-header">
+            <div class="logo-area">
+                <div class="logo-icon">N</div>
+                <div class="logo-text">
+                    <h1>NEXUS AI</h1>
+                    <p>by Gemini · Smart Assistant</p>
+                </div>
+            </div>
         </div>
 
-        <div class="input-area">
-            <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off">
-            <button id="send-btn">Send</button>
+        <!-- Chat Messages -->
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+                <div class="avatar">AI</div>
+                <div class="bubble">
+                    <p>नमस्ते! मैं NEXUS AI हूँ। मैं आपकी कैसे सहायता कर सकता हूँ? 😊</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="chat-input-area">
+            <input type="text" id="userInput" placeholder="अपना संदेश यहाँ लिखें..." autocomplete="off">
+            <button id="sendButton">
+                <svg viewBox="0 0 24 24">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+            </button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // === JavaScript Code ===
+        const API_KEY = 'AIzaSyCHhSiVMJZG0zbAp0nVaR0oLyQ2F_k9boA'; // ⚠️ यहाँ अपनी असली API key लगाएं
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${API_KEY}`;
+
+        const chatMessages = document.getElementById('chatMessages');
+        const userInput = document.getElementById('userInput');
+        const sendButton = document.getElementById('sendButton');
+
+        // Function to add a message to the chat
+        function addMessage(sender, text) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', sender);
+
+            const avatarDiv = document.createElement('div');
+            avatarDiv.classList.add('avatar');
+            avatarDiv.textContent = sender === 'user' ? 'आप' : 'AI';
+
+            const bubbleDiv = document.createElement('div');
+            bubbleDiv.classList.add('bubble');
+            bubbleDiv.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`;
+
+            messageDiv.appendChild(avatarDiv);
+            messageDiv.appendChild(bubbleDiv);
+
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Function to show typing indicator
+        function showTypingIndicator() {
+            const indicatorDiv = document.createElement('div');
+            indicatorDiv.classList.add('message', 'bot', 'typing');
+            indicatorDiv.id = 'typingIndicator';
+
+            const avatarDiv = document.createElement('div');
+            avatarDiv.classList.add('avatar');
+            avatarDiv.textContent = 'AI';
+
+            const bubbleDiv = document.createElement('div');
+            bubbleDiv.classList.add('bubble');
+            bubbleDiv.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
+
+            indicatorDiv.appendChild(avatarDiv);
+            indicatorDiv.appendChild(bubbleDiv);
+
+            chatMessages.appendChild(indicatorDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Function to remove typing indicator
+        function removeTypingIndicator() {
+            const indicator = document.getElementById('typingIndicator');
+            if (indicator) {
+                indicator.remove();
+            }
+        }
+
+        // Function to call Gemini API
+        async function getGeminiResponse(userMessage) {
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [{
+                                text: userMessage
+                            }]
+                        }]
+                    })
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    console.error('API Error:', errorData);
+                    throw new Error(`API error: ${response.status}`);
+                }
+
+                const data = await response.json();
+                // Extract text from response
+                const aiText = data.candidates[0].content.parts[0].text;
+                return aiText;
+
+            } catch (error) {
+                console.error('Fetch error:', error);
+                return "माफ़ कीजिए, अभी मैं आपका जवाब नहीं दे पा रहा। कृपया थोड़ी देर बाद कोशिश करें। 🙏";
+            }
+        }
+
+        // Handle send message
+        async function handleSendMessage() {
+            const message = userInput.value.trim();
+            if (!message) return;
+
+            // Disable input and button while processing
+            userInput.disabled = true;
+            sendButton.disabled = true;
+
+            // Add user message to chat
+            addMessage('user', message);
+            userInput.value = '';
+
+            // Show typing indicator
+            showTypingIndicator();
+
+            // Get AI response
+            const aiResponse = await getGeminiResponse(message);
+
+            // Remove typing indicator and add AI response
+            removeTypingIndicator();
+            addMessage('bot', aiResponse);
+
+            // Re-enable input
+            userInput.disabled = false;
+            sendButton.disabled = false;
+            userInput.focus();
+        }
+
+        // Event Listeners
+        sendButton.addEventListener('click', handleSendMessage);
+
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                handleSendMessage();
+            }
+        });
+
+        // Initial focus
+        userInput.focus();
+    </script>
 </body>
 </html>

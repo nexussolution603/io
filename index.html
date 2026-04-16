@@ -2,400 +2,724 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS AI - Chat Assistant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Rana Solar | Inverter Repair Lab & NRE Claim Center - Pakistan's #1 Solar Experts</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Rana Solar Inverter Repairing Lab + NRE Solar Inverter Claim Center - Pakistan's #1 solar inverter repair, NRE warranty claims, original spare parts (IGBT, FET, MPPT), and professional installation. 5000+ happy customers. Call 0300-0041131">
+    <meta name="keywords" content="solar inverter repair, NRE solar claim, solar inverter service, IGBT, FET, MPPT, solar installation, Rana Solar, inverter repairing lab, solar panel repair, solar warranty claim, solar inverter lab">
+    <meta name="author" content="Rana Solar Inverter Repairing Lab">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ranasolar.com/">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Rana Solar - Inverter Repair Lab & NRE Claim Center">
+    <meta property="og:description" content="Professional solar inverter repair, NRE warranty claims, original spare parts. 5000+ inverters repaired. Call now!">
+    <meta property="og:image" content="https://img.icons8.com/fluency/96/solar-panel.png">
+    <meta property="og:url" content="https://ranasolar.com/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rana Solar - Inverter Repair Lab & NRE Claim Center">
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Rana Solar Inverter Repairing Lab + NRE Solar Inverter Claim Center",
+      "image": "https://img.icons8.com/fluency/96/solar-panel.png",
+      "telephone": "+923000041131",
+      "email": "info@ranasolar.com",
+      "address": {"@type": "PostalAddress", "addressLocality": "Pakistan", "addressCountry": "PK"},
+      "openingHours": "Mo-Sa 09:00-19:00",
+      "priceRange": "$$",
+      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1250"}
+    }
+    </script>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            user-select: none;
         }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
-            height: 100vh;
+            font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+            background: #0a0f1c;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        html { scroll-behavior: smooth; }
+        
+        /* Modern Scroll */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
+        
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 24px; }
+        
+        /* Header - Premium Blue Dark */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #0a0f1c 100%);
+            border-bottom: 2px solid #3b82f6;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 12px 0;
+        }
+        .nav-bar {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            margin: 0;
-            padding: 20px;
+            flex-wrap: wrap;
         }
-
-        .chat-container {
-            width: 100%;
-            max-width: 900px;
-            height: 85vh;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 32px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.05);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .chat-header {
-            padding: 24px 28px;
-            background: rgba(15, 23, 42, 0.8);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .logo-area {
+        .logo {
             display: flex;
             align-items: center;
             gap: 12px;
         }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            border-radius: 12px;
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            background: #3b82f6;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 20px;
-            color: white;
-            transform: rotate(3deg);
-            box-shadow: 0 8px 16px -4px rgba(59, 130, 246, 0.4);
+            font-size: 1.8rem;
         }
-
-        .logo-text h1 {
-            font-size: 1.7rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #f0f9ff, #a5f3fc);
+        .logo h1 { font-size: 1.4rem; font-weight: 700; color: white; }
+        .logo p { font-size: 0.6rem; color: #94a3b8; }
+        
+        /* Desktop Nav */
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+        .nav-links a:hover, .nav-links a.active { color: #3b82f6; }
+        .cta-nav {
+            background: #3b82f6;
+            color: white !important;
+            padding: 6px 18px;
+            border-radius: 40px;
+        }
+        
+        /* Mobile Menu Button */
+        .menu-btn {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        /* Mobile Nav */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: #0f172a;
+            flex-direction: column;
+            padding: 20px;
+            gap: 15px;
+            z-index: 999;
+            border-bottom: 2px solid #3b82f6;
+        }
+        .mobile-nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            padding: 10px;
+            font-weight: 500;
+            border-radius: 10px;
+        }
+        .mobile-nav a:hover { background: #1e293b; color: #3b82f6; }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(120deg, #0f172a 0%, #0a0f1c 100%);
+            padding: 50px 0 60px;
+        }
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        .hero-text h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #3b82f6);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-
-        .logo-text p {
-            color: #94a3b8;
-            font-size: 0.8rem;
-            margin-top: 2px;
+        .hero-text .phone {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: #3b82f6;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin: 20px 0;
         }
-
-        .chat-messages {
-            flex: 1;
-            padding: 28px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            scroll-behavior: smooth;
-        }
-
-        .message {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            max-width: 85%;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .message.user {
-            align-self: flex-end;
-            flex-direction: row-reverse;
-        }
-
-        .avatar {
-            width: 38px;
-            height: 38px;
-            border-radius: 12px;
-            background: #334155;
-            display: flex;
+        .hero-img img { max-width: 100%; border-radius: 24px; box-shadow: 0 20px 35px rgba(0,0,0,0.3); }
+        .whatsapp-consult {
+            background: #25D366;
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            font-weight: 500;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 50px;
             color: white;
-            flex-shrink: 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 15px;
         }
-
-        .message.user .avatar {
-            background: linear-gradient(145deg, #2563eb, #4f46e5);
+        
+        /* Trust Bar */
+        .trust-bar {
+            background: #1e293b;
+            padding: 15px 0;
+            text-align: center;
         }
-
-        .message.bot .avatar {
-            background: linear-gradient(145deg, #475569, #1e293b);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .trust-logos { display: flex; justify-content: center; gap: 35px; flex-wrap: wrap; }
+        .trust-logos span { font-size: 0.85rem; font-weight: 500; color: #94a3b8; }
+        
+        /* Section */
+        .section-title {
+            font-size: 2rem;
+            margin: 50px 0 25px;
+            text-align: center;
+            font-weight: 700;
+            color: white;
         }
-
-        .bubble {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(8px);
-            padding: 14px 18px;
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: #3b82f6;
+            margin: 12px auto;
+        }
+        
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 22px;
+            margin: 30px 0;
+        }
+        .product-card {
+            background: #1e293b;
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #e2e8f0;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            word-wrap: break-word;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            padding: 18px;
+            transition: 0.3s;
+            border: 1px solid #334155;
         }
-
-        .message.user .bubble {
-            background: linear-gradient(145deg, #2563eb, #4f46e5);
-            color: white;
-            border: none;
-            border-bottom-right-radius: 4px;
+        .product-card:hover { transform: translateY(-5px); border-color: #3b82f6; box-shadow: 0 10px 25px rgba(59,130,246,0.2); }
+        .product-card h3 { font-size: 1.1rem; color: white; margin-bottom: 6px; }
+        .rating { color: #fbbf24; font-size: 0.75rem; margin: 5px 0; }
+        .product-desc { color: #94a3b8; font-size: 0.8rem; margin: 8px 0; }
+        .stock-badge { background: #3b82f620; color: #3b82f6; padding: 3px 10px; border-radius: 20px; font-size: 0.65rem; display: inline-block; }
+        .share-buttons { display: flex; gap: 8px; margin-top: 12px; }
+        .share-btn { background: #334155; border: none; padding: 4px 10px; border-radius: 30px; cursor: pointer; font-size: 0.65rem; color: white; }
+        
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 22px;
+            margin: 30px 0;
         }
-
-        .message.bot .bubble {
-            border-bottom-left-radius: 4px;
+        .service-card {
+            background: #1e293b;
+            border-radius: 20px;
+            padding: 22px 16px;
+            text-align: center;
+            border: 1px solid #334155;
+            transition: 0.3s;
         }
-
-        .typing-indicator {
-            display: flex;
-            gap: 4px;
-            padding: 8px 0;
+        .service-card:hover { border-color: #3b82f6; }
+        .service-card h3 { font-size: 1rem; margin-bottom: 8px; color: white; }
+        .service-card p { font-size: 0.75rem; color: #94a3b8; }
+        
+        /* Industries - 3 Cards */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+            margin: 35px 0;
         }
-
-        .typing-indicator span {
-            width: 8px;
-            height: 8px;
-            background: #94a3b8;
+        .industry-card {
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border-radius: 28px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid #334155;
+        }
+        .industry-card h3 { font-size: 1.3rem; color: #3b82f6; margin-bottom: 12px; }
+        .industry-card p { color: #cbd5e1; font-size: 0.85rem; }
+        
+        /* Team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 25px;
+            margin: 35px 0;
+        }
+        .team-member {
+            background: #1e293b;
+            border-radius: 24px;
+            padding: 22px;
+            text-align: center;
+        }
+        .team-member img {
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            animation: typing 1.4s infinite ease-in-out;
+            object-fit: cover;
+            border: 3px solid #3b82f6;
+            margin-bottom: 12px;
         }
-
-        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
-        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
-
-        @keyframes typing {
-            0%, 60%, 100% { transform: translateY(0); opacity: 0.6; }
-            30% { transform: translateY(-6px); opacity: 1; }
+        .team-member h3 { color: white; font-size: 1rem; }
+        .team-member p { color: #3b82f6; font-size: 0.75rem; margin: 5px 0; }
+        .team-socials a { margin: 0 5px; color: #94a3b8; font-size: 0.9rem; display: inline-block; }
+        .team-socials a:hover { color: #3b82f6; }
+        
+        /* Contact Form */
+        .contact-form {
+            background: #1e293b;
+            border-radius: 28px;
+            padding: 35px;
+            margin: 45px 0;
+            border: 1px solid #334155;
         }
-
-        .chat-input-area {
-            padding: 24px 28px;
-            background: rgba(15, 23, 42, 0.6);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            display: flex;
-            gap: 16px;
-            align-items: center;
+        .form-group { margin-bottom: 16px; }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #334155;
+            border-radius: 40px;
+            background: #0f172a;
+            color: white;
+            font-family: inherit;
         }
-
-        #userInput {
-            flex: 1;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 100px;
-            padding: 16px 22px;
-            font-size: 1rem;
-            color: #f1f5f9;
-            outline: none;
-            transition: all 0.2s;
-        }
-
-        #userInput:focus {
-            border-color: #3b82f6;
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
-        }
-
-        #userInput::placeholder {
-            color: #64748b;
-        }
-
-        #sendButton {
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        textarea { border-radius: 20px; }
+        .btn-submit {
+            background: #3b82f6;
             border: none;
-            border-radius: 100px;
-            width: 56px;
-            height: 56px;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+        }
+        .btn-submit:hover { background: #2563eb; }
+        
+        /* Footer - New Design */
+        footer {
+            background: #0a0f1c;
+            border-top: 1px solid #1e293b;
+            padding: 45px 0 25px;
+            margin-top: 40px;
+        }
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 35px;
+        }
+        .footer-col h4 { color: #3b82f6; margin-bottom: 15px; font-size: 1.1rem; }
+        .footer-col p, .footer-col a { color: #94a3b8; font-size: 0.8rem; text-decoration: none; display: block; margin-bottom: 6px; }
+        .footer-col a:hover { color: #3b82f6; }
+        .social-icons a {
+            color: #94a3b8;
+            margin-right: 18px;
+            font-size: 1.3rem;
+            display: inline-block;
+        }
+        .social-icons a:hover { color: #3b82f6; }
+        .credit { text-align: center; margin-top: 35px; border-top: 1px solid #1e293b; padding-top: 20px; font-size: 0.7rem; color: #64748b; }
+        .credit a { color: #3b82f6; text-decoration: none; }
+        
+        /* Floating WhatsApp */
+        .float-wa {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 8px 18px -6px rgba(59, 130, 246, 0.5);
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 1100;
+            transition: 0.3s;
+            text-decoration: none;
         }
-
-        #sendButton:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 22px -4px #3b82f6;
+        .float-wa:hover { transform: scale(1.1); background: #20b359; }
+        
+        /* Modal & Cookie */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
         }
-
-        #sendButton svg {
-            width: 22px;
-            height: 22px;
-            fill: white;
+        .modal-content { background: #1e293b; max-width: 450px; width: 90%; padding: 28px; border-radius: 28px; color: white; }
+        .close-modal { float: right; font-size: 24px; cursor: pointer; color: white; }
+        .cookie-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: #0f172a;
+            border: 1px solid #3b82f6;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            z-index: 1500;
+            font-size: 0.75rem;
         }
-
-        #sendButton:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
+        .cookie-btn { background: #3b82f6; border: none; padding: 6px 18px; border-radius: 30px; color: white; cursor: pointer; }
+        .security-toast {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            background: #ef4444;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 0.65rem;
+            z-index: 999;
+            display: none;
         }
-
-        .chat-messages::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .chat-messages::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .chat-messages::-webkit-scrollbar-thumb {
-            background: #475569;
-            border-radius: 100px;
-        }
-
-        .chat-messages::-webkit-scrollbar-thumb:hover {
-            background: #5f6b7e;
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .menu-btn { display: block; }
+            .mobile-nav.show { display: flex; }
+            .hero-text h1 { font-size: 1.8rem; }
+            .section-title { font-size: 1.5rem; }
+            .container { padding: 0 16px; }
+            .float-wa { width: 48px; height: 48px; font-size: 1.6rem; bottom: 15px; right: 15px; }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="chat-container">
-        <div class="chat-header">
-            <div class="logo-area">
-                <div class="logo-icon">N</div>
-                <div class="logo-text">
-                    <h1>NEXUS AI</h1>
-                    <p>by Gemini · Smart Assistant</p>
-                </div>
+
+<header>
+    <div class="container nav-bar">
+        <div class="logo">
+            <div class="logo-img"><i class="fas fa-solar-panel"></i></div>
+            <div><h1>RANA SOLAR</h1><p>Inverter Repair Lab | NRE Claim Center</p></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#industries">Industries</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="cta-nav">Claim/Quote</a></li>
+        </ul>
+        <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact">Claim/Quote</a>
+    </div>
+</header>
+
+<main id="home">
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Rana Solar Inverter Repairing Lab + NRE Claim Center</h1>
+                <div class="phone"><i class="fas fa-phone-alt"></i> 0300-0041131</div>
+                <p>✔ Pakistan's #1 Solar Inverter Repair Lab | ✔ NRE Solar Warranty Claims | ✔ Original IGBT, FET, MPPT, Display, Main Board | ✔ 5000+ Inverters Repaired | ✔ Free Consultation</p>
+                <a href="https://wa.me/923000041131?text=Hello%20Rana%20Solar%2C%20I%20need%20expert%20consultation" class="whatsapp-consult" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Free Consultation</a>
+            </div>
+            <div class="hero-img">
+                <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=500&h=350&fit=crop" alt="Solar Inverter Repair Lab">
             </div>
         </div>
+    </section>
 
-        <div class="chat-messages" id="chatMessages">
-            <div class="message bot">
-                <div class="avatar">AI</div>
-                <div class="bubble">
-                    <p>Hello! I'm NEXUS AI. How can I help you today? 😊</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="chat-input-area">
-            <input type="text" id="userInput" placeholder="Type your message here..." autocomplete="off">
-            <button id="sendButton">
-                <svg viewBox="0 0 24 24">
-                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-                </svg>
-            </button>
+    <div class="trust-bar">
+        <div class="container trust-logos">
+            <span>⭐ 5000+ Inverters Repaired</span>
+            <span>🔧 15+ Years Experience</span>
+            <span>🏆 NRE Authorized Center</span>
+            <span>📦 100% Original Parts</span>
+            <span>⚡ 24/7 Support</span>
         </div>
     </div>
 
-    <script>
-        // === NEXUS AI with Your Gemini API Key ===
-        const API_KEY = 'AIzaSyCHhSiVMJZG0zbAp0nVaR0oLyQ2F_k9boA'; // ✅ Your actual key
-        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${API_KEY}`;
+    <!-- Products - 20+ Items -->
+    <div class="container" id="products">
+        <h2 class="section-title">Solar Inverter Products & Spare Parts</h2>
+        <div class="products-grid" id="productsGrid"></div>
+    </div>
 
-        const chatMessages = document.getElementById('chatMessages');
-        const userInput = document.getElementById('userInput');
-        const sendButton = document.getElementById('sendButton');
+    <!-- Services -->
+    <div class="container" id="services">
+        <h2 class="section-title">Our Repair & Installation Services</h2>
+        <div class="services-grid" id="servicesGrid"></div>
+    </div>
 
-        function addMessage(sender, text) {
-            const messageDiv = document.createElement('div');
-            messageDiv.classList.add('message', sender);
+    <!-- Industries - Repairing Lab | Selling | Selling -->
+    <div class="container" id="industries">
+        <h2 class="section-title">Our Business Divisions</h2>
+        <div class="industries-grid">
+            <div class="industry-card"><h3>🔧 Solar Inverter Repairing Lab</h3><p>Expert repair of all solar inverter brands. IGBT, FET, MPPT, Main Board, Display repair. Fast turnaround, warranty on repairs. Pakistan's most trusted repair lab with 5000+ successful repairs.</p></div>
+            <div class="industry-card"><h3>🛒 Solar Inverter & Parts Selling</h3><p>Original solar inverters (1kW-30kW), IGBT modules, FETs, Optocouplers, Capacitors, MPPT controllers, System Cards, Cooling Fans, Coils, Chopper, Main Boards, Displays. Best prices guaranteed.</p></div>
+            <div class="industry-card"><h3>🏭 NRE Solar Claim & New Systems</h3><p>Official NRE Solar Inverter Claim Center. Complete warranty claim processing. Also selling brand new NRE solar inverters, complete solar systems, and professional installation services.</p></div>
+        </div>
+    </div>
 
-            const avatarDiv = document.createElement('div');
-            avatarDiv.classList.add('avatar');
-            avatarDiv.textContent = sender === 'user' ? 'You' : 'AI';
+    <!-- Team -->
+    <div class="container" id="team">
+        <h2 class="section-title">Our Expert Team</h2>
+        <div class="team-grid" id="teamGrid"></div>
+    </div>
 
-            const bubbleDiv = document.createElement('div');
-            bubbleDiv.classList.add('bubble');
-            bubbleDiv.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`;
+    <!-- Contact Form - Submit Only -->
+    <div class="container" id="contact">
+        <div class="contact-form">
+            <h3 style="margin-bottom: 20px; font-size: 1.5rem; text-align: center;">📋 Get Quote / NRE Claim</h3>
+            <form id="contactForm">
+                <div class="form-group"><input type="text" placeholder="Full Name" required></div>
+                <div class="form-group"><input type="email" placeholder="Email Address"></div>
+                <div class="form-group"><input type="tel" placeholder="WhatsApp Number" required></div>
+                <div class="form-group">
+                    <select id="productSelect">
+                        <option>Select Service / Product</option>
+                        <option>NRE Warranty Claim</option><option>Inverter Repair</option><option>IGBT/FET Replacement</option>
+                        <option>MPPT Repair</option><option>New Solar Inverter</option><option>Solar Installation</option>
+                        <option>Main Board / Display</option><option>Solar Spare Parts</option>
+                    </select>
+                </div>
+                <div class="form-group"><textarea rows="2" placeholder="Describe issue or requirement..."></textarea></div>
+                <button type="submit" class="btn-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</main>
 
-            messageDiv.appendChild(avatarDiv);
-            messageDiv.appendChild(bubbleDiv);
-            chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/923000041131?text=Hello%20Rana%20Solar%2C%20I%20need%20assistance" class="float-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-        function showTypingIndicator() {
-            const indicatorDiv = document.createElement('div');
-            indicatorDiv.classList.add('message', 'bot', 'typing');
-            indicatorDiv.id = 'typingIndicator';
+<footer>
+    <div class="container footer-inner">
+        <div class="footer-col">
+            <h4><i class="fas fa-solar-panel"></i> RANA SOLAR</h4>
+            <p>Inverter Repairing Lab + NRE Claim Center</p>
+            <p>Pakistan's #1 Solar Service Provider</p>
+            <p><i class="fas fa-phone"></i> 0300-0041131</p>
+            <p><i class="fas fa-envelope"></i> info@ranasolar.com</p>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <a href="#products">Products</a>
+            <a href="#services">Services</a>
+            <a href="#industries">Industries</a>
+            <a href="#team">Team</a>
+            <a href="#contact">NRE Claim</a>
+        </div>
+        <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="#" id="privacyLink">Privacy Policy</a>
+            <a href="#" id="termsLink">Terms of Service</a>
+            <a href="#" id="cookieLink">Cookie Policy</a>
+            <a href="#" id="disclaimerLink">Disclaimer</a>
+        </div>
+        <div class="footer-col">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+                <a href="https://facebook.com/ranasolar" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/ranasolar" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com/company/ranasolar" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://instagram.com/ranasolar" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/923000041131" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://tiktok.com/@ranasolar" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://youtube.com/ranasolar" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="credit">
+        © <span id="currentYear"></span> <a href="https://nexussolution603.github.io/com/" target="_blank">NEXUS SOLUTION</a> | Rana Solar - Inverter Repair & NRE Claim Center | All Rights Reserved
+    </div>
+</footer>
 
-            const avatarDiv = document.createElement('div');
-            avatarDiv.classList.add('avatar');
-            avatarDiv.textContent = 'AI';
+<!-- Modals -->
+<div id="modal" class="modal"><div class="modal-content"><span class="close-modal">&times;</span><div id="modalBody"></div></div></div>
+<div id="cookieConsent" class="cookie-banner"><span>🔧 Rana Solar uses cookies for better experience.</span><button id="acceptCookies" class="cookie-btn">Accept</button></div>
+<div id="securityToast" class="security-toast">🔒 Content Protected</div>
 
-            const bubbleDiv = document.createElement('div');
-            bubbleDiv.classList.add('bubble');
-            bubbleDiv.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
-
-            indicatorDiv.appendChild(avatarDiv);
-            indicatorDiv.appendChild(bubbleDiv);
-            chatMessages.appendChild(indicatorDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function removeTypingIndicator() {
-            const indicator = document.getElementById('typingIndicator');
-            if (indicator) indicator.remove();
-        }
-
-        async function getGeminiResponse(userMessage) {
-            try {
-                const response = await fetch(API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{
-                            parts: [{ text: userMessage }]
-                        }]
-                    })
-                });
-
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    console.error('API Error:', errorText);
-                    throw new Error(`API error: ${response.status}`);
-                }
-
-                const data = await response.json();
-                return data.candidates[0].content.parts[0].text;
-            } catch (error) {
-                console.error('Fetch error:', error);
-                return "I'm sorry, I'm having trouble connecting right now. Please try again later. 🙏";
-            }
-        }
-
-        async function handleSendMessage() {
-            const message = userInput.value.trim();
-            if (!message) return;
-
-            userInput.disabled = true;
-            sendButton.disabled = true;
-
-            addMessage('user', message);
-            userInput.value = '';
-            showTypingIndicator();
-
-            const aiResponse = await getGeminiResponse(message);
-
-            removeTypingIndicator();
-            addMessage('bot', aiResponse);
-
-            userInput.disabled = false;
-            sendButton.disabled = false;
-            userInput.focus();
-        }
-
-        sendButton.addEventListener('click', handleSendMessage);
-        userInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                handleSendMessage();
+<script>
+    (function(){
+        // Security
+        document.addEventListener('contextmenu', e => { e.preventDefault(); showMsg(); });
+        document.addEventListener('selectstart', e => e.preventDefault());
+        document.addEventListener('copy', e => { e.preventDefault(); showMsg(); });
+        document.addEventListener('keydown', e => {
+            if(e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) || (e.ctrlKey && e.key === 'u')) {
+                e.preventDefault(); showMsg();
             }
         });
-
-        userInput.focus();
-    </script>
+        function showMsg() { let t=document.getElementById('securityToast'); if(t){t.style.display='block'; setTimeout(()=>t.style.display='none',1500);} }
+        
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        menuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('show');
+        });
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => mobileNav.classList.remove('show'));
+        });
+        
+        // Products (20+ items)
+        const products = [
+            "New IGBT Available", "New FET Available", "New Opto Available", "New Capacitor", "Solar MPPT Module",
+            "System Control Card", "LCD Display", "Solar Inverter 3kW", "Solar Inverter 5kW", "Solar Inverter 8kW",
+            "Cooling Fan", "Transformer Coil", "Chopper Module", "Main Board", "Repair Kit Combo",
+            "NRE Claim Service", "Solar Installation", "MPPT Controller 60A", "Gate Driver IC", "AC/DC Breaker",
+            "Solar Inverter 10kW", "Hybrid Inverter 6kW"
+        ];
+        const ratings = [4.9,4.8,4.7,4.8,4.9,4.8,4.7,4.8,4.9,4.8,4.6,4.7,4.8,4.9,4.8,5.0,4.9,4.8,4.7,4.8,4.9,4.8];
+        const tags = ["In Stock","In Stock","Ready","In Stock","New","Premium","Original","Best","Hot","Pro","In Stock","Available","Heavy","Ready","Combo","Service","Install","Hot","New","Safety","Best","Pro"];
+        const descs = ["Original IGBT modules","Power MOSFETs","Optocoupler ICs","Electrolytic caps","60A/80A MPPT","Main control board","Plug & play display","Hybrid inverter 3kW","Home solution 5kW","Three phase 8kW","High airflow fan","For inverters","IGBT chopper","Universal fit","Full repair kit","Warranty claim","Complete setup","20A-100A","For IGBT","Safety device","10kW inverter","6kW hybrid"];
+        
+        const prodContainer = document.getElementById('productsGrid');
+        for(let i=0; i<products.length; i++){
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <h3>${products[i]}</h3>
+                <div class="rating">${'★'.repeat(Math.floor(ratings[i]))} (${ratings[i]})</div>
+                <div><span class="stock-badge">${tags[i]}</span></div>
+                <p class="product-desc">${descs[i]}</p>
+                <div class="share-buttons">
+                    <button class="share-btn share-wa" data-product="${products[i]}"><i class="fab fa-whatsapp"></i> Inquiry</button>
+                    <button class="share-btn share-fb" data-product="${products[i]}"><i class="fab fa-facebook"></i> Share</button>
+                </div>
+            `;
+            prodContainer.appendChild(card);
+        }
+        
+        function attachShareEvents(){
+            document.querySelectorAll('.share-wa').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    let prod = btn.getAttribute('data-product');
+                    window.open(`https://wa.me/923000041131?text=${encodeURIComponent(`Hello Rana Solar, I need: ${prod}`)}`, '_blank');
+                });
+            });
+            document.querySelectorAll('.share-fb').forEach(btn => {
+                btn.addEventListener('click', () => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://ranasolar.com')}`, '_blank'));
+            });
+        }
+        
+        // Services
+        const servicesArr = [
+            "NRE Warranty Claim Center", "IGBT / FET Replacement", "Solar MPPT Expert Repair", "Display & Main Board", "Complete Inverter Repair", "Solar Installation Service", "Original Spare Parts Supply", "On-Site Repair Support"
+        ];
+        const servGrid = document.getElementById('servicesGrid');
+        servicesArr.forEach(s => {
+            const div = document.createElement('div');
+            div.className = 'service-card';
+            div.innerHTML = `<h3>${s}</h3><p>Professional service with warranty</p>`;
+            servGrid.appendChild(div);
+        });
+        
+        // Team
+        const team = [
+            { name: "Rana Imran", role: "Senior Technician", img: "https://randomuser.me/api/portraits/men/45.jpg", whatsapp:"https://wa.me/923000041131", twitter:"#", facebook:"#", linkedin:"#", youtube:"#", tiktok:"#" },
+            { name: "Rana Usman", role: "NRE Claim Expert", img: "https://randomuser.me/api/portraits/men/32.jpg", whatsapp:"#", twitter:"#", facebook:"#", linkedin:"#", youtube:"#", tiktok:"#" },
+            { name: "Ahmed Raza", role: "MPPT Specialist", img: "https://randomuser.me/api/portraits/men/67.jpg", whatsapp:"#", twitter:"#", facebook:"#", linkedin:"#", youtube:"#", tiktok:"#" },
+            { name: "Fatima Zafar", role: "Customer Support", img: "https://randomuser.me/api/portraits/women/68.jpg", whatsapp:"#", twitter:"#", facebook:"#", linkedin:"#", youtube:"#", tiktok:"#" }
+        ];
+        const teamGrid = document.getElementById('teamGrid');
+        team.forEach(m => {
+            const div = document.createElement('div');
+            div.className = 'team-member';
+            div.innerHTML = `
+                <img src="${m.img}" alt="${m.name}">
+                <h3>${m.name}</h3>
+                <p>${m.role}</p>
+                <div class="team-socials">
+                    <a href="${m.whatsapp}" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="${m.facebook}" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="${m.twitter}" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="${m.linkedin}" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="${m.youtube}" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="${m.tiktok}" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            `;
+            teamGrid.appendChild(div);
+        });
+        
+        // Modal Legal
+        const modal = document.getElementById('modal');
+        const modalBody = document.getElementById('modalBody');
+        const closeModal = document.querySelector('.close-modal');
+        function showModal(title, html) { modalBody.innerHTML = `<h3>${title}</h3>${html}`; modal.style.display = 'flex'; }
+        closeModal.onclick = () => modal.style.display = 'none';
+        window.onclick = (e) => { if(e.target === modal) modal.style.display = 'none'; };
+        document.getElementById('privacyLink')?.addEventListener('click', (e) => { e.preventDefault(); showModal('Privacy Policy', '<p>Your data is safe with Rana Solar. We never share your information.</p>'); });
+        document.getElementById('termsLink')?.addEventListener('click', (e) => { e.preventDefault(); showModal('Terms of Service', '<p>All repairs come with 30-day warranty. NRE claims processed as per policy.</p>'); });
+        document.getElementById('cookieLink')?.addEventListener('click', (e) => { e.preventDefault(); showModal('Cookie Policy', '<p>We use cookies to improve your experience.</p>'); });
+        document.getElementById('disclaimerLink')?.addEventListener('click', (e) => { e.preventDefault(); showModal('Disclaimer', '<p>Results may vary based on inverter condition.</p>'); });
+        
+        // Cookie
+        const cookieBanner = document.getElementById('cookieConsent');
+        if(!localStorage.getItem('ranaSolarCookie')) cookieBanner.style.display = 'flex';
+        else cookieBanner.style.display = 'none';
+        document.getElementById('acceptCookies')?.addEventListener('click', () => {
+            localStorage.setItem('ranaSolarCookie','true');
+            cookieBanner.style.display = 'none';
+        });
+        
+        // Contact Form - Submit only
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e){
+            e.preventDefault();
+            const selectVal = document.getElementById('productSelect').value;
+            window.open(`https://wa.me/923000041131?text=${encodeURIComponent(`Hello Rana Solar, I need: ${selectVal}`)}`, '_blank');
+            alert("Thank you! Redirecting to WhatsApp.");
+        });
+        
+        document.getElementById('currentYear').innerText = new Date().getFullYear();
+        attachShareEvents();
+    })();
+</script>
 </body>
 </html>

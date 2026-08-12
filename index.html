@@ -1586,110 +1586,113 @@ const waMenu = document.getElementById('waMenu');
   document.addEventListener('click', function(e) { if (!waFloat.contains(e.target) && !waMenu.contains(e.target)) { waMenuOpen = false; waMenu.style.display = 'none'; } });
 
   // ==========================================
-  // 3. GUILD MEMBERS SLIDER (UPDATED WITH DATA FROM SPREADSHEET)
-  // ==========================================
-  const membersData = [
-    { name: 'ITACHI FF', uid: '292', points: 15719, role: 'Rusher' },
-    { name: 'HK GAMER YT', uid: '164', points: 14144, role: 'Rusher' },
-    { name: 'MOON FF', uid: '182', points: 12406, role: 'Rusher' },
-    { name: 'MOON 2 FF', uid: '169', points: 9765, role: 'Rusher' },
-    { name: 'AHMAD FF', uid: '262', points: 9331, role: 'Rusher' },
-    { name: 'INTROVERT FF', uid: '246', points: 9038, role: 'Rusher' },
-    { name: 'LEGEND FF', uid: '131', points: 8626, role: 'Rusher' },
-    { name: 'EXTROVERT FF', uid: '184', points: 8762, role: 'Rusher' },
-    { name: 'ASTROVERT FF', uid: '136', points: 8635, role: 'Rusher' },
-    { name: 'ZALIM FF', uid: '204', points: 5617, role: 'Rusher' },
-    { name: 'DICTATOR FF', uid: '142', points: 5213, role: 'Rusher' },
-    { name: 'IANA FS', uid: '125', points: 5041, role: 'Rusher' },
-    { name: 'WHITE FF', uid: '161', points: 4648, role: 'Rusher' },
-    { name: 'Modenator FF', uid: '7', points: 4553, role: 'Rusher' },
-    { name: 'The LAST HOPE', uid: '212', points: 4324, role: 'Rusher' },
-    { name: 'BIGBATH FF', uid: '103', points: 3956, role: 'Rusher' },
-    { name: 'TANGSTER FF', uid: '204', points: 3712, role: 'Rusher' },
-    { name: 'KABEER FF', uid: '172', points: 3114, role: 'Rusher' },
-    { name: 'AGENT FF', uid: '0', points: 3038, role: 'Survivor' },
-    { name: 'NISOKA FF', uid: '82', points: 2817, role: 'Rusher' },
-    { name: 'AZIZ FF', uid: '141', points: 2584, role: 'Rusher' },
-    { name: 'APOLLO FF', uid: '45', points: 2569, role: 'Rusher' },
-    { name: 'ZAIN FF', uid: '102', points: 2554, role: 'Rusher' },
-    { name: 'MK STAR FF', uid: '71', points: 2508, role: 'Rusher' },
-    { name: 'OMNIVERT FF', uid: '142', points: 2479, role: 'Rusher' },
-    { name: 'Konkar FF', uid: '109', points: 2365, role: 'Rusher' },
-    { name: 'RAJPUT FF', uid: '71', points: 2246, role: 'Rusher' },
-    { name: 'JERRY FF', uid: '118', points: 2007, role: 'Rusher' },
-    { name: 'AFTAJ JUTT', uid: '44', points: 1969, role: 'Rusher' },
-    { name: 'BLUE ROX', uid: '117', points: 1810, role: 'Rusher' },
-    { name: 'UMER', uid: '102', points: 1651, role: 'Rusher' },
-    { name: 'SHOUFF', uid: '36', points: 1562, role: 'Rusher' },
-    { name: 'DOREMON', uid: '0', points: 1476, role: 'Survivor' },
-    { name: 'HAMMAD FF', uid: '0', points: 1473, role: 'Survivor' },
-    { name: 'BLACK 444', uid: '60', points: 1456, role: 'Rusher' },
-    { name: 'THAN B2K', uid: '68', points: 1427, role: 'Rusher' },
-    { name: 'CAPT', uid: '0', points: 1130, role: 'Survivor' },
-    { name: 'RANA FF', uid: '0', points: 1041, role: 'Survivor' },
-    { name: 'RAYAN FF', uid: '57', points: 971, role: 'Rusher' },
-    { name: 'KGR MAFIA', uid: '41', points: 945, role: 'Rusher' },
-    { name: 'KARELA', uid: '11', points: 930, role: 'Rusher' },
-    { name: 'SPEEDY FF', uid: '0', points: 887, role: 'Survivor' },
-    { name: 'TSG GAMER', uid: '81', points: 805, role: 'Rusher' },
-    { name: 'PALEBEE', uid: '47', points: 786, role: 'Rusher' },
-    { name: 'FBINEUXS', uid: '88', points: 595, role: 'Rusher' },
-    { name: 'NARUTO', uid: '0', points: 592, role: 'Survivor' },
-    { name: '7x OnefireX', uid: '1', points: 593, role: 'Rusher' },
-    { name: 'EE OR LOOR', uid: '0', points: 430, role: 'Survivor' },
-    { name: 'MUZI FF', uid: '40', points: 360, role: 'Rusher' },
-    { name: 'XX KASHIF', uid: '12', points: 354, role: 'Rusher' },
-    { name: 'MAN', uid: '0', points: 220, role: 'Survivor' },
-    { name: 'KRANO 70', uid: '0', points: 90, role: 'Survivor' },
-    { name: 'XT EGO', uid: '0', points: 575, role: 'Survivor' }
-  ];
+// 3. GUILD MEMBERS SLIDER (UPDATED WITH DATA FROM SPREADSHEET)
+// ==========================================
+const membersData = [
+  { name: 'ITACHI FF', points: 292, glory: 15719, role: 'Rusher' },
+  { name: 'HK GAMER YT', points: 164, glory: 14144, role: 'Rusher' },
+  { name: 'MOON FF', points: 182, glory: 12406, role: 'Rusher' },
+  { name: 'MOON 2 FF', points: 169, glory: 9765, role: 'Rusher' },
+  { name: 'AHMAD FF', points: 262, glory: 9331, role: 'Rusher' },
+  { name: 'INTROVERT FF', points: 246, glory: 9038, role: 'Rusher' },
+  { name: 'LEGEND FF', points: 131, glory: 8626, role: 'Rusher' },
+  { name: 'EXTROVERT FF', points: 184, glory: 8762, role: 'Rusher' },
+  { name: 'ASTROVERT FF', points: 136, glory: 8635, role: 'Rusher' },
+  { name: 'ZALIM FF', points: 204, glory: 5617, role: 'Rusher' },
+  { name: 'DICTATOR FF', points: 142, glory: 5213, role: 'Rusher' },
+  { name: 'ANAS FF', points: 125, glory: 5041, role: 'Rusher' },
+  { name: 'WHITE FF', points: 161, glory: 4648, role: 'Rusher' },
+  { name: 'MODERATOR FF', points: 7, glory: 4553, role: 'Rusher' },
+  { name: 'LAST HOPE FF', points: 212, glory: 4324, role: 'Rusher' },
+  { name: 'SIBGHAT FF', points: 103, glory: 3956, role: 'Rusher' },
+  { name: 'GANGSTER FF', points: 204, glory: 3712, role: 'Rusher' },
+  { name: 'KABEER FF', points: 172, glory: 3114, role: 'Rusher' },
+  { name: 'AGENT FF', points: 0, glory: 3038, role: 'Survivor' },
+  { name: 'HISOKA FF', points: 82, glory: 2817, role: 'Rusher' },
+  { name: 'AZIZ FF', points: 141, glory: 2584, role: 'Rusher' },
+  { name: 'APOLLO FF', points: 45, glory: 2569, role: 'Rusher' },
+  { name: 'ZAIN FF', points: 102, glory: 2554, role: 'Rusher' },
+  { name: 'MK STAR FF', points: 71, glory: 2508, role: 'Rusher' },
+  { name: 'OMNIVERT FF', points: 142, glory: 2479, role: 'Rusher' },
+  { name: 'Konkar FF', points: 109, glory: 2365, role: 'Rusher' },
+  { name: 'RAJPUT FF', points: 71, glory: 2246, role: 'Rusher' },
+  { name: 'JERRY FF', points: 118, glory: 2007, role: 'Rusher' },
+  { name: 'AFTAJ JUTT', points: 44, glory: 1969, role: 'Rusher' },
+  { name: 'BLUE ROX', points: 117, glory: 1810, role: 'Rusher' },
+  { name: 'UMER', points: 102, glory: 1651, role: 'Rusher' },
+  { name: 'SHISUI FF', points: 36, glory: 1562, role: 'Rusher' },
+  { name: 'DOREMON', points: 0, glory: 1476, role: 'Survivor' },
+  { name: 'HAMMAD FF', points: 0, glory: 1473, role: 'Survivor' },
+  { name: 'BLACK 444', points: 60, glory: 1456, role: 'Rusher' },
+  { name: 'THAN B2K', points: 68, glory: 1427, role: 'Rusher' },
+  { name: 'CAPT', points: 0, glory: 1130, role: 'Survivor' },
+  { name: 'RANA FF', points: 0, glory: 1041, role: 'Survivor' },
+  { name: 'RAYAN FF', points: 57, glory: 971, role: 'Rusher' },
+  { name: 'KGR MAFIA', points: 41, glory: 945, role: 'Rusher' },
+  { name: 'KARELA', points: 11, glory: 930, role: 'Rusher' },
+  { name: 'SPEEDY FF', points: 0, glory: 887, role: 'Survivor' },
+  { name: 'TSG GAMER', points: 81, glory: 805, role: 'Rusher' },
+  { name: 'ALI BRAND FF ', points: 47, glory: 786, role: 'Rusher' },
+  { name: 'FBI NEUXS', points: 88, glory: 595, role: 'Rusher' },
+  { name: 'NARUTO', points: 0, glory: 592, role: 'Survivor' },
+  { name: '7x OnefireX', points: 1, glory: 593, role: 'Rusher' },
+  { name: 'LE OR LOOR', points: 0, glory: 430, role: 'Survivor' },
+  { name: 'MUZI FF', points: 40, glory: 360, role: 'Rusher' },
+  { name: 'XX KASHIF', points: 12, glory: 354, role: 'Rusher' },
+  { name: 'MAN', points: 0, glory: 220, role: 'Survivor' },
 
-  const sliderWrapper = document.getElementById('membersSliderWrapper');
-  const ffAvatarColors = ['FF6A00', 'FF8C2E', 'FFB347', 'FF4500', 'FF6347', 'FF7F50', 'FFA500', 'FFD700', 'FF8C00', 'FF6600'];
+  
+  { name: 'KRANO 70', points: 0, glory: 90, role: 'Survivor' },
+    { name: 'OWII BRAND', points: 0, glory: 40, role: 'Survivor' },
+  { name: 'X7 EGO', points: 0, glory: 575, role: 'Survivor' }
+];
 
-  membersData.forEach((member, index) => {
-    const bgColor = ffAvatarColors[index % ffAvatarColors.length];
-    const slide = document.createElement('div');
-    slide.className = 'swiper-slide';
-    slide.innerHTML = `
-      <div class="member-card">
-        <img src="https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=${bgColor}&color=fff&size=160&bold=true&font-size=0.4&length=2" 
-             alt="${member.name}" loading="lazy" 
-             onerror="this.src='https://placehold.co/80x80/${bgColor}/white?text=FF'">
-        <div class="member-name">${member.name}</div>
-        <div class="member-uid">UID: ${member.uid}</div>
-        <div class="member-glory">${member.role === 'Rusher' ? '🔥' : '🛡️'} ${member.points} pts</div>
-        <span class="badge ${member.role === 'Rusher' ? 'badge-rusher' : 'badge-survivor'}">${member.role === 'Rusher' ? '⚔️ Rusher' : '🛡️ Survivor'}</span>
-      </div>
-    `;
-    sliderWrapper.appendChild(slide);
-  });
+const sliderWrapper = document.getElementById('membersSliderWrapper');
+const ffAvatarColors = ['FF6A00', 'FF8C2E', 'FFB347', 'FF4500', 'FF6347', 'FF7F50', 'FFA500', 'FFD700', 'FF8C00', 'FF6600'];
 
-  // Initialize Swiper
-  const swiper = new Swiper('.mySwiper', {
-    slidesPerView: 1,
-    spaceBetween: 15,
-    loop: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      480: { slidesPerView: 2, spaceBetween: 15 },
-      768: { slidesPerView: 3, spaceBetween: 20 },
-      1024: { slidesPerView: 4, spaceBetween: 20 },
-      1200: { slidesPerView: 5, spaceBetween: 25 },
-    },
-  });
+membersData.forEach((member, index) => {
+  const bgColor = ffAvatarColors[index % ffAvatarColors.length];
+  const slide = document.createElement('div');
+  slide.className = 'swiper-slide';
+  slide.innerHTML = `
+    <div class="member-card">
+      <img src="https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=${bgColor}&color=fff&size=160&bold=true&font-size=0.4&length=2" 
+           alt="${member.name}" loading="lazy" 
+           onerror="this.src='https://placehold.co/80x80/${bgColor}/white?text=FF'">
+      <div class="member-name">${member.name}</div>
+      <div class="member-uid">Points: ${member.points}</div>
+      <div class="member-glory">${member.role === 'Rusher' ? '🔥' : '🛡️'} ${member.glory} pts</div>
+      <span class="badge ${member.role === 'Rusher' ? 'badge-rusher' : 'badge-survivor'}">${member.role === 'Rusher' ? '⚔️ Rusher' : '🛡️ Survivor'}</span>
+    </div>
+  `;
+  sliderWrapper.appendChild(slide);
+});
+
+// Initialize Swiper
+const swiper = new Swiper('.mySwiper', {
+  slidesPerView: 1,
+  spaceBetween: 15,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    480: { slidesPerView: 2, spaceBetween: 15 },
+    768: { slidesPerView: 3, spaceBetween: 20 },
+    1024: { slidesPerView: 4, spaceBetween: 20 },
+    1200: { slidesPerView: 5, spaceBetween: 25 },
+  },
+});
 
   // ==========================================
   // 4. FAQ ACCORDION & SEARCH

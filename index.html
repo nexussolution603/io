@@ -1282,7 +1282,7 @@
     </div>
   </section>
 
-  <!-- ========== 4. SERVICES / GUILD PERKS ========== -->
+  <!-- ========== 4. SERVICES / GUILD PERKS (UPDATED WITH MEMBER TRACKER) ========== -->
   <section id="services" class="container">
     <div class="section-header">
       <h2><i class="fas fa-cogs"></i> Guild Services & Perks</h2>
@@ -1296,6 +1296,43 @@
       <div class="card"><i class="fas fa-trophy" style="font-size: 2.5rem; color: var(--ff-orange);"></i><h3>Monthly Tournaments</h3><p>Internal tournaments with <strong>Google Play Gift Cards</strong>, <strong>Free Fire Diamonds</strong>, and exclusive in-game items as prizes.</p></div>
       <div class="card"><i class="fas fa-users" style="font-size: 2.5rem; color: var(--ff-orange);"></i><h3>WhatsApp Community</h3><p>24/7 active group for strategy discussions, callouts, squad formation, and making lifelong gaming friendships.</p></div>
       <div class="card"><i class="fas fa-shield-alt" style="font-size: 2.5rem; color: var(--ff-orange);"></i><h3>Anti-Toxicity & Security</h3><p>Strict zero-tolerance policy against hacking, cheating, and toxicity. We maintain a safe and respectful environment for all players.</p></div>
+      
+      <!-- NEW: Monthly Member Tracker Card -->
+      <div class="card" style="border-left: 4px solid var(--ff-gold); background: linear-gradient(145deg, #1a1e30, #131520); grid-column: span 1;">
+        <i class="fas fa-users" style="font-size: 2.5rem; color: var(--ff-gold);"></i>
+        <h3 style="color: var(--ff-gold);">📊 Monthly Member Tracker</h3>
+        <p style="font-size: 0.9rem; color: #ccc;">Track our guild's growth — Rusher (150+) & Survivor (100+) members this month</p>
+        
+        <!-- Stats Display -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 15px 0; text-align: center;">
+          <div style="background: rgba(255,106,0,0.15); border-radius: 12px; padding: 10px;">
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--ff-orange);" id="totalMembersDisplay">0</div>
+            <div style="font-size: 0.7rem; color: #aaa;">Total Members</div>
+          </div>
+          <div style="background: rgba(255,106,0,0.12); border-radius: 12px; padding: 10px;">
+            <div style="font-size: 1.8rem; font-weight: 800; color: #FF6A00;" id="rusherCountDisplay">0</div>
+            <div style="font-size: 0.7rem; color: #aaa;">🔥 Rushers (150+)</div>
+          </div>
+          <div style="background: rgba(255,179,71,0.12); border-radius: 12px; padding: 10px;">
+            <div style="font-size: 1.8rem; font-weight: 800; color: #FFB347;" id="survivorCountDisplay">0</div>
+            <div style="font-size: 0.7rem; color: #aaa;">🛡️ Survivors (100+)</div>
+          </div>
+        </div>
+        
+        <!-- View Details Link -->
+        <a href="https://docs.google.com/spreadsheets/d/1I8VysjY6m7t7c6jJru9rTl2H3_sNXsqbMNUh8cQOKGg/edit?usp=sharing" 
+           target="_blank" 
+           rel="noopener" 
+           style="display: inline-flex; align-items: center; gap: 8px; background: var(--ff-gradient); color: white; padding: 10px 20px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s; width: 100%; justify-content: center;"
+           onmouseover="this.style.transform='scale(1.02)'" 
+           onmouseout="this.style.transform='scale(1)'">
+          <i class="fas fa-external-link-alt"></i> View Full Member Data (Google Drive)
+        </a>
+        
+        <p style="font-size: 0.7rem; color: #666; margin-top: 10px; text-align: center;">
+          <i class="fas fa-sync-alt" style="color: var(--ff-orange);"></i> Auto-updates daily from our master spreadsheet
+        </p>
+      </div>
     </div>
   </section>
 
@@ -1580,119 +1617,116 @@
   // 2. WHATSAPP CORNER TOGGLE
   // ==========================================
   const waFloat = document.getElementById('waFloatBtn');
-const waMenu = document.getElementById('waMenu');
+  const waMenu = document.getElementById('waMenu');
   let waMenuOpen = false;
   waFloat.addEventListener('click', function(e) { e.stopPropagation(); waMenuOpen = !waMenuOpen; waMenu.style.display = waMenuOpen ? 'flex' : 'none'; });
   document.addEventListener('click', function(e) { if (!waFloat.contains(e.target) && !waMenu.contains(e.target)) { waMenuOpen = false; waMenu.style.display = 'none'; } });
 
   // ==========================================
-// 3. GUILD MEMBERS SLIDER (UPDATED WITH DATA FROM SPREADSHEET)
-// ==========================================
-const membersData = [
-  { name: 'ITACHI FF', points: 292, glory: 15719, role: 'Rusher' },
-  { name: 'HK GAMER YT', points: 164, glory: 14144, role: 'Rusher' },
-  { name: 'MOON FF', points: 182, glory: 12406, role: 'Rusher' },
-  { name: 'MOON 2 FF', points: 169, glory: 9765, role: 'Rusher' },
-  { name: 'AHMAD FF', points: 262, glory: 9331, role: 'Rusher' },
-  { name: 'INTROVERT FF', points: 246, glory: 9038, role: 'Rusher' },
-  { name: 'LEGEND FF', points: 131, glory: 8626, role: 'Rusher' },
-  { name: 'EXTROVERT FF', points: 184, glory: 8762, role: 'Rusher' },
-  { name: 'ASTROVERT FF', points: 136, glory: 8635, role: 'Rusher' },
-  { name: 'ZALIM FF', points: 204, glory: 5617, role: 'Rusher' },
-  { name: 'DICTATOR FF', points: 142, glory: 5213, role: 'Rusher' },
-  { name: 'ANAS FF', points: 125, glory: 5041, role: 'Rusher' },
-  { name: 'WHITE FF', points: 161, glory: 4648, role: 'Rusher' },
-  { name: 'MODERATOR FF', points: 7, glory: 4553, role: 'Rusher' },
-  { name: 'LAST HOPE FF', points: 212, glory: 4324, role: 'Rusher' },
-  { name: 'SIBGHAT FF', points: 103, glory: 3956, role: 'Rusher' },
-  { name: 'GANGSTER FF', points: 204, glory: 3712, role: 'Rusher' },
-  { name: 'KABEER FF', points: 172, glory: 3114, role: 'Rusher' },
-  { name: 'AGENT FF', points: 0, glory: 3038, role: 'Survivor' },
-  { name: 'HISOKA FF', points: 82, glory: 2817, role: 'Rusher' },
-  { name: 'AZIZ FF', points: 141, glory: 2584, role: 'Rusher' },
-  { name: 'APOLLO FF', points: 45, glory: 2569, role: 'Rusher' },
-  { name: 'ZAIN FF', points: 102, glory: 2554, role: 'Rusher' },
-  { name: 'MK STAR FF', points: 71, glory: 2508, role: 'Rusher' },
-  { name: 'OMNIVERT FF', points: 142, glory: 2479, role: 'Rusher' },
-  { name: 'Konkar FF', points: 109, glory: 2365, role: 'Rusher' },
-  { name: 'RAJPUT FF', points: 71, glory: 2246, role: 'Rusher' },
-  { name: 'JERRY FF', points: 118, glory: 2007, role: 'Rusher' },
-  { name: 'AFTAJ JUTT', points: 44, glory: 1969, role: 'Rusher' },
-  { name: 'BLUE ROX', points: 117, glory: 1810, role: 'Rusher' },
-  { name: 'UMER', points: 102, glory: 1651, role: 'Rusher' },
-  { name: 'SHISUI FF', points: 36, glory: 1562, role: 'Rusher' },
-  { name: 'DOREMON', points: 0, glory: 1476, role: 'Survivor' },
-  { name: 'HAMMAD FF', points: 0, glory: 1473, role: 'Survivor' },
-  { name: 'BLACK 444', points: 60, glory: 1456, role: 'Rusher' },
-  { name: 'THAN B2K', points: 68, glory: 1427, role: 'Rusher' },
-  { name: 'CAPT', points: 0, glory: 1130, role: 'Survivor' },
-  { name: 'RANA FF', points: 0, glory: 1041, role: 'Survivor' },
-  { name: 'RAYAN FF', points: 57, glory: 971, role: 'Rusher' },
-  { name: 'KGR MAFIA', points: 41, glory: 945, role: 'Rusher' },
-  { name: 'KARELA', points: 11, glory: 930, role: 'Rusher' },
-  { name: 'SPEEDY FF', points: 0, glory: 887, role: 'Survivor' },
-  { name: 'TSG GAMER', points: 81, glory: 805, role: 'Rusher' },
-  { name: 'ALI BRAND FF ', points: 47, glory: 786, role: 'Rusher' },
-  { name: 'FBI NEUXS', points: 88, glory: 595, role: 'Rusher' },
-  { name: 'NARUTO', points: 0, glory: 592, role: 'Survivor' },
-  { name: '7x OnefireX', points: 1, glory: 593, role: 'Rusher' },
-  { name: 'LE OR LOOR', points: 0, glory: 430, role: 'Survivor' },
-  { name: 'MUZI FF', points: 40, glory: 360, role: 'Rusher' },
-  { name: 'XX KASHIF', points: 12, glory: 354, role: 'Rusher' },
-  { name: 'MAN', points: 0, glory: 220, role: 'Survivor' },
+  // 3. GUILD MEMBERS SLIDER (UPDATED WITH DATA FROM SPREADSHEET)
+  // ==========================================
+  const membersData = [
+    { name: 'MOON FF', points: 170, glory: 17517, role: 'Rusher' },
+    { name: 'ASTROVERT FF', points: 160, glory: 13386, role: 'Rusher' },
+    { name: 'ITACHI FF', points: 301, glory: 12427, role: 'Rusher' },
+    { name: 'WHITE FF', points: 239, glory: 10089, role: 'Rusher' },
+    { name: 'GHOST FF', points: 135, glory: 8328, role: 'Rusher' },
+    { name: 'KPKYASIRFF', points: 203, glory: 6737, role: 'Rusher' },
+    { name: 'LEGEND FF', points: 108, glory: 6311, role: 'Rusher' },
+    { name: 'HK-GAMER F', points: 129, glory: 6289, role: 'Rusher' },
+    { name: 'SAAD REHMAN', points: 46, glory: 6232, role: 'Rusher' },
+    { name: "a'DNA", points: 43, glory: 6017, role: 'Rusher' },
+    { name: 'ANAS FF', points: 131, glory: 5577, role: 'Rusher' },
+    { name: 'LAST HOPE FF', points: 139, glory: 5424, role: 'Rusher' },
+    { name: 'X9 BRA9D', points: 165, glory: 5281, role: 'Rusher' },
+    { name: 'THE 1ST HOPE', points: 104, glory: 5180, role: 'Rusher' },
+    { name: 'ZAIN FF', points: 134, glory: 4874, role: 'Rusher' },
+    { name: 'HISOKA FF', points: 111, glory: 4803, role: 'Rusher' },
+    { name: 'AHMAD FF', points: 188, glory: 4534, role: 'Rusher' },
+    { name: 'CRADEE FF', points: 85, glory: 4483, role: 'Rusher' },
+    { name: 'OMNIVERT FF', points: 159, glory: 4397, role: 'Rusher' },
+    { name: 'HAMMAD FF', points: 99, glory: 4366, role: 'Rusher' },
+    { name: 'X7 EGO', points: 179, glory: 4209, role: 'Rusher' },
+    { name: 'INTROVERT FF', points: 207, glory: 3648, role: 'Rusher' },
+    { name: 'AZIZ FF', points: 69, glory: 3558, role: 'Rusher' },
+    { name: 'ZALIM.f', points: 119, glory: 6115, role: 'Rusher' },
+    { name: 'Konkhar FF', points: 27, glory: 3033, role: 'Rusher' },
+    { name: 'OWII BRAND', points: 0, glory: 2972, role: 'Survivor' },
+    { name: "'DP'HAsnan'", points: 101, glory: 2875, role: 'Rusher' },
+    { name: 'JERRYFF', points: 100, glory: 2804, role: 'Rusher' },
+    { name: 'MUZI FF', points: 48, glory: 2781, role: 'Rusher' },
+    { name: 'AFTAJ JUTT', points: 73, glory: 2623, role: 'Rusher' },
+    { name: 'DICTATOR FF', points: 142, glory: 9319, role: 'Rusher' },
+    { name: 'GANGSTER FF', points: 93, glory: 1995, role: 'Rusher' },
+    { name: 'MODERATOR FI', points: 31, glory: 1764, role: 'Rusher' },
+    { name: 'SBGHAT FF', points: 61, glory: 1769, role: 'Rusher' },
+    { name: 'BLUE ROXY', points: 166, glory: 1753, role: 'Rusher' },
+    { name: 'SPEEDY FF', points: 21, glory: 1685, role: 'Rusher' },
+    { name: 'SHISUFF', points: 39, glory: 1578, role: 'Rusher' },
+    { name: 'STRANGERFF', points: 52, glory: 1617, role: 'Rusher' },
+    { name: 'TOXIC', points: 114, glory: 1409, role: 'Rusher' },
+    { name: 'ECLAIR', points: 62, glory: 1211, role: 'Rusher' },
+    { name: 'OnlyErrors', points: 68, glory: 1120, role: 'Rusher' },
+    { name: 'RANA FF', points: 0, glory: 1013, role: 'Survivor' },
+    { name: 'Aurora', points: 25, glory: 945, role: 'Rusher' },
+    { name: 'ROSE FF', points: 0, glory: 898, role: 'Survivor' },
+    { name: 'TW FLEXY', points: 0, glory: 880, role: 'Survivor' },
+    { name: 'NARUTO', points: 0, glory: 840, role: 'Survivor' },
+    { name: 'KASHIF FF', points: 81, glory: 743, role: 'Rusher' },
+    { name: '7xs Onefirex', points: 0, glory: 600, role: 'Survivor' },
+    { name: 'NK BROKEN', points: 27, glory: 361, role: 'Rusher' },
+    { name: 'ROYAL', points: 0, glory: 242, role: 'Survivor' },
+    { name: 'JANO GAIM', points: 7, glory: 130, role: 'Rusher' },
+    { name: 'TRY TALHA', points: 0, glory: 10, role: 'Survivor' },
+    { name: 'AGENT FF', points: 0, glory: 0, role: 'Survivor' }
+  ];
 
-  
-  { name: 'KRANO 70', points: 0, glory: 90, role: 'Survivor' },
-    { name: 'OWII BRAND', points: 0, glory: 40, role: 'Survivor' },
-  { name: 'X7 EGO', points: 0, glory: 575, role: 'Survivor' }
-];
+  const sliderWrapper = document.getElementById('membersSliderWrapper');
+  const ffAvatarColors = ['FF6A00', 'FF8C2E', 'FFB347', 'FF4500', 'FF6347', 'FF7F50', 'FFA500', 'FFD700', 'FF8C00', 'FF6600'];
 
-const sliderWrapper = document.getElementById('membersSliderWrapper');
-const ffAvatarColors = ['FF6A00', 'FF8C2E', 'FFB347', 'FF4500', 'FF6347', 'FF7F50', 'FFA500', 'FFD700', 'FF8C00', 'FF6600'];
+  membersData.forEach((member, index) => {
+    const bgColor = ffAvatarColors[index % ffAvatarColors.length];
+    const slide = document.createElement('div');
+    slide.className = 'swiper-slide';
+    slide.innerHTML = `
+      <div class="member-card">
+        <img src="https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=${bgColor}&color=fff&size=160&bold=true&font-size=0.4&length=2" 
+             alt="${member.name}" loading="lazy" 
+             onerror="this.src='https://placehold.co/80x80/${bgColor}/white?text=FF'">
+        <div class="member-name">${member.name}</div>
+        <div class="member-uid">Points: ${member.points}</div>
+        <div class="member-glory">${member.role === 'Rusher' ? '🔥' : '🛡️'} ${member.glory} pts</div>
+        <span class="badge ${member.role === 'Rusher' ? 'badge-rusher' : 'badge-survivor'}">${member.role === 'Rusher' ? '⚔️ Rusher' : '🛡️ Survivor'}</span>
+      </div>
+    `;
+    sliderWrapper.appendChild(slide);
+  });
 
-membersData.forEach((member, index) => {
-  const bgColor = ffAvatarColors[index % ffAvatarColors.length];
-  const slide = document.createElement('div');
-  slide.className = 'swiper-slide';
-  slide.innerHTML = `
-    <div class="member-card">
-      <img src="https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=${bgColor}&color=fff&size=160&bold=true&font-size=0.4&length=2" 
-           alt="${member.name}" loading="lazy" 
-           onerror="this.src='https://placehold.co/80x80/${bgColor}/white?text=FF'">
-      <div class="member-name">${member.name}</div>
-      <div class="member-uid">Points: ${member.points}</div>
-      <div class="member-glory">${member.role === 'Rusher' ? '🔥' : '🛡️'} ${member.glory} pts</div>
-      <span class="badge ${member.role === 'Rusher' ? 'badge-rusher' : 'badge-survivor'}">${member.role === 'Rusher' ? '⚔️ Rusher' : '🛡️ Survivor'}</span>
-    </div>
-  `;
-  sliderWrapper.appendChild(slide);
-});
-
-// Initialize Swiper
-const swiper = new Swiper('.mySwiper', {
-  slidesPerView: 1,
-  spaceBetween: 15,
-  loop: true,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-    pauseOnMouseEnter: true,
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  breakpoints: {
-    480: { slidesPerView: 2, spaceBetween: 15 },
-    768: { slidesPerView: 3, spaceBetween: 20 },
-    1024: { slidesPerView: 4, spaceBetween: 20 },
-    1200: { slidesPerView: 5, spaceBetween: 25 },
-  },
-});
+  // Initialize Swiper
+  const swiper = new Swiper('.mySwiper', {
+    slidesPerView: 1,
+    spaceBetween: 15,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      480: { slidesPerView: 2, spaceBetween: 15 },
+      768: { slidesPerView: 3, spaceBetween: 20 },
+      1024: { slidesPerView: 4, spaceBetween: 20 },
+      1200: { slidesPerView: 5, spaceBetween: 25 },
+    },
+  });
 
   // ==========================================
   // 4. FAQ ACCORDION & SEARCH
@@ -1942,7 +1976,90 @@ const swiper = new Swiper('.mySwiper', {
     });
   });
 
+  // ==========================================
+  // 13. MONTHLY MEMBER COUNTER (Google Sheets API)
+  // ==========================================
+  async function fetchMemberCounts() {
+    try {
+      // Try to fetch from Google Sheets first
+      const SHEET_ID = '1I8VysjY6m7t7c6jJru9rTl2H3_sNXsqbMNUh8cQOKGg';
+      const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
+      
+      const response = await fetch(url);
+      const text = await response.text();
+      
+      // Parse the JSONP response
+      const jsonData = JSON.parse(text.substring(47, text.length - 2));
+      const rows = jsonData.table.rows;
+      
+      let total = 0;
+      let rusherCount = 0;
+      let survivorCount = 0;
+      
+      // Start from row 1 (skip headers)
+      for (let i = 1; i < rows.length; i++) {
+        const row = rows[i];
+        if (row.c && row.c[0] && row.c[0].v) {
+          total++;
+          const glory = parseInt(row.c[2]?.v) || 0;
+          if (glory >= 150) {
+            rusherCount++;
+          } else if (glory >= 100) {
+            survivorCount++;
+          }
+        }
+      }
+      
+      // Update the UI
+      document.getElementById('totalMembersDisplay').textContent = total;
+      document.getElementById('rusherCountDisplay').textContent = rusherCount;
+      document.getElementById('survivorCountDisplay').textContent = survivorCount;
+      
+      // Store in localStorage for offline display
+      localStorage.setItem('ff_member_counts', JSON.stringify({
+        total, rusherCount, survivorCount,
+        lastUpdated: new Date().toISOString()
+      }));
+      
+    } catch (error) {
+      console.warn('Google Sheets fetch failed, using fallback data:', error);
+      
+      // Fallback to cached data
+      const cached = localStorage.getItem('ff_member_counts');
+      if (cached) {
+        try {
+          const data = JSON.parse(cached);
+          document.getElementById('totalMembersDisplay').textContent = data.total || 0;
+          document.getElementById('rusherCountDisplay').textContent = data.rusherCount || 0;
+          document.getElementById('survivorCountDisplay').textContent = data.survivorCount || 0;
+        } catch (e) {
+          useMembersDataFallback();
+        }
+      } else {
+        useMembersDataFallback();
+      }
+    }
+  }
+
+  function useMembersDataFallback() {
+    // Use the membersData array as fallback
+    const total = membersData.length;
+    const rusherCount = membersData.filter(m => m.role === 'Rusher').length;
+    const survivorCount = membersData.filter(m => m.role === 'Survivor').length;
+    document.getElementById('totalMembersDisplay').textContent = total;
+    document.getElementById('rusherCountDisplay').textContent = rusherCount;
+    document.getElementById('survivorCountDisplay').textContent = survivorCount;
+  }
+
+  // Run on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    fetchMemberCounts();
+    // Refresh every 5 minutes
+    setInterval(fetchMemberCounts, 300000);
+  });
+
   console.log('%c🚀 PAKISTAN FF GUILD Website Ready - PWA Banner Fixed!', 'color: #FF6A00; font-size: 18px; font-weight: bold;');
+  console.log('%c📊 Monthly Member Tracker Active!', 'color: #FFB347; font-size: 14px; font-weight: bold;');
 </script>
 
 </body>

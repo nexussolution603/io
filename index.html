@@ -62,6 +62,8 @@
         }
     </script>
 
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -252,7 +254,7 @@
         }
 
         /* ============================================================
-                   GLASS NAVBAR — Holographic
+                   GLASS NAVBAR — Holographic with Bootstrap
                 ============================================================ */
         .navbar {
             position: fixed;
@@ -574,6 +576,7 @@
             border-radius: var(--radius-lg);
             padding: 2rem 1.8rem;
             transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            height: 100%;
         }
         .glass-card:hover {
             transform: translateY(-10px) scale(1.02);
@@ -661,6 +664,14 @@
             margin-bottom: 0.5rem;
             filter: drop-shadow(0 0 30px rgba(251, 191, 36, 0.1));
         }
+        .flip-card-front .product-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--gold);
+            margin-bottom: 0.5rem;
+        }
         .flip-card-front h4 {
             font-size: 1.1rem;
             font-weight: 600;
@@ -674,6 +685,11 @@
             color: var(--gold);
             font-size: 0.9rem;
             margin: 0.5rem 0;
+        }
+        .flip-card-front .p-price {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
         }
         .flip-card-back {
             transform: rotateY(180deg);
@@ -710,6 +726,36 @@
         }
         .flip-card-back .btn-wa:hover {
             background: #1ebe5c !important;
+        }
+
+        /* ---- Testimonials ---- */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .testimonial-grid .glass-card {
+            text-align: center;
+        }
+        .testimonial-grid .glass-card .stars {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        .testimonial-grid .glass-card .quote {
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .testimonial-grid .glass-card .client {
+            margin-top: 0.8rem;
+            color: #fff;
+            font-weight: 600;
+        }
+        .testimonial-grid .glass-card .client-role {
+            color: var(--text-muted);
+            font-size: 0.8rem;
         }
 
         /* ---- Team with Social Links ---- */
@@ -771,36 +817,6 @@
             color: #fff;
             background: var(--gold);
             transform: scale(1.15);
-        }
-
-        /* ---- Testimonials ---- */
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .testimonial-grid .glass-card {
-            text-align: center;
-        }
-        .testimonial-grid .glass-card .stars {
-            color: var(--gold);
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-        }
-        .testimonial-grid .glass-card .quote {
-            color: var(--text-muted);
-            font-style: italic;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        .testimonial-grid .glass-card .client {
-            margin-top: 0.8rem;
-            color: #fff;
-            font-weight: 600;
-        }
-        .testimonial-grid .glass-card .client-role {
-            color: var(--text-muted);
-            font-size: 0.8rem;
         }
 
         /* ---- Blog ---- */
@@ -962,6 +978,18 @@
             transition: 0.3s;
         }
         .contact-info .item a:hover {
+            color: var(--gold);
+        }
+        .contact-info .map-placeholder {
+            background: rgba(255,255,255,0.05);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--border-glass);
+            margin-top: 1rem;
+        }
+        .contact-info .map-placeholder i {
+            font-size: 3rem;
             color: var(--gold);
         }
         .newsletter-box {
@@ -1392,7 +1420,7 @@
         </div>
     </section>
 
-    <!-- ===== PRODUCTS with Social Share ===== -->
+    <!-- ===== PRODUCTS with Social Share & Images ===== -->
     <section class="section" id="section-products">
         <div class="section-header reveal">
             <div class="tag"><i class="fas fa-rotate-3d"></i> 3D COLLECTION</div>
@@ -1401,27 +1429,63 @@
         </div>
         <div class="product-grid">
             <div class="flip-card reveal"><div class="flip-card-inner">
-                <div class="flip-card-front"><div class="p-icon"><i class="fas fa-sun"></i></div><h4>INVEREX VEYRONII</h4><div class="p-desc">6000W · 48V</div><div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.8</div></div>
+                <div class="flip-card-front">
+                    <img src="https://placehold.co/120x120/0b1120/fbbf24?text=INVEREX" alt="INVEREX" class="product-img">
+                    <h4>INVEREX VEYRONII</h4>
+                    <div class="p-desc">6000W · 48V</div>
+                    <div class="p-price">PKR 45,000</div>
+                    <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.8</div>
+                </div>
                 <div class="flip-card-back"><p style="color:#fff;font-weight:600;">⚡ Inquire Now</p><div class="share-btns"><a href="https://wa.me/923000041131?text=INVEREX%20VEYRONII%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=INVEREX%20VEYRONII%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a><a href="https://twitter.com/intent/tweet?text=INVEREX%20VEYRONII%20at%20RANA%20SOLAR%20TRADERS" target="_blank"><i class="fab fa-twitter"></i> Tweet</a></div></div>
             </div></div>
             <div class="flip-card reveal"><div class="flip-card-inner">
-                <div class="flip-card-front"><div class="p-icon"><i class="fas fa-sun"></i></div><h4>Fronus Inverter</h4><div class="p-desc">High‑efficiency</div><div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div></div>
+                <div class="flip-card-front">
+                    <img src="https://placehold.co/120x120/0b1120/fbbf24?text=Fronus" alt="Fronus" class="product-img">
+                    <h4>Fronus Inverter</h4>
+                    <div class="p-desc">High‑efficiency</div>
+                    <div class="p-price">PKR 55,000</div>
+                    <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div>
+                </div>
                 <div class="flip-card-back"><p style="color:#fff;font-weight:600;">⚡ Inquire Now</p><div class="share-btns"><a href="https://wa.me/923000041131?text=Fronus%20Inverter%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=Fronus%20Inverter%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a><a href="https://twitter.com/intent/tweet?text=Fronus%20Inverter%20at%20RANA%20SOLAR%20TRADERS" target="_blank"><i class="fab fa-twitter"></i> Tweet</a></div></div>
             </div></div>
             <div class="flip-card reveal"><div class="flip-card-inner">
-                <div class="flip-card-front"><div class="p-icon"><i class="fas fa-microchip"></i></div><h4>New Main Board</h4><div class="p-desc">Original replacement</div><div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div></div>
+                <div class="flip-card-front">
+                    <img src="https://placehold.co/120x120/0b1120/fbbf24?text=Board" alt="Main Board" class="product-img">
+                    <h4>New Main Board</h4>
+                    <div class="p-desc">Original replacement</div>
+                    <div class="p-price">PKR 8,500</div>
+                    <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div>
+                </div>
                 <div class="flip-card-back"><p style="color:#fff;font-weight:600;">⚡ Inquire Now</p><div class="share-btns"><a href="https://wa.me/923000041131?text=New%20Main%20Board%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=New%20Main%20Board%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a><a href="https://twitter.com/intent/tweet?text=New%20Main%20Board%20at%20RANA%20SOLAR%20TRADERS" target="_blank"><i class="fab fa-twitter"></i> Tweet</a></div></div>
             </div></div>
             <div class="flip-card reveal"><div class="flip-card-inner">
-                <div class="flip-card-front"><div class="p-icon"><i class="fas fa-bolt"></i></div><h4>Chopper / Coil</h4><div class="p-desc">Premium quality</div><div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.9</div></div>
+                <div class="flip-card-front">
+                    <img src="https://placehold.co/120x120/0b1120/fbbf24?text=Chopper" alt="Chopper" class="product-img">
+                    <h4>Chopper / Coil</h4>
+                    <div class="p-desc">Premium quality</div>
+                    <div class="p-price">PKR 3,200</div>
+                    <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.9</div>
+                </div>
                 <div class="flip-card-back"><p style="color:#fff;font-weight:600;">⚡ Inquire Now</p><div class="share-btns"><a href="https://wa.me/923000041131?text=Chopper%20Coil%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=Chopper%20Coil%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a><a href="https://twitter.com/intent/tweet?text=Chopper%20Coil%20at%20RANA%20SOLAR%20TRADERS" target="_blank"><i class="fab fa-twitter"></i> Tweet</a></div></div>
             </div></div>
             <div class="flip-card reveal"><div class="flip-card-inner">
-                <div class="flip-card-front"><div class="p-icon"><i class="fas fa-fan"></i></div><h4>Cooling Fan</h4><div class="p-desc">Original high‑speed</div><div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div></div>
+                <div class="flip-card-front">
+                    <img src="https://placehold.co/120x120/0b1120/fbbf24?text=Fan" alt="Cooling Fan" class="product-img">
+                    <h4>Cooling Fan</h4>
+                    <div class="p-desc">Original high‑speed</div>
+                    <div class="p-price">PKR 2,800</div>
+                    <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div>
+                </div>
                 <div class="flip-card-back"><p style="color:#fff;font-weight:600;">⚡ Inquire Now</p><div class="share-btns"><a href="https://wa.me/923000041131?text=Cooling%20Fan%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=Cooling%20Fan%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a><a href="https://twitter.com/intent/tweet?text=Cooling%20Fan%20at%20RANA%20SOLAR%20TRADERS" target="_blank"><i class="fab fa-twitter"></i> Tweet</a></div></div>
             </div></div>
             <div class="flip-card reveal"><div class="flip-card-inner">
-                <div class="flip-card-front"><div class="p-icon"><i class="fas fa-tv"></i></div><h4>Display Panel</h4><div class="p-desc">LCD / LED</div><div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.8</div></div>
+                <div class="flip-card-front">
+                    <img src="https://placehold.co/120x120/0b1120/fbbf24?text=Display" alt="Display" class="product-img">
+                    <h4>Display Panel</h4>
+                    <div class="p-desc">LCD / LED</div>
+                    <div class="p-price">PKR 6,500</div>
+                    <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.8</div>
+                </div>
                 <div class="flip-card-back"><p style="color:#fff;font-weight:600;">⚡ Inquire Now</p><div class="share-btns"><a href="https://wa.me/923000041131?text=Display%20Panel%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=Display%20Panel%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a><a href="https://twitter.com/intent/tweet?text=Display%20Panel%20at%20RANA%20SOLAR%20TRADERS" target="_blank"><i class="fab fa-twitter"></i> Tweet</a></div></div>
             </div></div>
         </div>
@@ -1615,6 +1679,10 @@
                 <div class="item"><i class="fas fa-map-marker-alt"></i> Rana Solar Lab, Kasur</div>
                 <div class="item"><i class="fas fa-clock"></i> Mon–Sat: 9AM – 8PM</div>
                 <div class="item"><i class="fas fa-badge-check"></i> NRE Claim Center</div>
+                <div class="map-placeholder">
+                    <i class="fas fa-map"></i>
+                    <p class="text-muted mt-2">📍 Find us on Google Maps</p>
+                </div>
                 <div style="margin-top:1.5rem;">
                     <label style="font-weight:600;color:#fff;display:block;margin-bottom:0.5rem;">📡 Subscribe to Quantum Updates</label>
                     <div class="newsletter-box">
